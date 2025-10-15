@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'playfair': ['Playfair Display', 'serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +51,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'pastel-pink': "hsl(var(--primary))",
+        'pastel-blue': "hsl(var(--secondary))",
+        'pastel-purple': "hsl(var(--accent))",
+        'pastel-cream': "hsl(var(--muted))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
