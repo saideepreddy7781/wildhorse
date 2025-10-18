@@ -3,19 +3,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 
 // Import existing images
 import heroWedding from '@/assets/hero-wedding.jpg';
-import maternityShoot from '@/assets/maternity-shoot.jpg';
+import maternityShoot from '@/assets/baby-3.jpg';
 import preweddingShoot from '@/assets/prewedding-shoot.jpg';
-import eventsPhoto from '@/assets/events-photo.jpg'; // Using this for multiple categories as placeholder
+import eventsPhoto from '@/assets/events-photo.jpg'; 
 
-// You should add specific images for these categories to src/assets/ and update below
-// import babyPhotoshoot from '@/assets/baby-photoshoot.jpg';
-// import modelPhotoshoot from '@/assets/model-photoshoot.jpg';
-// import familyPhotoshoot from '@/assets/family-photoshoot.jpg';
-// import housewarmingPhoto from '@/assets/housewarming-photo.jpg';
-// import namingCeremonyPhoto from '@/assets/naming-ceremony-photo.jpg';
-// import albumDesignPhoto from '@/assets/album-design-photo.jpg';
-// import productPhoto from '@/assets/product-photo.jpg';
-// import cameraRentalPhoto from '@/assets/camera-rental-photo.jpg';
+ import babyPhotoshoot from '@/assets/baby-photoshoot.jpg';
+ import modelPhotoshoot from '@/assets/model-photoshoot.jpg';
+import familyPhotoshoot from '@/assets/family-photoshoot.jpg';
+ import housewarmingPhoto from '@/assets/housewarming-photo.jpg';
+import namingCeremonyPhoto from '@/assets/naming-ceremony-photo.jpg';
+ import albumDesignPhoto from '@/assets/album-design-photo.jpg';
+import productPhoto from '@/assets/product-photo.jpg';
+import cameraRentalPhoto from '@/assets/camera-rental-photo.jpg';
 
 
 const services = [

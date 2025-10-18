@@ -1,86 +1,75 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { Button } from './ui/button';
-import heroWedding from '@/assets/hero-wedding.jpg';
-import maternityShoot from '@/assets/maternity-shoot.jpg';
-import preweddingShoot from '@/assets/prewedding-shoot.jpg';
-import eventsPhoto from '@/assets/events-photo.jpg'; // Using this as a placeholder
 
-// Updated slides array to include all 12 categories
+import heroWedding from '@/assets/mar-1.jpeg';
+import maternityShoot from '@/assets/mat-1.jpg';
+import preweddingShoot from '@/assets/prewedding-shoot.jpg';
+import eventsPhoto from '@/assets/events-photo.jpg';
+import babyPhotoshoot from '@/assets/baby-1.jpg';
+
 const slides = [
-  // 1. Wedding
   {
     image: heroWedding,
     title: 'Wedding Photography',
-    description: 'Capturing the magic of your special day.',
+    description: 'Capturing the magic', // Shortened tag line
   },
-  // 2. Pre-wedding
   {
     image: preweddingShoot,
     title: 'Pre-Wedding Photoshoot',
-    description: 'Celebrate your love story before the big day.',
+    description: 'Your love story', // Shortened tag line
   },
-  // 3. Maternity & Baby showers
   {
     image: maternityShoot,
     title: 'Maternity & Baby Showers',
-    description: 'Cherishing the beauty of anticipation and celebration.',
+    description: 'Anticipation & celebration', // Shortened tag line
   },
-  // 4. Product / E-Commerce photography
   {
-    image: eventsPhoto, // Placeholder - Add a specific product image
+    image: eventsPhoto,
     title: 'Product Photography',
-    description: 'Showcasing your products in the best light.',
+    description: 'Showcasing the best', // Shortened tag line
   },
-  // 5. Baby photoshoots
   {
-    image: maternityShoot, // Placeholder - Add a specific baby image
+    image: babyPhotoshoot,
     title: 'Baby Photoshoots',
-    description: 'Capturing the precious early moments.',
+    description: 'Precious early moments', // Shortened tag line
   },
-  // 6. Model photoshoots
   {
-    image: preweddingShoot, // Placeholder - Add a specific model image
+    image: preweddingShoot,
     title: 'Model Photoshoots',
-    description: 'Professional portfolios for aspiring and established models.',
+    description: 'Professional portfolios', // Shortened tag line
   },
-  // 7. Family photoshoots
   {
-    image: heroWedding, // Placeholder - Add a specific family image
+    image: heroWedding,
     title: 'Family Photoshoots',
-    description: 'Creating timeless memories with your loved ones.',
+    description: 'Timeless memories', // Shortened tag line
   },
-  // 8. Housewarming
   {
-    image: eventsPhoto, // Placeholder - Add a specific housewarming image
+    image: eventsPhoto,
     title: 'Housewarming Photography',
-    description: 'Documenting the joy of your new beginning.',
+    description: 'Joy of new beginnings', // Shortened tag line
   },
-  // 9. Naming ceremony
   {
-    image: maternityShoot, // Placeholder - Add a specific naming ceremony image
+    image: maternityShoot,
     title: 'Naming Ceremony',
-    description: 'Capturing the blessings of a special name.',
+    description: 'Blessings of a name', // Shortened tag line
   },
-  // 10. Album designs and printing
   {
-    image: heroWedding, // Placeholder - Add a specific album image
+    image: heroWedding,
     title: 'Album Design & Printing',
-    description: 'Preserving your memories in beautifully crafted albums.',
+    description: 'Beautifully crafted', // Shortened tag line
   },
-  // 11. Corporate photography
   {
     image: eventsPhoto,
     title: 'Corporate Photography',
-    description: 'Professional images for your business needs.',
+    description: 'Images for business', // Shortened tag line
   },
-  // 12. Camera Rentals
   {
-    image: preweddingShoot, // Placeholder - Add a specific camera rental image
+    image: preweddingShoot,
     title: 'Camera Rentals',
-    description: 'High-quality equipment for your photography projects.',
+    description: 'High-quality equipment', // Shortened tag line
   },
 ];
+
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -88,9 +77,9 @@ const HeroSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Auto-advances every 5 seconds
+    }, 5000);
     return () => clearInterval(timer);
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -98,11 +87,6 @@ const HeroSection = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    element?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -115,38 +99,9 @@ const HeroSection = () => {
             className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-             <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/50" />
-            {/* Caption overlay in bottom-right */}
-             <div className="absolute bottom-8 right-8 bg-card/80 backdrop-blur-sm px-6 py-3 rounded-lg shadow-[var(--shadow-soft)]">
-              <p className="font-playfair text-foreground font-semibold text-lg">
-                {slide.title}
-              </p>
-            </div>
+             {/* Gradient overlay removed */}
           </div>
         ))}
-      </div>
-
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto bg-card/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-[var(--shadow-pastel)]">
-          {/* Animate title and description changes */}
-          <div key={currentSlide} className="animate-fade-in">
-             <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-4 text-foreground">
-               {slides[currentSlide].title}
-             </h2>
-             <p className="text-lg md:text-xl font-poppins text-foreground/80 mb-8">
-               {slides[currentSlide].description}
-             </p>
-          </div>
-          <Button
-            onClick={scrollToContact}
-            size="lg"
-            className="font-poppins text-lg px-8 py-6"
-          >
-            Book Now
-          </Button>
-        </div>
       </div>
 
       {/* Navigation Arrows */}
@@ -166,7 +121,7 @@ const HeroSection = () => {
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -177,6 +132,18 @@ const HeroSection = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+
+      {/* Caption overlay in bottom-right - Updated */}
+      <div className="absolute bottom-6 right-6 z-20 bg-card/80 backdrop-blur-sm px-5 py-3 rounded-lg shadow-[var(--shadow-soft)] text-right"> {/* Added text-right */}
+        {/* Increased title size */}
+        <p className="font-playfair text-foreground font-semibold text-base md:text-lg">
+          {slides[currentSlide].title}
+        </p>
+        {/* Added tagline */}
+        <p className="font-poppins text-foreground/80 text-xs md:text-sm mt-1">
+          {slides[currentSlide].description}
+        </p>
       </div>
     </section>
   );
