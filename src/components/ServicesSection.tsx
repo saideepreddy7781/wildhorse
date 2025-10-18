@@ -21,7 +21,7 @@ import eventsPhoto from '@/assets/events-photo.jpg'; // Using this for multiple 
 const services = [
   // 1. Wedding
   {
-    icon: Heart,
+    icon: Heart, // Icon reference kept for potential future use, but not rendered
     title: 'Wedding',
     description: 'Capture your special day with our professional wedding photography and cinematography services',
     image: heroWedding,
@@ -133,10 +133,14 @@ const ServicesSection = () => {
               </div>
               <div className="flex flex-col flex-grow">
                 <CardHeader>
-                  <div className="mb-4 inline-block p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="h-8 w-8 text-primary" />
+                  {/* Container for the title with background */}
+                  <div className="mb-4 inline-flex items-center justify-center p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors w-full h-16">
+                    {/* Moved CardTitle here, removed icon */}
+                    <CardTitle className="font-playfair text-xl text-primary text-center">
+                      {service.title}
+                    </CardTitle>
                   </div>
-                  <CardTitle className="font-playfair text-xl">{service.title}</CardTitle>
+                  {/* Removed the original CardTitle placement */}
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <CardDescription className="font-poppins text-muted-foreground">
