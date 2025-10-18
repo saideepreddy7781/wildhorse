@@ -1,7 +1,27 @@
-import heroWedding from '@/assets/hero-wedding.jpg';
-import maternityShoot from '@/assets/maternity-shoot.jpg';
-import preweddingShoot from '@/assets/prewedding-shoot.jpg';
-import eventsPhoto from '@/assets/events-photo.jpg';
+import heroWedding from '@/assets/mar-3.jpeg';
+import heroWedding1 from '@/assets/mar-2.jpeg';
+import heroWedding3 from '@/assets/mar-1.jpeg';
+
+import maternityShoot from '@/assets/mat-3.jpg';
+import maternityShoot2 from '@/assets/mat-2.jpg';
+import eventsPhoto from '@/assets/eng-3.jpeg';
+import eventsPhoto2 from '@/assets/eng-2.jpeg';
+import eventsPhoto3 from '@/assets/eng-1.jpeg';
+
+import preweddingShoot from '@/assets/pwe-1.jpg';
+import preweddingShoot2 from '@/assets/pwe-2.jpg';
+import preweddingShoot3 from '@/assets/pwe-3.jpg';
+import babyPhotoshoot3 from '@/assets/baby-3.jpg';
+
+
+import babyPhotoshoot1 from '@/assets/baby-2.jpg';
+import modelPhotoshoot from '@/assets/mod-2.jpg';
+import familyPhotoshoot from '@/assets/famm-2.jpeg';
+import housewarmingPhoto from '@/assets/hwa-2.jpeg';
+import namingCeremonyPhoto from '@/assets/mat-3.jpg';
+import albumDesignPhoto from '@/assets/br-3.jpg';
+import productPhoto from '@/assets/pr-3.jpeg';
+import cameraRentalPhoto from '@/assets/br-2.jpg';
 
 // Updated categories to be more specific and reduce duplicates
 const portfolioItems = [
@@ -9,14 +29,14 @@ const portfolioItems = [
   { image: maternityShoot, title: 'Glowing Motherhood', category: 'Maternity' },
   { image: preweddingShoot, title: 'Sunset Romance', category: 'Pre-Wedding' },
   { image: eventsPhoto, title: 'Elegant Event Setup', category: 'Event Decor' }, // More specific
-  { image: heroWedding, title: 'Candid Ceremony', category: 'Candid Wedding' }, // More specific
-  { image: preweddingShoot, title: 'Couple\'s Embrace', category: 'Couple Shoot' }, // More specific
-  { image: maternityShoot, title: 'Garden Maternity', category: 'Outdoor Maternity' }, // More specific
-  { image: eventsPhoto, title: 'Corporate Gala', category: 'Corporate Event' }, // More specific
-  { image: heroWedding, title: 'Bridal Portrait', category: 'Bridal Shoot' }, // More specific
-  { image: preweddingShoot, title: 'Love in Nature', category: 'Outdoor Pre-Wedding' }, // More specific
-  { image: maternityShoot, title: 'Baby Shower Joy', category: 'Baby Shower' },
-  { image: eventsPhoto, title: 'Conference Capture', category: 'Corporate Photography' }, // More specific
+  { image: heroWedding1, title: 'Candid Ceremony', category: 'Candid Wedding' }, // More specific
+  { image: preweddingShoot2, title: 'Couple\'s Embrace', category: 'Couple Shoot' }, // More specific
+  { image: maternityShoot2, title: 'Garden Maternity', category: 'Outdoor Maternity' }, // More specific
+  { image: eventsPhoto2, title: 'Corporate Gala', category: 'Corporate Event' }, // More specific
+  { image: heroWedding3, title: 'Bridal Portrait', category: 'Bridal Shoot' }, // More specific
+  { image: preweddingShoot3, title: 'Love in Nature', category: 'Outdoor Pre-Wedding' }, // More specific
+  { image: babyPhotoshoot3, title: 'Baby Shower Joy', category: 'Baby Shower' },
+  { image: eventsPhoto3, title: 'Wedding', category: 'Wedding Ceremony' }, // More specific
 ];
 
 const PortfolioSection = () => {

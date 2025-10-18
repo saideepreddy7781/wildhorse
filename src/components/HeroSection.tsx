@@ -3,9 +3,18 @@ import { useState, useEffect } from 'react';
 
 import heroWedding from '@/assets/mar-1.jpeg';
 import maternityShoot from '@/assets/mat-1.jpg';
-import preweddingShoot from '@/assets/prewedding-shoot.jpg';
-import eventsPhoto from '@/assets/events-photo.jpg';
+import preweddingShoot from '@/assets/pwe-1.jpg';
+import eventsPhoto from '@/assets/eng-1.jpeg';
 import babyPhotoshoot from '@/assets/baby-1.jpg';
+import modelPhotoshoot from '@/assets/mod-1.jpg';
+import familyPhotoshoot from '@/assets/famm-1.jpeg';
+import housewarmingPhoto from '@/assets/hwa-1.jpeg';
+import namingCeremonyPhoto from '@/assets/mat-2.jpg';
+import albumDesignPhoto from '@/assets/br-1.jpg';
+import productPhoto from '@/assets/pr-1.jpeg';
+import cameraRentalPhoto from '@/assets/br-2.jpg';
+import productPhoto1 from '@/assets/pr-2.jpeg';
+
 
 const slides = [
   {
@@ -24,7 +33,7 @@ const slides = [
     description: 'Anticipation & celebration', // Shortened tag line
   },
   {
-    image: eventsPhoto,
+    image: productPhoto,
     title: 'Product Photography',
     description: 'Showcasing the best', // Shortened tag line
   },
@@ -34,37 +43,37 @@ const slides = [
     description: 'Precious early moments', // Shortened tag line
   },
   {
-    image: preweddingShoot,
+    image: modelPhotoshoot,
     title: 'Model Photoshoots',
     description: 'Professional portfolios', // Shortened tag line
   },
   {
-    image: heroWedding,
+    image: familyPhotoshoot,
     title: 'Family Photoshoots',
     description: 'Timeless memories', // Shortened tag line
   },
   {
-    image: eventsPhoto,
+    image: housewarmingPhoto,
     title: 'Housewarming Photography',
     description: 'Joy of new beginnings', // Shortened tag line
   },
   {
-    image: maternityShoot,
+    image: namingCeremonyPhoto,
     title: 'Naming Ceremony',
     description: 'Blessings of a name', // Shortened tag line
   },
   {
-    image: heroWedding,
+    image: albumDesignPhoto,
     title: 'Album Design & Printing',
     description: 'Beautifully crafted', // Shortened tag line
   },
   {
-    image: eventsPhoto,
+    image: productPhoto1,
     title: 'Corporate Photography',
     description: 'Images for business', // Shortened tag line
   },
   {
-    image: preweddingShoot,
+    image:cameraRentalPhoto,
     title: 'Camera Rentals',
     description: 'High-quality equipment', // Shortened tag line
   },

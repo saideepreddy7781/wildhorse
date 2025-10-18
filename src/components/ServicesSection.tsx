@@ -2,19 +2,20 @@ import { Camera, Heart, Baby, Users, Briefcase, Image, ShoppingBag, Home, Cake, 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
 // Import existing images
-import heroWedding from '@/assets/hero-wedding.jpg';
-import maternityShoot from '@/assets/baby-3.jpg';
-import preweddingShoot from '@/assets/prewedding-shoot.jpg';
-import eventsPhoto from '@/assets/events-photo.jpg'; 
+import heroWedding from '@/assets/mar-2.jpeg';
+import maternityShoot from '@/assets/mat-1.jpg';
+import eventsPhoto from '@/assets/eng-2.jpeg';
+import preweddingShoot from '@/assets/pwe-2.jpg';
+import babyPhotoshoot from '@/assets/baby-2.jpg';
+import modelPhotoshoot from '@/assets/mod-2.jpg';
+import familyPhotoshoot from '@/assets/famm-2.jpeg';
+import housewarmingPhoto from '@/assets/hwa-2.jpeg';
+import namingCeremonyPhoto from '@/assets/mat-3.jpg';
+import albumDesignPhoto from '@/assets/br-3.jpg';
+import productPhoto from '@/assets/pr-3.jpeg';
+import cameraRentalPhoto from '@/assets/br-2.jpg';
+import productPhoto1 from '@/assets/pr-3.jpeg';
 
- import babyPhotoshoot from '@/assets/baby-photoshoot.jpg';
- import modelPhotoshoot from '@/assets/model-photoshoot.jpg';
-import familyPhotoshoot from '@/assets/family-photoshoot.jpg';
- import housewarmingPhoto from '@/assets/housewarming-photo.jpg';
-import namingCeremonyPhoto from '@/assets/naming-ceremony-photo.jpg';
- import albumDesignPhoto from '@/assets/album-design-photo.jpg';
-import productPhoto from '@/assets/product-photo.jpg';
-import cameraRentalPhoto from '@/assets/camera-rental-photo.jpg';
 
 
 const services = [
@@ -51,56 +52,56 @@ const services = [
     icon: Baby,
     title: 'Baby photoshoots',
     description: 'Adorable baby photography capturing precious early moments',
-    image: maternityShoot, // Placeholder - Add babyPhotoshoot
+    image: babyPhotoshoot, // Placeholder - Add babyPhotoshoot
   },
   // 6. Model photoshoots
   {
     icon: Users,
     title: 'Model photoshoots',
     description: 'Professional portfolio shoots for aspiring and established models',
-    image: preweddingShoot, // Placeholder - Add modelPhotoshoot
+    image: modelPhotoshoot, // Placeholder - Add modelPhotoshoot
   },
   // 7. Family photoshoots
   {
     icon: Users,
     title: 'Family photoshoots',
     description: 'Create lasting memories with beautiful family portraits',
-    image: heroWedding, // Placeholder - Add familyPhotoshoot
+    image: familyPhotoshoot, // Placeholder - Add familyPhotoshoot
   },
   // 8. Housewarming
   {
     icon: Home,
     title: 'Housewarming',
     description: 'Document your special housewarming celebration with professional photography',
-    image: eventsPhoto, // Placeholder - Add housewarmingPhoto
+    image: housewarmingPhoto, // Placeholder - Add housewarmingPhoto
   },
   // 9. Naming ceremony
   {
     icon: Cake,
     title: 'Naming ceremony',
     description: "Capture the joy of your baby's naming ceremony",
-    image: maternityShoot, // Placeholder - Add namingCeremonyPhoto
+    image: namingCeremonyPhoto, // Placeholder - Add namingCeremonyPhoto
   },
   // 10. Album designs and printing
   {
     icon: Image,
     title: 'Album designs and printing',
     description: 'Beautiful album designs and premium printing services to preserve your memories',
-    image: heroWedding, // Placeholder - Add albumDesignPhoto
+    image: albumDesignPhoto, // Placeholder - Add albumDesignPhoto
   },
   // 11. Corporate photography
   {
     icon: Briefcase,
     title: 'Corporate photography',
     description: 'Professional photography services for corporate events and business needs',
-    image: eventsPhoto,
+    image: productPhoto,
   },
   // 12. Camera Rentals
   {
     icon: Video,
     title: 'Camera Rentals',
     description: 'High-quality camera equipment rental services for your photography needs',
-    image: preweddingShoot, // Placeholder - Add cameraRentalPhoto
+    image: cameraRentalPhoto, // Placeholder - Add cameraRentalPhoto
   },
 ];
 
