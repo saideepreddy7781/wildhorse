@@ -6,20 +6,62 @@ const testimonials = [
   {
     name: 'Vinay Sridhara',
     location: 'Bangalore',
-    text: 'Had a great experience with Wild Horse Media. The communication with the representative on WhatsApp was very clear. The photographers were on time, very polite, friendly. Above all the photos and videos were awesome. Price also seems to be reasonable compared to others. I would definitely call the same team for our next function.',
+    text: 'Had a great experience with Wild Horse Media. The communication with the representative on WhatsApp was very clear. The photographers were on time, very polite, friendly. Above all the photos and videos were awesome. Price also seems to be reasonable compared to others.',
     initials: 'VS',
   },
   {
     name: 'Avinash M',
     location: 'Bangalore',
-    text: 'A very good service from the team, Team work to be very well appreciated. I had given my marriage album for print, Quality and the Time to delivery is too good. Team is ready to accept the changes required to deliver the best. Thanks for the nice album design. I will recommend for the people the most.',
+    text: 'A very good service from the team, Team work to be very well appreciated. I had given my marriage album for print, Quality and the Time to delivery is too good. Team is ready to accept the changes required to deliver the best.',
     initials: 'AM',
   },
   {
     name: 'Kiran G',
     location: 'Bangalore',
-    text: 'Extremely Happy with Maternity and Baby Shower Photo shoots. It was a great experience right from the beginning. Their coordination, follow ups and the response needs a special mention. Wild Horse Media has thorough professional, skilled and very friendly photographers. The photos and the quality are astounding.',
+    text: 'Extremely Happy with Maternity and Baby Shower Photo shoots. It was a great experience right from the beginning. Their coordination, follow ups and the response needs a special mention. Wild Horse Media has thorough professional, skilled and very friendly photographers.',
     initials: 'KG',
+  },
+  {
+    name: 'Priya Sharma',
+    location: 'Hyderabad',
+    text: 'Outstanding work! The team captured our wedding beautifully. Every moment was perfectly documented and the album design exceeded our expectations. Highly recommended!',
+    initials: 'PS',
+  },
+  {
+    name: 'Rajesh Kumar',
+    location: 'Bangalore',
+    text: 'Professional and creative photographers. They made our pre-wedding shoot so comfortable and fun. The final photos were stunning and unique. Thank you Wild Horse Media!',
+    initials: 'RK',
+  },
+  {
+    name: 'Deepa Reddy',
+    location: 'Chennai',
+    text: 'Excellent service for our baby photoshoot. The photographers were patient and knew exactly how to work with our little one. We got beautiful memories captured forever.',
+    initials: 'DR',
+  },
+  {
+    name: 'Amit Patel',
+    location: 'Pune',
+    text: 'Very professional corporate photography service. They understood our brand requirements perfectly and delivered high-quality images on time. Great team to work with!',
+    initials: 'AP',
+  },
+  {
+    name: 'Sneha Iyer',
+    location: 'Bangalore',
+    text: 'The maternity photoshoot was a wonderful experience. The team made me feel comfortable and the photos turned out absolutely gorgeous. Highly recommend their services!',
+    initials: 'SI',
+  },
+  {
+    name: 'Vikram Singh',
+    location: 'Delhi',
+    text: 'Fantastic product photography for our e-commerce store. The images are crisp, professional, and really showcase our products well. Great value for money!',
+    initials: 'VS',
+  },
+  {
+    name: 'Meera Nair',
+    location: 'Kochi',
+    text: 'Wild Horse Media captured our family moments beautifully at our housewarming. The candid shots were amazing and the team was very friendly. Will definitely hire them again!',
+    initials: 'MN',
   },
 ];
 

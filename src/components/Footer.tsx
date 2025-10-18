@@ -1,4 +1,4 @@
-import { Camera, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Camera, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -53,44 +53,55 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Follow Us */}
+          {/* Contact & Follow Us */}
           <div>
-            <h4 className="font-playfair font-semibold text-lg mb-4 text-foreground">Follow Us</h4>
-            <div className="flex gap-4">
+            <h4 className="font-playfair font-semibold text-lg mb-4 text-foreground">Contact & Follow</h4>
+            <div className="space-y-3 mb-4">
+              <p className="font-poppins text-muted-foreground text-sm">
+                <strong>Phone:</strong> +91 97409 44666
+              </p>
+              <p className="font-poppins text-muted-foreground text-sm">
+                <strong>Email:</strong> teamwildhorse@gmail.com
+              </p>
+              <p className="font-poppins text-muted-foreground text-sm">
+                <strong>Address:</strong><br />
+                3901, 13th main kumaraswamy layout,<br />
+                2nd stage, Bangalore - 560048
+              </p>
+              <p className="font-poppins text-muted-foreground text-sm">
+                <strong>Service Areas:</strong><br />
+                Serving Bangalore, Hyderabad, & Top Cities
+              </p>
+            </div>
+            <div className="flex gap-3">
               <a
-                href="#"
-                className="p-3 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5 text-primary" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/wildhorsemedia/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5 text-primary" />
               </a>
-              <a
-                href="#"
-                className="p-3 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5 text-primary" />
-              </a>
-              <a
-                href="#"
-                className="p-3 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors"
-                aria-label="Youtube"
-              >
-                <Youtube className="h-5 w-5 text-primary" />
-              </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 text-center">
-          <p className="font-poppins text-muted-foreground">
+        <div className="border-t border-border pt-8">
+          <div className="mb-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.0346!2d77.5397!3d12.9196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzEwLjYiTiA3N8KwMzInMjMuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="200"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+              title="Wild Horse Media Location"
+            />
+          </div>
+          <p className="font-poppins text-muted-foreground text-center">
             © {new Date().getFullYear()} Wild Horse Media. All rights reserved.
           </p>
         </div>

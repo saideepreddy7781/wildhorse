@@ -48,7 +48,7 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with 16:9 aspect ratio */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
         style={{
@@ -57,6 +57,13 @@ const HeroSection = () => {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/50" />
+        
+        {/* Caption overlay in bottom-right */}
+        <div className="absolute bottom-8 right-8 bg-card/80 backdrop-blur-sm px-6 py-3 rounded-lg shadow-[var(--shadow-soft)]">
+          <p className="font-playfair text-foreground font-semibold text-lg">
+            {slides[currentSlide].title}
+          </p>
+        </div>
       </div>
 
       {/* Content */}

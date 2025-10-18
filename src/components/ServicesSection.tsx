@@ -1,36 +1,66 @@
-import { Camera, Heart, Baby, Users, Briefcase, Image } from 'lucide-react';
+import { Camera, Heart, Baby, Users, Briefcase, Image, ShoppingBag, Home, Cake, Video } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
 const services = [
   {
     icon: Heart,
-    title: 'Wedding Photography',
+    title: 'Wedding',
     description: 'Capture your special day with our professional wedding photography and cinematography services',
   },
   {
     icon: Camera,
-    title: 'Pre-Wedding Photoshoot',
+    title: 'Pre-wedding',
     description: 'Beautiful pre-wedding shoots at stunning locations to celebrate your love story',
   },
   {
     icon: Baby,
-    title: 'Maternity & Baby Shower',
+    title: 'Maternity & Baby showers',
     description: 'Cherish the beautiful moments of motherhood with our maternity photography',
   },
   {
-    icon: Users,
-    title: 'Events Photography',
-    description: 'Professional coverage for all your special events and celebrations',
+    icon: ShoppingBag,
+    title: 'Product / E-Commerce photography',
+    description: 'Professional product photography for your online store and marketing needs',
   },
   {
-    icon: Briefcase,
-    title: 'Corporate Photography',
-    description: 'Professional photography services for corporate events and product shoots',
+    icon: Baby,
+    title: 'Baby photoshoots',
+    description: 'Adorable baby photography capturing precious early moments',
+  },
+  {
+    icon: Users,
+    title: 'Model photoshoots',
+    description: 'Professional portfolio shoots for aspiring and established models',
+  },
+  {
+    icon: Users,
+    title: 'Family photoshoots',
+    description: 'Create lasting memories with beautiful family portraits',
+  },
+  {
+    icon: Home,
+    title: 'Housewarming',
+    description: 'Document your special housewarming celebration with professional photography',
+  },
+  {
+    icon: Cake,
+    title: 'Naming ceremony',
+    description: "Capture the joy of your baby's naming ceremony",
   },
   {
     icon: Image,
-    title: 'Album Design & Printing',
+    title: 'Album designs and printing',
     description: 'Beautiful album designs and premium printing services to preserve your memories',
+  },
+  {
+    icon: Briefcase,
+    title: 'Corporate photography',
+    description: 'Professional photography services for corporate events and business needs',
+  },
+  {
+    icon: Video,
+    title: 'Camera Rentals',
+    description: 'High-quality camera equipment rental services for your photography needs',
   },
 ];
 

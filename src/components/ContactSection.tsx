@@ -25,10 +25,22 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Photography Inquiry - ${formData.service || 'General'}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nService: ${formData.service}\nCity: ${formData.city}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:teamwildhorse@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
     toast({
-      title: 'Thank you for contacting us!',
-      description: 'We will get back to you shortly.',
+      title: 'Opening email client...',
+      description: 'Your inquiry will be sent to teamwildhorse@gmail.com',
     });
+    
     setFormData({
       name: '',
       mobile: '',
@@ -97,12 +109,18 @@ const ContactSection = () => {
                     <SelectValue placeholder="Select Service" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="wedding">Wedding Photographers</SelectItem>
-                    <SelectItem value="prewedding">Pre Wedding Photoshoot</SelectItem>
-                    <SelectItem value="maternity">Maternity Photography</SelectItem>
-                    <SelectItem value="babyshower">Baby Shower Photographers</SelectItem>
-                    <SelectItem value="events">Events Photographers</SelectItem>
-                    <SelectItem value="portfolio">Portfolio Shoot</SelectItem>
+                    <SelectItem value="wedding">Wedding</SelectItem>
+                    <SelectItem value="prewedding">Pre-wedding</SelectItem>
+                    <SelectItem value="maternity">Maternity & Baby showers</SelectItem>
+                    <SelectItem value="product">Product / E-Commerce photography</SelectItem>
+                    <SelectItem value="babyphotoshoot">Baby photoshoots</SelectItem>
+                    <SelectItem value="modelphotoshoot">Model photoshoots</SelectItem>
+                    <SelectItem value="familyphotoshoot">Family photoshoots</SelectItem>
+                    <SelectItem value="housewarming">Housewarming</SelectItem>
+                    <SelectItem value="namingceremony">Naming ceremony</SelectItem>
+                    <SelectItem value="albumdesign">Album designs and printing</SelectItem>
+                    <SelectItem value="corporate">Corporate photography</SelectItem>
+                    <SelectItem value="rental">Camera Rentals</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -148,7 +166,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Call Us</h3>
-                  <p className="font-poppins text-muted-foreground">+91 96202 00005</p>
+                  <p className="font-poppins text-muted-foreground">+91 97409 44666</p>
                 </div>
               </div>
             </div>
@@ -160,7 +178,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Email Us</h3>
-                  <p className="font-poppins text-muted-foreground">info@wildhorsemedia.in</p>
+                  <p className="font-poppins text-muted-foreground">teamwildhorse@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -173,7 +191,7 @@ const ContactSection = () => {
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Visit Us</h3>
                   <p className="font-poppins text-muted-foreground">
-                    Bangalore, Karnataka, India
+                    3901, 13th main kumaraswamy layout, 2nd stage, Bangalore - 560048
                   </p>
                 </div>
               </div>
