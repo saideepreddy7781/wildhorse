@@ -13,7 +13,7 @@ import namingCeremonyPhoto from '@/assets/nam-2.jpeg';
 import albumDesignPhoto from '@/assets/br-1.jpg';
 import productPhoto from '@/assets/pr-4.jpg';
 import cameraRentalPhoto from '@/assets/ren-1.jpg';
-import productPhoto1 from '@/assets/pr-2.jpeg';
+import productPhoto1 from '@/assets/cr-2.jpg';
 
 
 const slides = [

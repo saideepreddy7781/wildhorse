@@ -12,7 +12,7 @@ import familyPhotoshoot from '@/assets/famm-2.jpeg';
 import housewarmingPhoto from '@/assets/hwa-2.jpeg';
 import namingCeremonyPhoto from '@/assets/mat-5.jpeg';
 import albumDesignPhoto from '@/assets/br-3.jpg';
-import productPhoto from '@/assets/pr-3.jpeg';
+import productPhoto from '@/assets/cr-3.jpg';
 import cameraRentalPhoto from '@/assets/ren-2.jpg';
 import productPhoto1 from '@/assets/pr-3.jpeg';
 
