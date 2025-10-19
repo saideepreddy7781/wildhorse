@@ -4,7 +4,7 @@ import matOw from '@/assets/mom-ow.jpeg';
 import whm17Ow from '@/assets/Copy-of-whm-17ow.jpg';
 import whm443Ow from '@/assets/Copy-of-WHM-443ow.jpg';
 import whm3Ow from '@/assets/Copy-of-whm3ow.jpg';
-import wildhors8Ow from '@/assets/Copy-of-wildhorse-348ow.jpg'; // Assuming full filename is similar
+import wildhors8Ow from '@/assets/Copy-of-wildhorse-348ow.jpg';
 import dsc08189Ow from '@/assets/DSC08189ow.jpg';
 import weddingOw from '@/assets/weddingow.jpg';
 import whm1460Ow from '@/assets/WHM-1460ow.jpg';
@@ -16,14 +16,11 @@ const portfolioImages = [
   modelOw,
   matOw,
   whm17Ow,
-  
   whm3Ow,
   wildhors8Ow,
   whm443Ow,
   whm1460Ow,
-
 ];
-
 
 const PortfolioSection = () => {
   return (
@@ -39,12 +36,12 @@ const PortfolioSection = () => {
         </div>
 
         {/* --- Updated Grid Layout --- */}
-        {/* Changed to 2 columns on medium screens and up, with a larger gap */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           {portfolioImages.map((imageSrc, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg aspect-video cursor-pointer" // Using aspect-video for a wider feel
+              // --- ADDED HOVER EFFECTS & TRANSITION ---
+              className="group relative overflow-hidden rounded-lg aspect-video cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[hsl(var(--gold)/0.4)] hover:-translate-y-2"
             >
               <img
                 src={imageSrc}
