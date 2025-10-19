@@ -1,43 +1,29 @@
-import heroWedding from '@/assets/mar-3.jpeg';
-import heroWedding1 from '@/assets/mar-2.jpeg';
-import heroWedding3 from '@/assets/mar-1.jpeg';
+// --- Import the new "Our Works" images ---
+import modelOw from '@/assets/model-ow.jpg';
+import matOw from '@/assets/mom-ow.jpeg';
+import whm17Ow from '@/assets/Copy-of-whm-17ow.jpg';
+import whm443Ow from '@/assets/Copy-of-WHM-443ow.jpg';
+import whm3Ow from '@/assets/Copy-of-whm3ow.jpg';
+import wildhors8Ow from '@/assets/Copy-of-wildhorse-348ow.jpg'; // Assuming full filename is similar
+import dsc08189Ow from '@/assets/DSC08189ow.jpg';
+import weddingOw from '@/assets/weddingow.jpg';
+import whm1460Ow from '@/assets/WHM-1460ow.jpg';
 
-import maternityShoot from '@/assets/mat-3.jpeg';
-import maternityShoot2 from '@/assets/mat-4.jpg';
-import eventsPhoto from '@/assets/cr-3.jpg';
-import eventsPhoto2 from '@/assets/cor-1.jpg';
-import eventsPhoto3 from '@/assets/eng-1.jpeg';
+// --- Create an array with just the imported images ---
+const portfolioImages = [
+  dsc08189Ow,
+  weddingOw,
+  modelOw,
+  matOw,
+  whm17Ow,
+  
+  whm3Ow,
+  wildhors8Ow,
+  whm443Ow,
+  whm1460Ow,
 
-import preweddingShoot from '@/assets/pwe-1.jpeg';
-import preweddingShoot2 from '@/assets/pwe-2.jpeg';
-import preweddingShoot3 from '@/assets/pwe-3.jpg';
-import babyPhotoshoot3 from '@/assets/baby-3.jpg';
-
-
-import babyPhotoshoot1 from '@/assets/baby-2.jpg';
-import modelPhotoshoot from '@/assets/mod-2.jpg';
-import familyPhotoshoot from '@/assets/famm-2.jpeg';
-import housewarmingPhoto from '@/assets/hwa-2.jpeg';
-import namingCeremonyPhoto from '@/assets/mat-3.jpg';
-import albumDesignPhoto from '@/assets/br-3.jpg';
-import productPhoto from '@/assets/pr-3.jpeg';
-import cameraRentalPhoto from '@/assets/br-2.jpg';
-
-// Updated categories to be more specific and reduce duplicates
-const portfolioItems = [
-  { image: heroWedding, title: 'Wedding Moments', category: 'Wedding Ceremony' }, // More specific
-  { image: maternityShoot, title: 'Glowing Motherhood', category: 'Maternity' },
-  { image: preweddingShoot, title: 'Sunset Romance', category: 'Pre-Wedding' },
-  { image: eventsPhoto, title: 'Elegant Event Setup', category: 'Event Decor' }, // More specific
-  { image: heroWedding1, title: 'Candid Ceremony', category: 'Candid Wedding' }, // More specific
-  { image: preweddingShoot2, title: 'Couple\'s Embrace', category: 'Couple Shoot' }, // More specific
-  { image: maternityShoot2, title: 'Garden Maternity', category: 'Outdoor Maternity' }, // More specific
-  { image: eventsPhoto2, title: 'Corporate Gala', category: 'Corporate Event' }, // More specific
-  { image: heroWedding3, title: 'Bridal Portrait', category: 'Bridal Shoot' }, // More specific
-  { image: preweddingShoot3, title: 'Love in Nature', category: 'Outdoor Pre-Wedding' }, // More specific
-  { image: babyPhotoshoot3, title: 'Baby Shower Joy', category: 'Baby Shower' },
-  { image: eventsPhoto3, title: 'Engagement', category: 'Engagement Ceremony' }, // More specific
 ];
+
 
 const PortfolioSection = () => {
   return (
@@ -52,25 +38,20 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {portfolioItems.map((item, index) => (
+        {/* --- Updated Grid Layout --- */}
+        {/* Changed to 2 columns on medium screens and up, with a larger gap */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+          {portfolioImages.map((imageSrc, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
+              className="group relative overflow-hidden rounded-lg aspect-video cursor-pointer" // Using aspect-video for a wider feel
             >
               <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src={imageSrc}
+                alt={`Portfolio image ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div className="p-4 text-primary-foreground">
-                  <p className="text-xs font-poppins uppercase tracking-wider mb-0.5">
-                    {item.category}
-                  </p>
-                  <h3 className="text-base font-playfair font-bold">{item.title}</h3>
-                </div>
-              </div>
+              {/* The overlay div with title and category has been removed */}
             </div>
           ))}
         </div>
