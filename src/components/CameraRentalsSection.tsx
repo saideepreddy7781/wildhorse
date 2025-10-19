@@ -1,26 +1,22 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from './ui/select';
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import rentalPlaceholderImage from '@/assets/ren-2.jpg'; // Using the specific rental image
 
-// Using preweddingShoot as placeholder - replace with your actual rental image import
-import rentalPlaceholderImage from '@/assets/ren-1.jpg';
+// --- Google Form Details (Copied) ---
+const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc42uRVxbUP0zs41vNcNUcKw0dC9NSW2NJuI-0VgCxrmGZQ6w/formResponse';
+const NAME_FIELD_ID = 'entry.1889392158';
+const MOBILE_FIELD_ID = 'entry.169121633';
+const EMAIL_FIELD_ID = 'entry.1119777017';
+const SERVICE_FIELD_ID = 'entry.1507775531';
+const CITY_FIELD_ID = 'entry.101705663';
+const MESSAGE_FIELD_ID = 'entry.1011311059';
+// --- End Google Form details ---
 
 const CameraRentalsSection = () => {
   const { toast } = useToast();
@@ -28,40 +24,51 @@ const CameraRentalsSection = () => {
     name: '',
     mobile: '',
     email: '',
-    service: 'rental', // Pre-select service
-    city: '',
+    city: '', // User types the city
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const defaultService = "Camera Rentals"; // Fixed service for this form
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const subject = encodeURIComponent(`Camera Rental Inquiry`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nService Request: Camera Rental\nCity: ${formData.city}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:teamwildhorse@gmail.com?subject=${subject}&body=${body}`;
+    const googleFormData = new FormData();
+    googleFormData.append(NAME_FIELD_ID, formData.name);
+    googleFormData.append(MOBILE_FIELD_ID, formData.mobile);
+    googleFormData.append(EMAIL_FIELD_ID, formData.email);
+    googleFormData.append(SERVICE_FIELD_ID, defaultService); // Use fixed service
+    googleFormData.append(CITY_FIELD_ID, formData.city);
+    googleFormData.append(MESSAGE_FIELD_ID, formData.message);
 
-    window.location.href = mailtoLink;
-
-    toast({
-      title: 'Opening email client...',
-      description: 'Your rental inquiry will be sent to teamwildhorse@gmail.com',
-    });
-
-    setFormData({
-      name: '',
-      mobile: '',
-      email: '',
-      service: 'rental',
-      city: '',
-      message: '',
-    });
+    try {
+      await fetch(GOOGLE_FORM_ACTION_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams(googleFormData as any),
+      });
+      toast({
+        title: 'Inquiry Submitted!',
+        description: "Thank you for your rental inquiry. We'll get back to you soon.",
+      });
+      setFormData({ name: '', mobile: '', email: '', city: '', message: '' }); // Reset form
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: 'Submission Failed',
+        description: 'Please try again later or contact us directly.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="rentals" className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
+        {/* ... Section Title ... */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4 text-foreground">
             Camera & Equipment Rentals
@@ -71,32 +78,20 @@ const CameraRentalsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
           {/* Image Carousel & Description */}
           <div className="space-y-6">
-            <Carousel className="w-full max-w-md mx-auto" opts={{ loop: true }}>
+             {/* ... Carousel ... */}
+             <Carousel className="w-full max-w-md mx-auto" opts={{ loop: true }}>
               <CarouselContent>
-                {/* Add more CarouselItems if you have multiple rental images */}
                 <CarouselItem>
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden rounded-lg">
-                       <img
-                         src={rentalPlaceholderImage} // Use your imported image
-                         alt="Camera Rental Equipment"
-                         className="object-cover w-full h-full"
-                       />
+                       <img src={rentalPlaceholderImage} alt="Camera Rental Equipment" className="object-cover w-full h-full" />
                     </CardContent>
                   </Card>
                 </CarouselItem>
-                {/* Example of a second item:
-                <CarouselItem>
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden rounded-lg">
-                       <img src={anotherRentalImage} alt="Another Rental Item" className="object-cover w-full h-full"/>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-                 */}
+                 {/* Add more rental images here if needed */}
               </CarouselContent>
               <CarouselPrevious className="left-4" />
               <CarouselNext className="right-4" />
@@ -112,71 +107,34 @@ const CameraRentalsSection = () => {
                 Rental Inquiry
              </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name */}
               <div>
-                <Input
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="font-poppins"
-                />
+                <Input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="font-poppins" />
               </div>
-
+              {/* Mobile */}
+              <div className="relative">
+                <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input type="tel" placeholder="Mobile Number" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} required className="font-poppins pl-10" />
+              </div>
+              {/* Email */}
               <div>
-                <Input
-                  type="tel"
-                  placeholder="Mobile Number"
-                  value={formData.mobile}
-                  onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                  required
-                  className="font-poppins"
-                />
+                <Input type="email" placeholder="Email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="font-poppins" />
               </div>
+              {/* Service is hidden */}
+              <input type="hidden" name="service" value={defaultService} />
+              <p className='text-sm font-poppins text-muted-foreground'>Service: <span className='font-medium text-foreground'>{defaultService}</span></p>
 
+              {/* City (Input instead of Select) */}
               <div>
-                <Input
-                  type="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="font-poppins"
-                />
+                 <Input type="text" placeholder="Your City" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} required className="font-poppins" />
               </div>
-
-              {/* Service is pre-filled, so we hide this select */}
-               <input type="hidden" name="service" value="rental" />
-
+              {/* Message */}
               <div>
-                <Select
-                  value={formData.city}
-                  onValueChange={(value) => setFormData({ ...formData, city: value })}
-                >
-                  <SelectTrigger className="font-poppins">
-                    <SelectValue placeholder="Select Your City" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="bangalore">Bangalore</SelectItem>
-                    <SelectItem value="hyderabad">Hyderabad</SelectItem>
-                     <SelectItem value="mysore">Mysore</SelectItem>
-                     <SelectItem value="tumkur">Tumkur</SelectItem>
-                    <SelectItem value="others">Others</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Textarea placeholder="Equipment needed, rental duration, event date, etc." value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="font-poppins min-h-[100px]" />
               </div>
-
-              <div>
-                <Textarea
-                  placeholder="Equipment needed, rental duration, etc. (Optional)"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="font-poppins min-h-[100px]"
-                />
-              </div>
-
-              <Button type="submit" className="w-full font-poppins" size="lg">
-                Submit Rental Inquiry
+              {/* Submit Button */}
+              <Button type="submit" className="w-full font-poppins" size="lg" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Rental Inquiry'}
               </Button>
             </form>
           </div>
@@ -185,5 +143,4 @@ const CameraRentalsSection = () => {
     </section>
   );
 };
-
 export default CameraRentalsSection;
