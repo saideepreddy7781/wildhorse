@@ -21,10 +21,15 @@ const ServiceBookingPage = () => {
             {/* Main content area */}
             <main className="flex-grow">
                 {/* Section with dynamic background image */}
-                <div
-                    className="relative pt-32 pb-20 md:pt-40 md:pb-24 px-4 bg-cover bg-center bg-no-repeat" // Adjusted padding
-                    style={{ backgroundImage: `url(${service.image})` }}
-                >
+                <div className="relative pt-32 pb-20 md:pt-40 md:pb-24 px-4 overflow-hidden">
+                    {/* Background image with lazy loading */}
+                    <img
+                        src={service.image}
+                        alt={service.title}
+                        loading="eager"
+                        decoding="async"
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                    />
                     {/* Darkening overlay for text contrast */}
                     <div className="absolute inset-0 bg-black/60 z-0"></div>
 

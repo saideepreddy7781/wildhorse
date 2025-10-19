@@ -82,6 +82,7 @@ const slides = [
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set([0]));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -89,6 +90,20 @@ const HeroSection = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // Preload adjacent images
+  useEffect(() => {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    
+    [currentSlide, nextIndex, prevIndex].forEach(index => {
+      if (!loadedImages.has(index)) {
+        const img = new Image();
+        img.src = slides[index].image;
+        setLoadedImages(prev => new Set([...prev, index]));
+      }
+    });
+  }, [currentSlide, loadedImages]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -105,10 +120,23 @@ const HeroSection = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-            style={{ backgroundImage: `url(${slide.image})` }}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
           >
-             {/* Gradient overlay removed */}
+            {/* Only render images that should be loaded */}
+            {loadedImages.has(index) && (
+              <img
+                src={slide.image}
+                alt={slide.title}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+                className="w-full h-full object-cover"
+                style={{ willChange: index === currentSlide ? 'opacity' : 'auto' }}
+              />
+            )}
+            {/* Loading skeleton for unloaded images */}
+            {!loadedImages.has(index) && (
+              <div className="w-full h-full bg-gradient-to-r from-muted/20 via-muted/40 to-muted/20 animate-pulse" />
+            )}
           </div>
         ))}
       </div>

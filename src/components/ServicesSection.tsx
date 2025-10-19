@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom'; // Make sure Link is imported
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { servicesData } from '@/lib/servicesData'; // Import the structured data
+import OptimizedImage from './OptimizedImage'; // Import optimized image component
 
 // Removed individual image imports as they are now in servicesData.ts
 
@@ -20,16 +21,18 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Map over the imported servicesData */}
-          {servicesData.map((service) => (
+          {servicesData.map((service, index) => (
              // --- Wrap Card with Link using service.slug ---
             <Link key={service.slug} to={`/service/${service.slug}`} className="group block h-full">
                 <Card className="overflow-hidden transition-all duration-300 border-border bg-card flex flex-col h-full group-hover:-translate-y-2 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] group-hover:shadow-[hsl(var(--gold)/0.4)]">
-                  {/* Image Div */}
-                  <div className="aspect-square overflow-hidden">
-                     <img
+                  {/* Image Div - Using OptimizedImage */}
+                  <div className="overflow-hidden">
+                     <OptimizedImage
                         src={service.image}
                         alt={service.title}
-                        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                        aspectRatio="aspect-square"
+                        priority={index < 3}
+                        className="transition-transform duration-300 group-hover:scale-105"
                      />
                   </div>
                   {/* Content Div */}
