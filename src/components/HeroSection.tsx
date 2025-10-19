@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import heroWedding from '@/assets/mar-1.jpeg';
 import maternityShoot from '@/assets/mat-6.jpg';
-import preweddingShoot from '@/assets/pwe-4.jpg';
+import preweddingShoot from '@/assets/pwe-5.jpeg';
 import eventsPhoto from '@/assets/eng-1.jpeg';
 import babyPhotoshoot from '@/assets/baby-1.jpg';
 import modelPhotoshoot from '@/assets/mod-1.jpg';

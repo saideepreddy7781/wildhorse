@@ -3,13 +3,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 
 // Import existing images
 import heroWedding from '@/assets/mar-2.jpeg';
-import maternityShoot from '@/assets/mat-3.jpeg';
+import maternityShoot from '@/assets/mat-6.jpg';
 import eventsPhoto from '@/assets/pr-6.jpg';
-import preweddingShoot from '@/assets/pwe-2.jpeg';
+import preweddingShoot from '@/assets/pwe-5.jpeg';
 import babyPhotoshoot from '@/assets/baby-5.jpg';
 import modelPhotoshoot from '@/assets/mod-2.jpg';
-import familyPhotoshoot from '@/assets/famm-2.jpeg';
-import housewarmingPhoto from '@/assets/hwa-2.jpeg';
+import familyPhotoshoot from '@/assets/famm-4.png';
+import housewarmingPhoto from '@/assets/hwa-4.jpeg';
 import namingCeremonyPhoto from '@/assets/mat-5.jpeg';
 import albumDesignPhoto from '@/assets/br-3.jpg';
 import productPhoto from '@/assets/cr-3.jpg';
