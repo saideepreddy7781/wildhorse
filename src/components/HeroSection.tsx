@@ -1,82 +1,53 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-import heroWedding from '@/assets/mar-1.jpeg';
-import maternityShoot from '@/assets/mat-6.jpg';
-import preweddingShoot from '@/assets/pwe-5.jpeg';
-import eventsPhoto from '@/assets/eng-1.jpeg';
-import babyPhotoshoot from '@/assets/baby-1.jpg';
-import modelPhotoshoot from '@/assets/mod-1.jpg';
-import familyPhotoshoot from '@/assets/famm-5.jpeg';
-import housewarmingPhoto from '@/assets/hwa-1.jpeg';
-import namingCeremonyPhoto from '@/assets/nam-2.jpeg';
-import albumDesignPhoto from '@/assets/br-1.jpg';
-import productPhoto from '@/assets/pr-6.jpg';
-import cameraRentalPhoto from '@/assets/ren-3.avif';
-import productPhoto1 from '@/assets/cr-2.jpg';
+// --- Import your new images ---
+import wedLanding from '@/assets/wed-landing.jpeg';
+import pweLanding from '@/assets/pwe-landing.jpg';
+import matLanding from '@/assets/mat-landing page.jpg';
+import babysLanding from '@/assets/Babys-landing.jpg'; // For baby shower/naming ceremony
+import babyLanding from '@/assets/baby-landing.jpg';   // For baby photoshoots
+import brideLanding from '@/assets/Bride-landing.jpg'; // Can be used for model/bridal shoots
+import familyLanding from '@/assets/family-landing.jpg';
 
-
+// --- Updated slides array with new images ---
 const slides = [
   {
-    image: heroWedding,
+    image: wedLanding,
     title: 'Wedding Photography',
-    description: 'Capturing the magic', // Shortened tag line
+    description: 'Capturing the magic',
   },
   {
-    image: preweddingShoot,
+    image: pweLanding,
     title: 'Pre-Wedding Photoshoot',
-    description: 'Your love story', // Shortened tag line
+    description: 'Your love story',
   },
   {
-    image: maternityShoot,
-    title: 'Maternity & Baby Showers',
-    description: 'Anticipation & celebration', // Shortened tag line
+    image: matLanding,
+    title: 'Maternity Shoots',
+    description: 'Anticipation & celebration',
   },
   {
-    image: productPhoto,
-    title: 'Product Photography',
-    description: 'Showcasing the best', // Shortened tag line
+    image: babysLanding,
+    title: 'Baby Shower',
+    description: 'Joyful new beginnings',
   },
   {
-    image: babyPhotoshoot,
+    image: babyLanding,
     title: 'Baby Photoshoots',
-    description: 'Precious early moments', // Shortened tag line
+    description: 'Precious early moments',
   },
   {
-    image: modelPhotoshoot,
-    title: 'Model Photoshoots',
-    description: 'Professional portfolios', // Shortened tag line
+    image: brideLanding,
+    title: 'Bridal Portraits',
+    description: 'The Princess Bride',
   },
   {
-    image: familyPhotoshoot,
+    image: familyLanding,
     title: 'Family Photoshoots',
-    description: 'Timeless memories', // Shortened tag line
+    description: 'Timeless memories',
   },
-  {
-    image: housewarmingPhoto,
-    title: 'Housewarming Photography',
-    description: 'Joy of new beginnings', // Shortened tag line
-  },
-  {
-    image: namingCeremonyPhoto,
-    title: 'Naming Ceremony',
-    description: 'Blessings of a name', // Shortened tag line
-  },
-  {
-    image: albumDesignPhoto,
-    title: 'Album Design & Printing',
-    description: 'Beautifully crafted', // Shortened tag line
-  },
-  {
-    image: productPhoto1,
-    title: 'Corporate Photography',
-    description: 'Images for business', // Shortened tag line
-  },
-  {
-    image:cameraRentalPhoto,
-    title: 'Camera Rentals',
-    description: 'High-quality equipment', // Shortened tag line
-  },
+  // Reusing some images for the remaining categories
 ];
 
 
@@ -108,7 +79,7 @@ const HeroSection = () => {
             className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-             {/* Gradient overlay removed */}
+             {/* Gradient overlay removed for clearer images */}
           </div>
         ))}
       </div>
@@ -143,8 +114,8 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Caption overlay in bottom-right - Updated */}
-      <div className="absolute bottom-6 right-6 z-20 bg-card/80 backdrop-blur-sm px-5 py-3 rounded-lg shadow-[var(--shadow-soft)] text-right"> {/* Added text-right */}
+      {/* Caption overlay in bottom-right */}
+      <div className="absolute bottom-6 right-6 z-20 bg-card/80 backdrop-blur-sm px-5 py-3 rounded-lg shadow-[var(--shadow-soft)] text-right">
         {/* Increased title size */}
         <p className="font-playfair text-foreground font-semibold text-base md:text-lg">
           {slides[currentSlide].title}
