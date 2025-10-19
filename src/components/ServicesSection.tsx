@@ -17,7 +17,6 @@ import cameraRentalPhoto from '@/assets/ren-2.jpg';
 import productPhoto1 from '@/assets/pr-3.jpeg';
 
 
-
 const services = [
   // 1. Wedding
   {
