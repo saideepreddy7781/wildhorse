@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { PlayCircle } from 'lucide-react'; // Import a play icon
-import { cn } from "@/lib/utils"; // Assuming you have this utility
+import { PlayCircle } from 'lucide-react';
+import { cn } from "@/lib/utils";
 
 const videos = [
   { id: 'u6lmI0V14BQ', title: 'Wild Horse Media Portfolio' },
@@ -10,7 +10,6 @@ const videos = [
 ];
 
 const YouTubeGallery = () => {
-  // State to hold the ID of the video currently in the main player
   const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
 
   return (
@@ -25,14 +24,15 @@ const YouTubeGallery = () => {
           </p>
         </div>
 
-        {/* Main Grid Layout (2/3 for player, 1/3 for thumbnails on medium screens and up) */}
+        {/* Main Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
 
           {/* Main Video Player */}
           <div className="md:col-span-2 aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
             <iframe
-              key={currentVideoId} // Add key to force iframe reload on state change
-              src={`https://www.youtube.com/embed/${currentVideoId}?autoplay=1`} // Added autoplay parameter
+              key={currentVideoId}
+              // --- REMOVED ?autoplay=1 from src ---
+              src={`https://www.youtube.com/embed/${currentVideoId}`}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -48,20 +48,18 @@ const YouTubeGallery = () => {
                 onClick={() => setCurrentVideoId(video.id)}
                 className={cn(
                   "relative aspect-video rounded-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-transform duration-200",
-                  // Dim the thumbnail if it's the currently playing video
                   currentVideoId === video.id ? "opacity-70 scale-95 cursor-default" : "hover:scale-[1.03]"
                 )}
-                // Disable button if it's the current video
                 disabled={currentVideoId === video.id}
                 aria-label={`Play video: ${video.title}`}
               >
                 {/* Thumbnail Image */}
                 <img
-                   src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} // YouTube thumbnail URL
+                   src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
                    alt={video.title}
                    className="absolute inset-0 w-full h-full object-cover"
                 />
-                 {/* Dark overlay on hover (or always if current) */}
+                 {/* Dark overlay */}
                 <div className={cn(
                     "absolute inset-0 bg-black/30 transition-opacity",
                     currentVideoId === video.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"
