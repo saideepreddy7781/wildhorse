@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react'; // Make sure Phone is imported
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -39,7 +39,7 @@ const ContactSection = () => {
       description: 'Your inquiry will be sent to teamwildhorse@gmail.com',
     });
 
-    setFormData({
+    setFormData({ // Reset form after submission attempt
       name: '',
       mobile: '',
       email: '',
@@ -64,6 +64,7 @@ const ContactSection = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-card p-8 rounded-lg shadow-[var(--shadow-soft)]">
+            {/* --- CUSTOM REACT FORM --- */}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
@@ -76,7 +77,6 @@ const ContactSection = () => {
                 />
               </div>
 
-              {/* === Input with Icon === */}
               <div className="relative">
                 <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
@@ -85,10 +85,9 @@ const ContactSection = () => {
                   value={formData.mobile}
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                   required
-                  className="font-poppins pl-10" // Added left padding
+                  className="font-poppins pl-10"
                 />
               </div>
-              {/* === End Input with Icon === */}
 
               <div>
                 <Input
@@ -110,7 +109,6 @@ const ContactSection = () => {
                     <SelectValue placeholder="Select Service" />
                   </SelectTrigger>
                   <SelectContent>
-                    {/* ... SelectItems ... */}
                      <SelectItem value="wedding">Wedding</SelectItem>
                      <SelectItem value="prewedding">Pre-wedding</SelectItem>
                      <SelectItem value="maternity">Maternity & Baby showers</SelectItem>
@@ -136,8 +134,7 @@ const ContactSection = () => {
                     <SelectValue placeholder="Select Your City" />
                   </SelectTrigger>
                   <SelectContent>
-                    {/* ... SelectItems ... */}
-                    <SelectItem value="bangalore">Bangalore</SelectItem>
+                     <SelectItem value="bangalore">Bangalore</SelectItem>
                      <SelectItem value="mysore">Mysore</SelectItem>
                      <SelectItem value="tumkur">Tumkur</SelectItem>
                      <SelectItem value="others">Others</SelectItem>
@@ -158,6 +155,7 @@ const ContactSection = () => {
                 Submit Inquiry
               </Button>
             </form>
+             {/* --- END CUSTOM REACT FORM --- */}
           </div>
 
           {/* Contact Information */}
@@ -174,7 +172,6 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-
             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-secondary/20 rounded-full">
@@ -186,7 +183,6 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-
             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-accent/20 rounded-full">

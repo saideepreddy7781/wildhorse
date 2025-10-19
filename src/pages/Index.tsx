@@ -1,12 +1,12 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import ContactSection from '@/components/ContactSection'; // Moved import up for clarity
 import ServicesSection from '@/components/ServicesSection';
-import PortfolioSection from '@/components/PortfolioSection'; // Re-import PortfolioSection
+import PortfolioSection from '@/components/PortfolioSection';
 import AboutSection from '@/components/AboutSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import YouTubeGallery from '@/components/YouTubeGallery';
 import CameraRentalsSection from '@/components/CameraRentalsSection';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -16,13 +16,14 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <ContactSection /> {/* Moved ContactSection here */}
         <ServicesSection />
-        <PortfolioSection /> {/* Add PortfolioSection back */}
+        <PortfolioSection />
         <AboutSection />
         <TestimonialsSection />
         <YouTubeGallery />
         <CameraRentalsSection />
-        <ContactSection />
+        {/* ContactSection removed from the bottom */}
       </main>
       <Footer />
       <WhatsAppButton />

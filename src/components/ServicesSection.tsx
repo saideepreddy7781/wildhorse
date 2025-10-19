@@ -1,10 +1,10 @@
 import { Camera, Heart, Baby, Users, Briefcase, Image, ShoppingBag, Home, Cake, Video } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
-// Import existing images
+// ... (image imports remain the same) ...
 import heroWedding from '@/assets/mar-2.jpeg';
 import maternityShoot from '@/assets/mat-6.jpg';
-import eventsPhoto from '@/assets/pr-6.jpg';
+import eventsPhoto from '@/assets/pr-6.jpg'; // Assuming this is Product/Ecomm
 import preweddingShoot from '@/assets/pwe-5.jpeg';
 import babyPhotoshoot from '@/assets/baby-5.jpg';
 import modelPhotoshoot from '@/assets/mod-2.jpg';
@@ -12,15 +12,14 @@ import familyPhotoshoot from '@/assets/famm-4.png';
 import housewarmingPhoto from '@/assets/hwa-4.jpeg';
 import namingCeremonyPhoto from '@/assets/mat-5.jpeg';
 import albumDesignPhoto from '@/assets/br-3.jpg';
-import productPhoto from '@/assets/cr-3.jpg';
+import productPhoto from '@/assets/cr-3.jpg'; // Assuming this is Corporate
 import cameraRentalPhoto from '@/assets/ren-2.jpg';
-import productPhoto1 from '@/assets/pr-3.jpeg';
-
 
 const services = [
-  // 1. Wedding
+    // ... (services array remains the same) ...
+     // 1. Wedding
   {
-    icon: Heart, // Icon reference kept for potential future use, but not rendered
+    icon: Heart,
     title: 'Wedding',
     description: 'Capture your special day with our professional wedding photography and cinematography services',
     image: heroWedding,
@@ -44,65 +43,66 @@ const services = [
     icon: ShoppingBag,
     title: 'Product / E-Commerce photography',
     description: 'Professional product photography for your online store and marketing needs',
-    image: eventsPhoto, // Placeholder - Add productPhoto
+    image: eventsPhoto, // Ensure this maps to the correct image import
   },
   // 5. Baby photoshoots
   {
     icon: Baby,
     title: 'Baby photoshoots',
     description: 'Adorable baby photography capturing precious early moments',
-    image: babyPhotoshoot, // Placeholder - Add babyPhotoshoot
+    image: babyPhotoshoot,
   },
   // 6. Model photoshoots
   {
     icon: Users,
     title: 'Model photoshoots',
     description: 'Professional portfolio shoots for aspiring and established models',
-    image: modelPhotoshoot, // Placeholder - Add modelPhotoshoot
+    image: modelPhotoshoot,
   },
   // 7. Family photoshoots
   {
     icon: Users,
     title: 'Family photoshoots',
     description: 'Create lasting memories with beautiful family portraits',
-    image: familyPhotoshoot, // Placeholder - Add familyPhotoshoot
+    image: familyPhotoshoot,
   },
   // 8. Housewarming
   {
     icon: Home,
     title: 'Housewarming',
     description: 'Document your special housewarming celebration with professional photography',
-    image: housewarmingPhoto, // Placeholder - Add housewarmingPhoto
+    image: housewarmingPhoto,
   },
   // 9. Naming ceremony
   {
     icon: Cake,
     title: 'Naming ceremony',
     description: "Capture the joy of your baby's naming ceremony",
-    image: namingCeremonyPhoto, // Placeholder - Add namingCeremonyPhoto
+    image: namingCeremonyPhoto,
   },
   // 10. Album designs and printing
   {
     icon: Image,
     title: 'Album designs and printing',
     description: 'Beautiful album designs and premium printing services to preserve your memories',
-    image: albumDesignPhoto, // Placeholder - Add albumDesignPhoto
+    image: albumDesignPhoto,
   },
   // 11. Corporate photography
   {
     icon: Briefcase,
     title: 'Corporate photography',
     description: 'Professional photography services for corporate events and business needs',
-    image: productPhoto,
+    image: productPhoto, // Ensure this maps to the correct image import
   },
   // 12. Camera Rentals
   {
     icon: Video,
     title: 'Camera Rentals',
     description: 'High-quality camera equipment rental services for your photography needs',
-    image: cameraRentalPhoto, // Placeholder - Add cameraRentalPhoto
+    image: cameraRentalPhoto,
   },
 ];
+
 
 const ServicesSection = () => {
   return (
@@ -121,7 +121,8 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group overflow-hidden hover:shadow-[var(--shadow-pastel)] transition-all duration-300 hover:-translate-y-2 border-border bg-card flex flex-col"
+              // --- UPDATED className for hover shadow ---
+              className="group overflow-hidden transition-all duration-300 border-border bg-card flex flex-col hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[hsl(var(--gold)/0.4)]" // Added gold shadow on hover
             >
               <div className="aspect-video overflow-hidden">
                  <img
@@ -132,14 +133,15 @@ const ServicesSection = () => {
               </div>
               <div className="flex flex-col flex-grow">
                 <CardHeader>
-                  {/* Container for the title with background */}
-                  <div className="mb-4 inline-flex items-center justify-center p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors w-full h-16">
-                    {/* Moved CardTitle here, removed icon */}
-                    <CardTitle className="font-playfair text-xl text-primary text-center">
+                  {/* Container for the title with background hover */}
+                  <div
+                     className="mb-4 inline-flex items-center justify-center p-4 rounded-lg bg-primary/10 transition-colors duration-300 w-full h-16 group-hover:bg-[hsl(var(--gold)/0.9)]"
+                   >
+                    {/* Title inside */}
+                    <CardTitle className="font-playfair text-xl text-primary text-center transition-colors duration-300 group-hover:text-primary-foreground">
                       {service.title}
                     </CardTitle>
                   </div>
-                  {/* Removed the original CardTitle placement */}
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <CardDescription className="font-poppins text-muted-foreground">

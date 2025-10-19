@@ -2,124 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Updated HSL values based on the provided palette */
 @layer base {
   :root {
-    /* Rightmost color: #F5F5DC -> HSL(60, 56%, 91%) */
-    --background: 60 56% 91%;
-    /* Leftmost color: #3D211A -> HSL(11, 40%, 17%) */
+    /* --- NEW --- Define gold color */
+    --gold: 43 77% 53%;
+
+    /* --- CHANGED --- Background to White */
+    --background: 0 0% 100%;
+    /* Bistre color for main text */
     --foreground: 11 40% 17%;
 
-    /* Using background for card, adjust if contrast needed */
-    --card: 60 56% 91%;
+    /* --- CHANGED --- Card background to White */
+    --card: 0 0% 100%;
     --card-foreground: 11 40% 17%;
 
-    /* Using background for popover */
-    --popover: 60 56% 91%;
+    /* --- CHANGED --- Popover background to White */
+    --popover: 0 0% 100%;
     --popover-foreground: 11 40% 17%;
 
-    /* Leftmost color: #3D211A -> HSL(11, 40%, 17%) */
+    /* Primary remains Bistre */
     --primary: 11 40% 17%;
-    /* Rightmost color: #F5F5DC -> HSL(60, 56%, 91%) for text on buttons */
-    --primary-foreground: 60 56% 91%;
+    /* --- CHANGED --- White text on primary buttons */
+    --primary-foreground: 0 0% 100%;
 
-    /* Chamoisee color: #A07856 -> HSL(27, 31%, 48%) */
+    /* Secondary remains Chamoisee */
     --secondary: 27 31% 48%;
-    /* Bistre for contrast */
     --secondary-foreground: 11 40% 17%;
 
-    /* Khaki color: #CBB799 -> HSL(36, 30%, 70%) */
-    --muted: 36 30% 70%;
-    /* Coffee color: #6F4D38 -> HSL(24, 32%, 33%) */
-    --muted-foreground: 24 32% 33%;
+    /* --- CHANGED --- Muted adjusted for white background */
+    --muted: 36 30% 90%; /* Lighter Khaki */
+    --muted-foreground: 24 32% 45%; /* Slightly darker Coffee */
 
-    /* Reusing Secondary for Accent */
+    /* Accent remains Chamoisee */
     --accent: 27 31% 48%;
-    --accent-foreground: 11 40% 17%;
+    --accent-foreground: 0 0% 100%; /* White text on accent */
 
-    /* Destructive remains default for now, can be adjusted if needed */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Khaki color: #CBB799 -> HSL(36, 30%, 70%) */
-    --border: 36 30% 70%;
-    --input: 36 30% 70%;
-    /* Primary color for ring */
-    --ring: 11 40% 17%;
+    /* --- CHANGED --- Border adjusted for white background */
+    --border: 36 30% 85%; /* Lighter Khaki */
+    --input: 36 30% 85%;
+    --ring: 11 40% 17%; /* Primary color for ring */
 
     --radius: 0.75rem;
 
-    /* Shadows might need tweaking based on new colors */
-    --shadow-pastel: 0 4px 20px -2px hsl(11 40% 17% / 0.2);
-    --shadow-soft: 0 2px 10px -1px hsl(11 40% 17% / 0.1);
+    /* Shadows might need tweaking */
+    --shadow-pastel: 0 4px 20px -2px hsl(11 40% 17% / 0.15);
+    --shadow-soft: 0 2px 10px -1px hsl(11 40% 17% / 0.08);
 
-    /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* --- Sidebar colors updated based on new palette --- */
-    --sidebar-background: 60 56% 95%; /* Slightly brighter Beige */
-    --sidebar-foreground: 11 40% 17%; /* Bistre */
-    --sidebar-primary: 11 40% 17%; /* Bistre */
-    --sidebar-primary-foreground: 60 56% 91%; /* Beige */
-    --sidebar-accent: 36 30% 80%; /* Lighter Khaki */
-    --sidebar-accent-foreground: 11 40% 17%; /* Bistre */
-    --sidebar-border: 36 30% 70%; /* Khaki */
-    --sidebar-ring: 11 40% 17%; /* Bistre */
+    /* Sidebar colors could also be adjusted if needed */
+    --sidebar-background: 0 0% 98%; /* Slightly off-white */
+    --sidebar-foreground: 11 40% 17%;
+    --sidebar-primary: 11 40% 17%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 30% 90%;
+    --sidebar-accent-foreground: 11 40% 17%;
+    --sidebar-border: 36 30% 85%;
+    --sidebar-ring: 11 40% 17%;
   }
 
-  /* --- Dark Mode Updated --- */
+  /* --- Dark Mode Updated (Keeping dark background) --- */
   .dark {
-    /* Using Bistre as background */
-    --background: 11 40% 17%;
-    /* Using Beige as foreground */
-    --foreground: 60 56% 91%;
+    --background: 11 40% 17%; /* Bistre */
+    --foreground: 36 30% 85%; /* Lighter Khaki */
 
-    /* Slightly lighter Bistre for card */
-    --card: 11 40% 20%;
-    --card-foreground: 60 56% 91%;
+    --card: 11 40% 20%; /* Slightly lighter Bistre */
+    --card-foreground: 36 30% 85%;
 
     --popover: 11 40% 20%;
-    --popover-foreground: 60 56% 91%;
+    --popover-foreground: 36 30% 85%;
 
-    /* Using Coffee as primary in dark mode */
-    --primary: 24 32% 33%;
-    --primary-foreground: 60 56% 91%;
+    /* Using Gold as primary in dark */
+    --primary: 43 77% 53%;
+    --primary-foreground: 11 40% 17%; /* Dark text on Gold */
 
     /* Using Khaki as secondary */
     --secondary: 36 30% 70%;
     --secondary-foreground: 11 40% 17%;
 
-    /* Darker Coffee for muted */
-    --muted: 24 32% 28%;
-     /* Lighter Khaki for muted text */
-    --muted-foreground: 36 30% 75%;
+    --muted: 24 32% 28%; /* Darker Coffee */
+    --muted-foreground: 36 30% 75%; /* Lighter Khaki for muted text */
 
-    /* Khaki for accent */
-    --accent: 36 30% 70%;
+    /* Gold for accent */
+    --accent: 43 77% 53%;
     --accent-foreground: 11 40% 17%;
 
-    /* Destructive remains default */
     --destructive: 0 62.8% 50.6%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Coffee for borders/inputs */
-    --border: 24 32% 33%;
+    --border: 24 32% 33%; /* Coffee */
     --input: 24 32% 33%;
-    --ring: 24 32% 33%;
+    --ring: 43 77% 53%; /* Gold ring */
 
     /* Dark mode shadows */
-    --shadow-pastel: 0 4px 20px -2px hsl(24 32% 33% / 0.3);
+    --shadow-pastel: 0 4px 20px -2px hsl(43 77% 53% / 0.3);
     --shadow-soft: 0 2px 10px -1px hsl(0 0% 0% / 0.4);
 
-     /* --- Dark Sidebar colors updated --- */
-    --sidebar-background: 11 40% 15%; /* Darker Bistre */
-    --sidebar-foreground: 60 56% 91%; /* Beige */
-    --sidebar-primary: 60 56% 91%; /* Beige */
-    --sidebar-primary-foreground: 11 40% 17%; /* Bistre */
-    --sidebar-accent: 24 32% 28%; /* Darker Coffee */
-    --sidebar-accent-foreground: 60 56% 91%; /* Beige */
-    --sidebar-border: 24 32% 33%; /* Coffee */
-    --sidebar-ring: 60 56% 91%; /* Beige */
+    /* --- Dark Sidebar colors --- */
+    --sidebar-background: 11 40% 15%;
+    --sidebar-foreground: 36 30% 85%;
+    --sidebar-primary: 43 77% 53%; /* Gold */
+    --sidebar-primary-foreground: 11 40% 17%;
+    --sidebar-accent: 24 32% 28%;
+    --sidebar-accent-foreground: 36 30% 85%;
+    --sidebar-border: 24 32% 33%;
+    --sidebar-ring: 43 77% 53%;
   }
 }
 
@@ -137,6 +127,7 @@
   }
 }
 
+/* ... Utilities (fadeIn animation) remain the same ... */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.8s ease-in;
