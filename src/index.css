@@ -2,110 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Updated HSL values based on the provided palette */
 @layer base {
   :root {
-    --background: 42 30% 92%;
-    --foreground: 0 0% 13%;
+    /* Rightmost color: #F5F5DC -> HSL(60, 56%, 91%) */
+    --background: 60 56% 91%;
+    /* Leftmost color: #3D211A -> HSL(11, 40%, 17%) */
+    --foreground: 11 40% 17%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 13%;
+    /* Using background for card, adjust if contrast needed */
+    --card: 60 56% 91%;
+    --card-foreground: 11 40% 17%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13%;
+    /* Using background for popover */
+    --popover: 60 56% 91%;
+    --popover-foreground: 11 40% 17%;
 
-    --primary: 25 95% 36%;
-    --primary-foreground: 0 0% 100%;
+    /* Leftmost color: #3D211A -> HSL(11, 40%, 17%) */
+    --primary: 11 40% 17%;
+    /* Rightmost color: #F5F5DC -> HSL(60, 56%, 91%) for text on buttons */
+    --primary-foreground: 60 56% 91%;
 
-    --secondary: 48 100% 62%;
-    --secondary-foreground: 0 0% 13%;
+    /* Chamoisee color: #A07856 -> HSL(27, 31%, 48%) */
+    --secondary: 27 31% 48%;
+    /* Bistre for contrast */
+    --secondary-foreground: 11 40% 17%;
 
-    --muted: 42 20% 85%;
-    --muted-foreground: 0 0% 30%;
+    /* Khaki color: #CBB799 -> HSL(36, 30%, 70%) */
+    --muted: 36 30% 70%;
+    /* Coffee color: #6F4D38 -> HSL(24, 32%, 33%) */
+    --muted-foreground: 24 32% 33%;
 
-    --accent: 48 100% 62%;
-    --accent-foreground: 0 0% 13%;
+    /* Reusing Secondary for Accent */
+    --accent: 27 31% 48%;
+    --accent-foreground: 11 40% 17%;
 
+    /* Destructive remains default for now, can be adjusted if needed */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 42 15% 82%;
-    --input: 42 15% 82%;
-    --ring: 25 95% 36%;
+    /* Khaki color: #CBB799 -> HSL(36, 30%, 70%) */
+    --border: 36 30% 70%;
+    --input: 36 30% 70%;
+    /* Primary color for ring */
+    --ring: 11 40% 17%;
 
     --radius: 0.75rem;
-    
-    /* Brand gradient colors */
-    --gradient-start: 25 95% 36%;
-    --gradient-mid: 48 100% 62%;
-    --gradient-end: 42 30% 92%;
-    
-    /* Shadows */
-    --shadow-pastel: 0 4px 20px -2px hsl(25 95% 36% / 0.2);
-    --shadow-soft: 0 2px 10px -1px hsl(0 0% 13% / 0.1);
-    
+
+    /* Shadows might need tweaking based on new colors */
+    --shadow-pastel: 0 4px 20px -2px hsl(11 40% 17% / 0.2);
+    --shadow-soft: 0 2px 10px -1px hsl(11 40% 17% / 0.1);
+
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* --- Sidebar colors updated based on new palette --- */
+    --sidebar-background: 60 56% 95%; /* Slightly brighter Beige */
+    --sidebar-foreground: 11 40% 17%; /* Bistre */
+    --sidebar-primary: 11 40% 17%; /* Bistre */
+    --sidebar-primary-foreground: 60 56% 91%; /* Beige */
+    --sidebar-accent: 36 30% 80%; /* Lighter Khaki */
+    --sidebar-accent-foreground: 11 40% 17%; /* Bistre */
+    --sidebar-border: 36 30% 70%; /* Khaki */
+    --sidebar-ring: 11 40% 17%; /* Bistre */
   }
 
+  /* --- Dark Mode Updated --- */
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 42 30% 92%;
+    /* Using Bistre as background */
+    --background: 11 40% 17%;
+    /* Using Beige as foreground */
+    --foreground: 60 56% 91%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 42 30% 92%;
+    /* Slightly lighter Bistre for card */
+    --card: 11 40% 20%;
+    --card-foreground: 60 56% 91%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 42 30% 92%;
+    --popover: 11 40% 20%;
+    --popover-foreground: 60 56% 91%;
 
-    --primary: 25 95% 45%;
-    --primary-foreground: 0 0% 100%;
+    /* Using Coffee as primary in dark mode */
+    --primary: 24 32% 33%;
+    --primary-foreground: 60 56% 91%;
 
-    --secondary: 48 100% 52%;
-    --secondary-foreground: 0 0% 13%;
+    /* Using Khaki as secondary */
+    --secondary: 36 30% 70%;
+    --secondary-foreground: 11 40% 17%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 42 20% 70%;
+    /* Darker Coffee for muted */
+    --muted: 24 32% 28%;
+     /* Lighter Khaki for muted text */
+    --muted-foreground: 36 30% 75%;
 
-    --accent: 48 100% 52%;
-    --accent-foreground: 0 0% 13%;
+    /* Khaki for accent */
+    --accent: 36 30% 70%;
+    --accent-foreground: 11 40% 17%;
 
+    /* Destructive remains default */
     --destructive: 0 62.8% 50.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 25 95% 45%;
-    
-    --shadow-pastel: 0 4px 20px -2px hsl(25 95% 45% / 0.3);
+    /* Coffee for borders/inputs */
+    --border: 24 32% 33%;
+    --input: 24 32% 33%;
+    --ring: 24 32% 33%;
+
+    /* Dark mode shadows */
+    --shadow-pastel: 0 4px 20px -2px hsl(24 32% 33% / 0.3);
     --shadow-soft: 0 2px 10px -1px hsl(0 0% 0% / 0.4);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+
+     /* --- Dark Sidebar colors updated --- */
+    --sidebar-background: 11 40% 15%; /* Darker Bistre */
+    --sidebar-foreground: 60 56% 91%; /* Beige */
+    --sidebar-primary: 60 56% 91%; /* Beige */
+    --sidebar-primary-foreground: 11 40% 17%; /* Bistre */
+    --sidebar-accent: 24 32% 28%; /* Darker Coffee */
+    --sidebar-accent-foreground: 60 56% 91%; /* Beige */
+    --sidebar-border: 24 32% 33%; /* Coffee */
+    --sidebar-ring: 60 56% 91%; /* Beige */
   }
 }
 
@@ -117,7 +131,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-poppins;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -127,7 +141,7 @@ All colors MUST be HSL.
   .animate-fade-in {
     animation: fadeIn 0.8s ease-in;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;

@@ -3,13 +3,13 @@ import heroWedding1 from '@/assets/mar-2.jpeg';
 import heroWedding3 from '@/assets/mar-1.jpeg';
 
 import maternityShoot from '@/assets/mat-3.jpeg';
-import maternityShoot2 from '@/assets/mat-2.jpg';
-import eventsPhoto from '@/assets/eng-3.jpeg';
+import maternityShoot2 from '@/assets/mat-4.jpg';
+import eventsPhoto from '@/assets/cr-3.jpg';
 import eventsPhoto2 from '@/assets/cor-1.jpg';
 import eventsPhoto3 from '@/assets/eng-1.jpeg';
 
 import preweddingShoot from '@/assets/pwe-1.jpeg';
-import preweddingShoot2 from '@/assets/pwe-2.jpg';
+import preweddingShoot2 from '@/assets/pwe-2.jpeg';
 import preweddingShoot3 from '@/assets/pwe-3.jpg';
 import babyPhotoshoot3 from '@/assets/baby-3.jpg';
 
@@ -36,7 +36,7 @@ const portfolioItems = [
   { image: heroWedding3, title: 'Bridal Portrait', category: 'Bridal Shoot' }, // More specific
   { image: preweddingShoot3, title: 'Love in Nature', category: 'Outdoor Pre-Wedding' }, // More specific
   { image: babyPhotoshoot3, title: 'Baby Shower Joy', category: 'Baby Shower' },
-  { image: eventsPhoto3, title: 'Wedding', category: 'Wedding Ceremony' }, // More specific
+  { image: eventsPhoto3, title: 'Engagement', category: 'Engagement Ceremony' }, // More specific
 ];
 
 const PortfolioSection = () => {
