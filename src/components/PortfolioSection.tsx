@@ -2,13 +2,13 @@ import heroWedding from '@/assets/mar-3.jpeg';
 import heroWedding1 from '@/assets/mar-2.jpeg';
 import heroWedding3 from '@/assets/mar-1.jpeg';
 
-import maternityShoot from '@/assets/mat-3.jpg';
+import maternityShoot from '@/assets/mat-3.jpeg';
 import maternityShoot2 from '@/assets/mat-2.jpg';
 import eventsPhoto from '@/assets/eng-3.jpeg';
-import eventsPhoto2 from '@/assets/eng-2.jpeg';
+import eventsPhoto2 from '@/assets/cor-1.jpg';
 import eventsPhoto3 from '@/assets/eng-1.jpeg';
 
-import preweddingShoot from '@/assets/pwe-1.jpg';
+import preweddingShoot from '@/assets/pwe-1.jpeg';
 import preweddingShoot2 from '@/assets/pwe-2.jpg';
 import preweddingShoot3 from '@/assets/pwe-3.jpg';
 import babyPhotoshoot3 from '@/assets/baby-3.jpg';

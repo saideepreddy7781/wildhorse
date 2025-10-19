@@ -3,16 +3,16 @@ import { useState, useEffect } from 'react';
 
 import heroWedding from '@/assets/mar-1.jpeg';
 import maternityShoot from '@/assets/mat-1.jpg';
-import preweddingShoot from '@/assets/pwe-1.jpg';
+import preweddingShoot from '@/assets/pwe-1.jpeg';
 import eventsPhoto from '@/assets/eng-1.jpeg';
 import babyPhotoshoot from '@/assets/baby-1.jpg';
 import modelPhotoshoot from '@/assets/mod-1.jpg';
 import familyPhotoshoot from '@/assets/famm-1.jpeg';
 import housewarmingPhoto from '@/assets/hwa-1.jpeg';
-import namingCeremonyPhoto from '@/assets/mat-2.jpg';
+import namingCeremonyPhoto from '@/assets/nam-2.jpeg';
 import albumDesignPhoto from '@/assets/br-1.jpg';
-import productPhoto from '@/assets/pr-1.jpeg';
-import cameraRentalPhoto from '@/assets/br-2.jpg';
+import productPhoto from '@/assets/pr-4.jpg';
+import cameraRentalPhoto from '@/assets/ren-1.jpg';
 import productPhoto1 from '@/assets/pr-2.jpeg';
 
 
