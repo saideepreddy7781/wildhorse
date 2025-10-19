@@ -6,7 +6,7 @@ import { Textarea } from './ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import rentalPlaceholderImage from '@/assets/ren-2.jpg'; // Using the specific rental image
+import rentalPlaceholderImage from '@/assets/ren-3.avif'; // Using the specific rental image
 
 // --- Google Form Details (Copied) ---
 const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc42uRVxbUP0zs41vNcNUcKw0dC9NSW2NJuI-0VgCxrmGZQ6w/formResponse';
