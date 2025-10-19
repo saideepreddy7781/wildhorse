@@ -22,6 +22,7 @@ import namingCeremonyPhoto from '@/assets/mat-3.jpg';
 import albumDesignPhoto from '@/assets/br-3.jpg';
 import productPhoto from '@/assets/pr-3.jpeg';
 import cameraRentalPhoto from '@/assets/br-2.jpg';
+import OptimizedImage from './OptimizedImage';
 
 // Updated categories to be more specific and reduce duplicates
 const portfolioItems = [
@@ -56,12 +57,14 @@ const PortfolioSection = () => {
           {portfolioItems.map((item, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
+              className="group relative overflow-hidden rounded-lg cursor-pointer"
             >
-              <img
+              <OptimizedImage
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                aspectRatio="aspect-square"
+                priority={index < 4}
+                className="transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                 <div className="p-4 text-primary-foreground">

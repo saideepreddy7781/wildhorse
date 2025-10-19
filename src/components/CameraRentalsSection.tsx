@@ -5,8 +5,17 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import rentalPlaceholderImage from '@/assets/ren-2.jpg'; // Using the specific rental image
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import OptimizedImage from './OptimizedImage';
+
+// Using the specific rental image
+import rentalPlaceholderImage from '@/assets/ren-2.jpg';
 
 // --- Google Form Details (Copied) ---
 const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc42uRVxbUP0zs41vNcNUcKw0dC9NSW2NJuI-0VgCxrmGZQ6w/formResponse';
@@ -86,8 +95,13 @@ const CameraRentalsSection = () => {
               <CarouselContent>
                 <CarouselItem>
                   <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden rounded-lg">
-                       <img src={rentalPlaceholderImage} alt="Camera Rental Equipment" className="object-cover w-full h-full" />
+                    <CardContent className="flex items-center justify-center p-0 overflow-hidden rounded-lg">
+                       <OptimizedImage
+                         src={rentalPlaceholderImage}
+                         alt="Camera Rental Equipment"
+                         aspectRatio="aspect-square"
+                         priority={false}
+                       />
                     </CardContent>
                   </Card>
                 </CarouselItem>
