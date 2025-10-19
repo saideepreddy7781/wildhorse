@@ -4,9 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 // Import existing images
 import heroWedding from '@/assets/mar-2.jpeg';
 import maternityShoot from '@/assets/mat-3.jpeg';
-import eventsPhoto from '@/assets/pr-5.jpg';
+import eventsPhoto from '@/assets/pr-6.jpg';
 import preweddingShoot from '@/assets/pwe-2.jpg';
-import babyPhotoshoot from '@/assets/baby-2.jpeg';
+import babyPhotoshoot from '@/assets/baby-5.jpg';
 import modelPhotoshoot from '@/assets/mod-2.jpg';
 import familyPhotoshoot from '@/assets/famm-2.jpeg';
 import housewarmingPhoto from '@/assets/hwa-2.jpeg';

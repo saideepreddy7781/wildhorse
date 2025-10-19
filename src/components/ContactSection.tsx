@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react'; // Make sure Phone is imported
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -25,22 +25,20 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create mailto link with form data
+
     const subject = encodeURIComponent(`Photography Inquiry - ${formData.service || 'General'}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nService: ${formData.service}\nCity: ${formData.city}\n\nMessage:\n${formData.message}`
     );
     const mailtoLink = `mailto:teamwildhorse@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
+
     window.location.href = mailtoLink;
-    
+
     toast({
       title: 'Opening email client...',
       description: 'Your inquiry will be sent to teamwildhorse@gmail.com',
     });
-    
+
     setFormData({
       name: '',
       mobile: '',
@@ -78,16 +76,19 @@ const ContactSection = () => {
                 />
               </div>
 
-              <div>
+              {/* === Input with Icon === */}
+              <div className="relative">
+                <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="tel"
                   placeholder="Mobile Number"
                   value={formData.mobile}
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                   required
-                  className="font-poppins"
+                  className="font-poppins pl-10" // Added left padding
                 />
               </div>
+              {/* === End Input with Icon === */}
 
               <div>
                 <Input
@@ -109,18 +110,19 @@ const ContactSection = () => {
                     <SelectValue placeholder="Select Service" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="wedding">Wedding</SelectItem>
-                    <SelectItem value="prewedding">Pre-wedding</SelectItem>
-                    <SelectItem value="maternity">Maternity & Baby showers</SelectItem>
-                    <SelectItem value="product">Product / E-Commerce photography</SelectItem>
-                    <SelectItem value="babyphotoshoot">Baby photoshoots</SelectItem>
-                    <SelectItem value="modelphotoshoot">Model photoshoots</SelectItem>
-                    <SelectItem value="familyphotoshoot">Family photoshoots</SelectItem>
-                    <SelectItem value="housewarming">Housewarming</SelectItem>
-                    <SelectItem value="namingceremony">Naming ceremony</SelectItem>
-                    <SelectItem value="albumdesign">Album designs and printing</SelectItem>
-                    <SelectItem value="corporate">Corporate photography</SelectItem>
-                    <SelectItem value="rental">Camera Rentals</SelectItem>
+                    {/* ... SelectItems ... */}
+                     <SelectItem value="wedding">Wedding</SelectItem>
+                     <SelectItem value="prewedding">Pre-wedding</SelectItem>
+                     <SelectItem value="maternity">Maternity & Baby showers</SelectItem>
+                     <SelectItem value="product">Product / E-Commerce photography</SelectItem>
+                     <SelectItem value="babyphotoshoot">Baby photoshoots</SelectItem>
+                     <SelectItem value="modelphotoshoot">Model photoshoots</SelectItem>
+                     <SelectItem value="familyphotoshoot">Family photoshoots</SelectItem>
+                     <SelectItem value="housewarming">Housewarming</SelectItem>
+                     <SelectItem value="namingceremony">Naming ceremony</SelectItem>
+                     <SelectItem value="albumdesign">Album designs and printing</SelectItem>
+                     <SelectItem value="corporate">Corporate photography</SelectItem>
+                     <SelectItem value="rental">Camera Rentals</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -134,10 +136,11 @@ const ContactSection = () => {
                     <SelectValue placeholder="Select Your City" />
                   </SelectTrigger>
                   <SelectContent>
+                    {/* ... SelectItems ... */}
                     <SelectItem value="bangalore">Bangalore</SelectItem>
-                    <SelectItem value="mysore">Mysore</SelectItem>
-                    <SelectItem value="tumkur">Tumkur</SelectItem>
-                    <SelectItem value="others">Others</SelectItem>
+                     <SelectItem value="mysore">Mysore</SelectItem>
+                     <SelectItem value="tumkur">Tumkur</SelectItem>
+                     <SelectItem value="others">Others</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -159,7 +162,8 @@ const ContactSection = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
+             {/* ... Contact Info Blocks ... */}
+             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-primary/10 rounded-full">
                   <Phone className="h-6 w-6 text-primary" />

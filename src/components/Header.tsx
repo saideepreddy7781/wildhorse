@@ -7,8 +7,18 @@ const Header = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false);
+    // Add slight offset for fixed header if needed
+    if (element) {
+      const headerOffset = 80; // Adjust this value based on your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+      });
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking
   };
 
   return (
@@ -33,11 +43,12 @@ const Header = () => {
             >
               Services
             </button>
+            {/* Portfolio Link Removed */}
             <button
-              onClick={() => scrollToSection('portfolio')}
+              onClick={() => scrollToSection('rentals')}
               className="font-poppins text-foreground hover:text-primary transition-colors"
             >
-              Portfolio
+              Camera Rentals
             </button>
             <button
               onClick={() => scrollToSection('about')}
@@ -88,11 +99,12 @@ const Header = () => {
             >
               Services
             </button>
+             {/* Portfolio Link Removed */}
             <button
-              onClick={() => scrollToSection('portfolio')}
+              onClick={() => scrollToSection('rentals')}
               className="block w-full text-left font-poppins text-foreground hover:text-primary transition-colors py-2"
             >
-              Portfolio
+              Camera Rentals
             </button>
             <button
               onClick={() => scrollToSection('about')}

@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 import heroWedding from '@/assets/mar-1.jpeg';
-import maternityShoot from '@/assets/mat-1.jpg';
+import maternityShoot from '@/assets/mat-6.jpg';
 import preweddingShoot from '@/assets/pwe-1.jpeg';
 import eventsPhoto from '@/assets/eng-1.jpeg';
 import babyPhotoshoot from '@/assets/baby-1.jpg';
