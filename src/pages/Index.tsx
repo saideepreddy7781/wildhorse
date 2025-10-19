@@ -1,4 +1,3 @@
-// src/pages/Index.tsx
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ContactSection from '@/components/ContactSection';
@@ -6,8 +5,9 @@ import ServicesSection from '@/components/ServicesSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import AboutSection from '@/components/AboutSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import YouTubeGallery from '@/components/YouTubeGallery'; // Import remains the same
+import YouTubeGallery from '@/components/YouTubeGallery';
 import CameraRentalsSection from '@/components/CameraRentalsSection';
+import FaqSection from '@/components/FaqSection'; // Import the new component
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -19,14 +19,12 @@ const Index = () => {
         <HeroSection />
         <ContactSection />
         <ServicesSection />
-        {/* --- Moved YouTubeGallery before PortfolioSection --- */}
         <YouTubeGallery />
         <PortfolioSection />
-        {/* --- End of change --- */}
+        <CameraRentalsSection /> {/* Moved after PortfolioSection */}
         <AboutSection />
         <TestimonialsSection />
-        {/* YouTubeGallery removed from here */}
-        <CameraRentalsSection />
+        <FaqSection /> {/* Added at the end */}
       </main>
       <Footer />
       <WhatsAppButton />
