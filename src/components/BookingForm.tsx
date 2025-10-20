@@ -5,17 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-// Removed Select imports
-
-// --- Google Form Details (Copied) ---
-const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc42uRVxbUP0zs41vNcNUcKw0dC9NSW2NJuI-0VgCxrmGZQ6w/formResponse';
-const NAME_FIELD_ID = 'entry.1889392158';
-const MOBILE_FIELD_ID = 'entry.169121633';
-const EMAIL_FIELD_ID = 'entry.1119777017';
-const SERVICE_FIELD_ID = 'entry.1507775531';
-const CITY_FIELD_ID = 'entry.101705663';
-const MESSAGE_FIELD_ID = 'entry.1011311059';
-// --- End Google Form details ---
+import { submitServiceBookingForm } from '@/lib/formApi';
 
 interface BookingFormProps {
   defaultService: string; // The service name to pre-fill
@@ -27,7 +17,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ defaultService }) => {
     name: '',
     mobile: '',
     email: '',
-    city: '', // User types the city
+    city: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,27 +26,24 @@ const BookingForm: React.FC<BookingFormProps> = ({ defaultService }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const googleFormData = new FormData();
-    googleFormData.append(NAME_FIELD_ID, formData.name);
-    googleFormData.append(MOBILE_FIELD_ID, formData.mobile);
-    googleFormData.append(EMAIL_FIELD_ID, formData.email);
-    googleFormData.append(SERVICE_FIELD_ID, defaultService); // Use pre-filled service
-    googleFormData.append(CITY_FIELD_ID, formData.city);
-    googleFormData.append(MESSAGE_FIELD_ID, formData.message);
-
     try {
-      await fetch(GOOGLE_FORM_ACTION_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams(googleFormData as any),
+      const result = await submitServiceBookingForm({
+        ...formData,
+        service: defaultService
       });
-      toast({
-        title: 'Inquiry Submitted!',
-        description: "Thank you, we'll get back to you soon.",
-      });
-      setFormData({ name: '', mobile: '', email: '', city: '', message: '' }); // Reset form
+      
+      if (result.success) {
+        toast({
+          title: 'Inquiry Submitted!',
+          description: "Thank you, we'll get back to you soon.",
+        });
+        // Reset form
+        setFormData({ name: '', mobile: '', email: '', city: '', message: '' });
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting booking form:", error);
       toast({
         title: 'Submission Failed',
         description: 'Please try again later or contact us directly.',
