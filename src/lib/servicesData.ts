@@ -13,14 +13,14 @@ import brideLanding from '@/assets/br-2.jpeg';
 
 // --- Housewarming, Interior, Engagement ---
 import housewarming from '@/assets/hpusewarming.jpeg';
-import interior from '@/assets/interior.jpeg';
+import interior from '@/assets/pr-1.jpg';
 import eng1 from '@/assets/eng-1.jpeg';
 
 // --- Other available images (use for gallery examples) ---
 import weddingOw from '@/assets/weddingow.jpg';
 import whm1460Ow from '@/assets/WHM-1460ow.jpg';
 import dsc08189Ow from '@/assets/DSC08189ow.jpg';
-import modelOw from '@/assets/model-3.jpeg'; // Example image
+import modelOw from '@/assets/model-title.jpeg'; // Example image
 import matOw from '@/assets/mom-22.jpeg'; // Example image
 
 // Define the structure for service data
