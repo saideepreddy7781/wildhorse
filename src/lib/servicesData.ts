@@ -1,18 +1,20 @@
-import babyShowerWwd from '@/assets/baby-shower2.jpeg';
+// src/lib/servicesData.ts
+
+// --- "What We Do" Images ---
+import babyShowerWwd from '@/assets/Baby-Shower-wwd.jpg';
 import babyWwd from '@/assets/Baby-wwd.jpg';
 import family2Wwd from '@/assets/family-2-wwd.jpg';
 import maternityWwd from '@/assets/Maternity-wwd.jpg';
-import modelPhotoshootWwd from '@/assets/model-title.jpeg';
+import modelPhotoshootWwd from '@/assets/model-Photoshoot-wwd.jpg';
 import preWeddingWwd from '@/assets/pre-wedding-wwd.jpg';
 import wedding2Wwd from '@/assets/wedding-2-wwd.jpg';
 import albumDesignWwd from '@/assets/album-design-wwd.jpg';
 import brideLanding from '@/assets/br-2.jpeg';
 
-// --- NEW IMAGES TO BE ADDED BY YOU to src/assets/ ---
-// Please add hpusewarming.jpeg and interior.jpeg to your src/assets folder.
-// I've renamed them here for consistency.
-import housewarmingWwd from '@/assets/hpusewarming.jpeg';
-import interiorWwd from '@/assets/interior.jpeg';
+// --- NEW IMAGES TO BE ADDED BY YOU ---
+import housewarming from '@/assets/hpusewarming.jpeg';
+import interior from '@/assets/interior.jpeg';
+import eng1 from '@/assets/eng-1.jpeg';
 
 
 // Define the structure for service data
@@ -24,7 +26,7 @@ export interface Service {
     fullDescription?: string; // Optional longer description for the booking page
 }
 
-// Array holding all service details, with new services added
+// Array holding all service details, using updated fullDescriptions
 export const servicesData: Service[] = [
   {
     slug: 'wedding',
@@ -41,6 +43,20 @@ export const servicesData: Service[] = [
     fullDescription: 'Searching for the Most Romantic Pre-Wedding Photographers in South India? Book your dreamy pre-wedding photography session with Wild Horse Media today!'
   },
   {
+    slug: 'engagement-ceremony',
+    title: 'Engagement Ceremony',
+    description: 'Capture the joy and excitement of your engagement ceremony',
+    image: eng1,
+    fullDescription: 'Celebrate the beginning of your journey together. Book us for your engagement ceremony.'
+  },
+  {
+    slug: 'bridal-photoshoot',
+    title: 'Bridal Photoshoot',
+    description: 'Your solo moment to shine with stunning bridal portraits',
+    image: brideLanding,
+    fullDescription: 'Want Stunning Bridal Portraits? Discover the Best Photographers for Your Wedding Day Look! Your solo moment to shine! Get a breathtaking bridal photoshoot package from Wild Horse Media.'
+  },
+  {
     slug: 'maternity',
     title: 'Maternity',
     description: 'Cherish the beautiful moments of motherhood with our maternity photography',
@@ -50,7 +66,7 @@ export const servicesData: Service[] = [
   {
     slug: 'baby-shower',
     title: 'Baby Shower',
-    description: "Capture the joy of your baby shower",
+    description: "Capture the joy and celebration of your baby shower",
     image: babyShowerWwd,
     fullDescription: 'Need Creative Baby Shower Photographers and Coverage in South India? Capture the joy of your celebration! Enquire about Wild Horse Media\'s baby shower packages now!'
   },
@@ -69,11 +85,25 @@ export const servicesData: Service[] = [
     fullDescription: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!'
   },
   {
-    slug: 'bridal-photoshoot',
-    title: 'Bridal Photoshoot',
-    description: 'Your solo moment to shine with stunning bridal portraits',
-    image: brideLanding,
-    fullDescription: 'Want Stunning Bridal Portraits? Discover the Best Photographers for Your Wedding Day Look! Your solo moment to shine! Get a breathtaking bridal photoshoot package from Wild Horse Media.'
+    slug: 'model-photoshoots',
+    title: 'Model photoshoots',
+    description: 'Professional portfolio shoots for aspiring and established models',
+    image: modelPhotoshootWwd,
+    fullDescription: 'Build a stunning and professional portfolio with our expert model photography services.'
+  },
+  {
+    slug: 'house-warming',
+    title: 'House Warming',
+    description: 'Capture the memories of your new home with our photography services',
+    image: housewarming,
+    fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.'
+  },
+  {
+    slug: 'product-interior',
+    title: 'Product & Interior',
+    description: 'Professional shots for your products and interior spaces',
+    image: interior,
+    fullDescription: 'Showcase your products or property with high-quality interior and product photography.'
   },
   {
     slug: 'album-design',
@@ -81,28 +111,6 @@ export const servicesData: Service[] = [
     description: 'Beautiful album designs and premium printing services to preserve your memories',
     image: albumDesignWwd,
     fullDescription: 'Preserve your cherished memories in beautifully designed, high-quality, custom photo albums.'
-  },
-  // --- NEW SERVICES ADDED ---
-  {
-    slug: 'house-warming',
-    title: 'House Warming',
-    description: 'Capture the joy and blessings of your new home with our specialized photography.',
-    image: housewarmingWwd,
-    fullDescription: 'Moving into a new home? Let us capture the memorable moments of your house warming ceremony with beautiful photos you can cherish forever.'
-  },
-  {
-    slug: 'interior-photography',
-    title: 'Interior Photography',
-    description: 'Professional photos to showcase your property, hotel, or business space.',
-    image: interiorWwd,
-    fullDescription: 'Showcase your space at its best. We provide professional interior and architectural photography for designers, architects, and businesses.'
-  },
-  {
-    slug: 'model-photoshoots',
-    title: 'Model photoshoots',
-    description: 'Professional portfolio shoots for aspiring and established models',
-    image: modelPhotoshootWwd,
-    fullDescription: 'Build a stunning and professional portfolio with our expert model photography services.'
   },
 ];
 

@@ -2,12 +2,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // --- Import your new images with corrected relative paths ---
-import wedLanding from '../assets/wed-landing.jpeg';
+import wedLanding from '../assets/wed-landing.png';
 import pweLanding from '../assets/pwe-landing.jpg';
 import matLanding from '../assets/mat-landing page.jpg';
 import babysLanding from '../assets/Babys-landing.jpg';
 import babyLanding from '../assets/baby-landing.jpg';
-import brideLanding from '../assets/Bride-landing.jpg';
+import brideLanding from '../assets/br-2.jpeg';
 import familyLanding from '../assets/family-landing.jpg';
 
 // --- Updated slides array with new images ---

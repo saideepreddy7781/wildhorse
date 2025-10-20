@@ -1,6 +1,6 @@
 // --- Import the new "Our Works" images ---
-import modelOw from '@/assets/model-ow.jpg';
-import matOw from '@/assets/mom-ow.jpeg';
+import modelOw from '@/assets/model-3.jpeg';
+import matOw from '@/assets/mom-22.jpeg';
 import whm17Ow from '@/assets/Copy-of-whm-17ow.jpg';
 import whm443Ow from '@/assets/Copy-of-WHM-443ow.jpg';
 import whm3Ow from '@/assets/Copy-of-whm3ow.jpg';
