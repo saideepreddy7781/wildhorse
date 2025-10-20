@@ -1,9 +1,7 @@
 // src/components/ServicesSection.tsx
-import { Link } from 'react-router-dom'; // Make sure Link is imported
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { servicesData } from '@/lib/servicesData'; // Import the structured data
-
-// Removed individual image imports as they are now in servicesData.ts
 
 const ServicesSection = () => {
   return (
@@ -18,13 +16,11 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Map over the imported servicesData */}
+        {/* --- Updated Grid Layout --- */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {servicesData.map((service) => (
-             // --- Wrap Card with Link using service.slug ---
             <Link key={service.slug} to={`/service/${service.slug}`} className="group block h-full">
                 <Card className="overflow-hidden transition-all duration-300 border-border bg-card flex flex-col h-full group-hover:-translate-y-2 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] group-hover:shadow-[hsl(var(--gold)/0.4)]">
-                  {/* Image Div */}
                   <div className="aspect-square overflow-hidden">
                      <img
                         src={service.image}
@@ -32,10 +28,10 @@ const ServicesSection = () => {
                         className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                      />
                   </div>
-                  {/* Content Div */}
                   <div className="flex flex-col flex-grow">
                     <CardHeader>
-                      <div className="mb-4 inline-flex items-center justify-center p-4 rounded-lg bg-primary/10 transition-colors duration-300 w-full h-16 group-hover:bg-[hsl(var(--gold)/0.9)]">
+                       {/* Title Section (adjusted for consistent height if needed) */}
+                       <div className="mb-4 inline-flex items-center justify-center p-2 rounded-lg bg-primary/10 transition-colors duration-300 w-full h-16 group-hover:bg-[hsl(var(--gold)/0.9)]">
                         <CardTitle className="font-playfair text-xl text-primary text-center transition-colors duration-300 group-hover:text-primary-foreground">
                           {service.title}
                         </CardTitle>
@@ -49,7 +45,6 @@ const ServicesSection = () => {
                   </div>
                 </Card>
             </Link>
-             // --- End Link Wrapper ---
           ))}
         </div>
       </div>

@@ -1,3 +1,5 @@
+// src/components/HeroSection.tsx
+
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -12,42 +14,13 @@ import familyLanding from '../assets/family-landing.jpg';
 
 // --- Updated slides array with new images ---
 const slides = [
-  {
-    image: wedLanding,
-    title: 'Wedding Photography',
-    description: 'Capturing the magic',
-  },
-  {
-    image: pweLanding,
-    title: 'Pre-Wedding Photoshoot',
-    description: 'Your love story',
-  },
-  {
-    image: matLanding,
-    title: 'Maternity Shoots',
-    description: 'Anticipation & celebration',
-  },
-  {
-    image: babysLanding,
-    title: 'Baby Shower',
-    description: 'Joyful new beginnings',
-  },
-  {
-    image: babyLanding,
-    title: 'Baby Photoshoots',
-    description: 'Precious early moments',
-  },
-  {
-    image: brideLanding,
-    title: 'Bridal Portraits',
-    description: 'The Princess Bride',
-  },
-  {
-    image: familyLanding,
-    title: 'Family Photoshoots',
-    description: 'Timeless memories',
-  },
-  // Reusing some images for the remaining categories
+  { image: wedLanding, title: 'Wedding Photography', description: 'Capturing the magic' },
+  { image: pweLanding, title: 'Pre-Wedding Photoshoot', description: 'Your love story' },
+  { image: matLanding, title: 'Maternity Shoots', description: 'Anticipation & celebration' },
+  { image: babysLanding, title: 'Baby Shower', description: 'Joyful new beginnings' },
+  { image: babyLanding, title: 'Baby Photoshoots', description: 'Precious early moments' },
+  { image: brideLanding, title: 'Bridal Portraits', description: 'The Princess Bride' },
+  { image: familyLanding, title: 'Family Photoshoots', description: 'Timeless memories' },
 ];
 
 
@@ -70,21 +43,29 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    // --- Adjusted height for mobile ---
+    <section id="home" className="relative h-[75vh] md:h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-            style={{ backgroundImage: `url(${slide.image})` }}
+            // --- Removed background style, added opacity transition container ---
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
           >
-             {/* Gradient overlay removed for clearer images */}
+             {/* --- Added img tag for better aspect ratio control --- */}
+             <img
+                src={slide.image}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover" // Use object-cover (or object-contain if needed)
+             />
+             {/* Gradient overlay can be added back here if needed */}
+             {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div> */}
           </div>
         ))}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows (Unchanged) */}
       <button
         onClick={prevSlide}
         className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-card/80 hover:bg-card backdrop-blur-sm p-2 md:p-3 rounded-full transition-all"
@@ -100,7 +81,7 @@ const HeroSection = () => {
         <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
       </button>
 
-      {/* Slide Indicators */}
+      {/* Slide Indicators (Unchanged) */}
       <div className="absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, index) => (
           <button
@@ -114,13 +95,11 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Caption overlay in bottom-right */}
+      {/* Caption overlay (Unchanged) */}
       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 bg-card/80 backdrop-blur-sm px-4 py-2 md:px-5 md:py-3 rounded-lg shadow-[var(--shadow-soft)] text-right">
-        {/* Increased title size */}
         <p className="font-playfair text-foreground font-semibold text-base md:text-lg">
           {slides[currentSlide].title}
         </p>
-        {/* Added tagline */}
         <p className="font-poppins text-foreground/80 text-xs md:text-sm mt-1">
           {slides[currentSlide].description}
         </p>
@@ -130,4 +109,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
