@@ -2,7 +2,7 @@ import babyShowerWwd from '@/assets/Baby-Shower-wwd.jpg';
 import babyWwd from '@/assets/Baby-wwd.jpg';
 import family2Wwd from '@/assets/family-2-wwd.jpg';
 import maternityWwd from '@/assets/Maternity-wwd.jpg';
-import modelPhotoshootWwd from '@/assets/model-Photoshoot-wwd.jpg';
+import modelPhotoshootWwd from '@/assets/model-title.jpeg';
 import preWeddingWwd from '@/assets/pre-wedding-wwd.jpg';
 import wedding2Wwd from '@/assets/wedding-2-wwd.jpg';
 import albumDesignWwd from '@/assets/album-design-wwd.jpg';

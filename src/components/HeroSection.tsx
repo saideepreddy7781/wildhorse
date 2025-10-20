@@ -1,14 +1,14 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-// --- Import your new images ---
-import wedLanding from '@/assets/wed-landing.jpeg';
-import pweLanding from '@/assets/pwe-landing.jpg';
-import matLanding from '@/assets/mat-landing page.jpg';
-import babysLanding from '@/assets/Babys-landing.jpg'; // For baby shower/naming ceremony
-import babyLanding from '@/assets/baby-landing.jpg';   // For baby photoshoots
-import brideLanding from '@/assets/Bride-landing.jpg'; // Can be used for model/bridal shoots
-import familyLanding from '@/assets/family-landing.jpg';
+// --- Import your new images with corrected relative paths ---
+import wedLanding from '../assets/wed-landing.jpeg';
+import pweLanding from '../assets/pwe-landing.jpg';
+import matLanding from '../assets/mat-landing page.jpg';
+import babysLanding from '../assets/Babys-landing.jpg';
+import babyLanding from '../assets/baby-landing.jpg';
+import brideLanding from '../assets/Bride-landing.jpg';
+import familyLanding from '../assets/family-landing.jpg';
 
 // --- Updated slides array with new images ---
 const slides = [
@@ -87,21 +87,21 @@ const HeroSection = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-card/80 hover:bg-card backdrop-blur-sm p-3 rounded-full transition-all"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-card/80 hover:bg-card backdrop-blur-sm p-2 md:p-3 rounded-full transition-all"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="h-6 w-6 text-foreground" />
+        <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-card/80 hover:bg-card backdrop-blur-sm p-3 rounded-full transition-all"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-card/80 hover:bg-card backdrop-blur-sm p-2 md:p-3 rounded-full transition-all"
         aria-label="Next slide"
       >
-        <ChevronRight className="h-6 w-6 text-foreground" />
+        <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -115,7 +115,7 @@ const HeroSection = () => {
       </div>
 
       {/* Caption overlay in bottom-right */}
-      <div className="absolute bottom-6 right-6 z-20 bg-card/80 backdrop-blur-sm px-5 py-3 rounded-lg shadow-[var(--shadow-soft)] text-right">
+      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 bg-card/80 backdrop-blur-sm px-4 py-2 md:px-5 md:py-3 rounded-lg shadow-[var(--shadow-soft)] text-right">
         {/* Increased title size */}
         <p className="font-playfair text-foreground font-semibold text-base md:text-lg">
           {slides[currentSlide].title}
