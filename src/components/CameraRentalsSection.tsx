@@ -7,30 +7,50 @@ import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import rentalPlaceholderImage from '@/assets/ren-3.avif';
-
-// --- Google Form Details ---
-const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc42uRVxbUP0zs41vNcNUcKw0dC9NSW2NJuI-0VgCxrmGZQ6w/formResponse';
-const NAME_FIELD_ID = 'entry.1889392158';
-const MOBILE_FIELD_ID = 'entry.169121633';
-const EMAIL_FIELD_ID = 'entry.1119777017';
-const SERVICE_FIELD_ID = 'entry.1507775531';
-const CITY_FIELD_ID = 'entry.101705663';
-const MESSAGE_FIELD_ID = 'entry.1011311059';
-// --- End Google Form details ---
+import { submitCameraRentalForm } from '@/lib/formApi';
 
 const CameraRentalsSection = () => {
   const { toast } = useToast();
-  const [formKey, setFormKey] = useState(Date.now());
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+    city: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const defaultService = "Camera Rentals";
 
-  const handleSubmit = () => {
-    setTimeout(() => {
-      toast({
-        title: 'Inquiry Submitted!',
-        description: "Thank you for your rental inquiry. We'll get back to you soon.",
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitCameraRentalForm({
+        ...formData,
+        service: defaultService
       });
-      setFormKey(Date.now());
-    }, 500);
+      
+      if (result.success) {
+        toast({
+          title: 'Inquiry Submitted!',
+          description: "Thank you for your rental inquiry. We'll get back to you soon.",
+        });
+        // Reset form
+        setFormData({ name: '', mobile: '', email: '', city: '', message: '' });
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+    } catch (error) {
+      console.error("Error submitting camera rental form:", error);
+      toast({
+        title: 'Submission Failed',
+        description: 'Please try again later or contact us directly.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -69,37 +89,63 @@ const CameraRentalsSection = () => {
             <h3 className="text-2xl font-playfair font-semibold mb-6 text-center text-foreground">
               Rental Inquiry
             </h3>
-            <form
-              key={formKey}
-              action={GOOGLE_FORM_ACTION_URL}
-              method="POST"
-              target="hidden_iframe_rentals"
-              onSubmit={handleSubmit}
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Input name={NAME_FIELD_ID} type="text" placeholder="Your Name" required className="font-poppins" />
+                <Input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required 
+                  className="font-poppins" 
+                />
               </div>
               <div className="relative">
                 <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <Input name={MOBILE_FIELD_ID} type="tel" placeholder="Mobile Number" required className="font-poppins pl-10" />
+                <Input 
+                  type="tel" 
+                  placeholder="Mobile Number" 
+                  value={formData.mobile}
+                  onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                  required 
+                  className="font-poppins pl-10" 
+                />
               </div>
               <div>
-                <Input name={EMAIL_FIELD_ID} type="email" placeholder="Email" required className="font-poppins" />
+                <Input 
+                  type="email" 
+                  placeholder="Email" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required 
+                  className="font-poppins" 
+                />
               </div>
-              <input type="hidden" name={SERVICE_FIELD_ID} value={defaultService} />
-              <p className='text-sm font-poppins text-muted-foreground'>Service: <span className='font-medium text-foreground'>{defaultService}</span></p>
+              <p className='text-sm font-poppins text-muted-foreground'>
+                Service: <span className='font-medium text-foreground'>{defaultService}</span>
+              </p>
               <div>
-                <Input name={CITY_FIELD_ID} type="text" placeholder="Your City" required className="font-poppins" />
+                <Input 
+                  type="text" 
+                  placeholder="Your City" 
+                  value={formData.city}
+                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                  required 
+                  className="font-poppins" 
+                />
               </div>
               <div>
-                <Textarea name={MESSAGE_FIELD_ID} placeholder="Equipment needed, rental duration, event date, etc." className="font-poppins min-h-[100px]" />
+                <Textarea 
+                  placeholder="Equipment needed, rental duration, event date, etc." 
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="font-poppins min-h-[100px]" 
+                />
               </div>
-              <Button type="submit" className="w-full font-poppins" size="lg">
-                Submit Rental Inquiry
+              <Button type="submit" className="w-full font-poppins" size="lg" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Rental Inquiry'}
               </Button>
             </form>
-            <iframe name="hidden_iframe_rentals" id="hidden_iframe_rentals" style={{ display: 'none' }}></iframe>
           </div>
         </div>
       </div>
