@@ -1,4 +1,4 @@
-import babyShowerWwd from '@/assets/Baby-Shower-wwd.jpg';
+import babyShowerWwd from '@/assets/baby-shower2.jpeg';
 import babyWwd from '@/assets/Baby-wwd.jpg';
 import family2Wwd from '@/assets/family-2-wwd.jpg';
 import maternityWwd from '@/assets/Maternity-wwd.jpg';
