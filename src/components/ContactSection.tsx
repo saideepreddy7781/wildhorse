@@ -157,21 +157,21 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
-               <div className="flex items-start gap-4">
-                <div className="p-3 bg-secondary/20 rounded-full"><Mail className="h-6 w-6 text-secondary-foreground" /></div>
-                <div>
-                  <h3 className="font-playfair font-semibold text-lg mb-2">Email Us</h3>
-                  <p className="font-poppins text-muted-foreground">teamwildhorse@gmail.com</p>
-                </div>
-              </div>
-            </div>
             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
                <div className="flex items-start gap-4">
                 <div className="p-3 bg-pink-500/10 rounded-full"><Instagram className="h-6 w-6 text-pink-500" /></div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Instagram</h3>
                    <a href="https://www.instagram.com/wildhorsemedia/" target="_blank" rel="noopener noreferrer" className="font-poppins text-muted-foreground hover:text-primary transition-colors">@wildhorsemedia</a>
+                </div>
+              </div>
+            </div>
+             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
+               <div className="flex items-start gap-4">
+                <div className="p-3 bg-secondary/20 rounded-full"><Mail className="h-6 w-6 text-secondary-foreground" /></div>
+                <div>
+                  <h3 className="font-playfair font-semibold text-lg mb-2">Email Us</h3>
+                  <p className="font-poppins text-muted-foreground">teamwildhorse@gmail.com</p>
                 </div>
               </div>
             </div>

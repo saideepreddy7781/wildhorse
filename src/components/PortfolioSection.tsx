@@ -50,6 +50,7 @@ const PortfolioSection = () => {
                 src={imageSrc}
                 alt={`Portfolio image ${index + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               {/* The overlay div with title and category has been removed */}
             </div>

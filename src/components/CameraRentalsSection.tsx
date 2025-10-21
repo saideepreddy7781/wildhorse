@@ -71,8 +71,8 @@ const CameraRentalsSection = () => {
               <CarouselContent>
                 <CarouselItem>
                   <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden rounded-lg">
-                      <img src={rentalPlaceholderImage} alt="Camera Rental Equipment" className="object-cover w-full h-full" />
+                    <CardContent className="flex aspect-video md:aspect-square items-center justify-center p-0 overflow-hidden rounded-lg">
+                      <img src={rentalPlaceholderImage} alt="Camera Rental Equipment" className="object-cover w-full h-full" loading="lazy" />
                     </CardContent>
                   </Card>
                 </CarouselItem>

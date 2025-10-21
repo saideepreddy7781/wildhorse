@@ -90,17 +90,17 @@ function doGet(e) {
 function handleContactForm(data) {
   const sheet = getOrCreateSheet(CONFIG.SHEETS.CONTACT);
   
-  // Ensure headers exist
-  const headers = ['Timestamp', 'Name', 'Mobile', 'Email', 'Service', 'City', 'Message'];
+  // Ensure headers exist - TIMESTAMP FIRST, THEN SERVICE
+  const headers = ['Timestamp', 'Service', 'Name', 'Mobile', 'Email', 'City', 'Message'];
   ensureHeaders(sheet, headers);
   
-  // Prepare row data
+  // Prepare row data - TIMESTAMP FIRST, SERVICE SECOND for easy filtering
   const rowData = [
-    new Date(),
+    new Date(),              // TIMESTAMP FIRST!
+    data.service || '',      // SERVICE SECOND!
     data.name || '',
     data.mobile || '',
     data.email || '',
-    data.service || '',
     data.city || '',
     data.message || ''
   ];
@@ -121,17 +121,17 @@ function handleContactForm(data) {
 function handleServiceBookingForm(data) {
   const sheet = getOrCreateSheet(CONFIG.SHEETS.SERVICE_BOOKING);
   
-  // Ensure headers exist
-  const headers = ['Timestamp', 'Name', 'Mobile', 'Email', 'Service', 'City', 'Message'];
+  // Ensure headers exist - TIMESTAMP FIRST, THEN SERVICE
+  const headers = ['Timestamp', 'Service', 'Name', 'Mobile', 'Email', 'City', 'Message'];
   ensureHeaders(sheet, headers);
   
-  // Prepare row data
+  // Prepare row data - TIMESTAMP FIRST, SERVICE SECOND for easy filtering
   const rowData = [
-    new Date(),
+    new Date(),              // TIMESTAMP FIRST!
+    data.service || '',      // SERVICE SECOND!
     data.name || '',
     data.mobile || '',
     data.email || '',
-    data.service || '',
     data.city || '',
     data.message || ''
   ];
@@ -152,17 +152,17 @@ function handleServiceBookingForm(data) {
 function handleCameraRentalForm(data) {
   const sheet = getOrCreateSheet(CONFIG.SHEETS.CAMERA_RENTAL);
   
-  // Ensure headers exist
-  const headers = ['Timestamp', 'Name', 'Mobile', 'Email', 'Service', 'City', 'Message'];
+  // Ensure headers exist - TIMESTAMP FIRST, THEN SERVICE
+  const headers = ['Timestamp', 'Service', 'Name', 'Mobile', 'Email', 'City', 'Message'];
   ensureHeaders(sheet, headers);
   
-  // Prepare row data
+  // Prepare row data - TIMESTAMP FIRST, SERVICE SECOND for easy filtering
   const rowData = [
-    new Date(),
+    new Date(),                        // TIMESTAMP FIRST!
+    data.service || 'Camera Rentals',  // SERVICE SECOND!
     data.name || '',
     data.mobile || '',
     data.email || '',
-    data.service || 'Camera Rentals',
     data.city || '',
     data.message || ''
   ];
