@@ -128,13 +128,10 @@ export const servicesData: Service[] = [
     galleryImages: [wedTile1, wedTile2, wedTile3, wedTile4, wedTile5, wedTile6],
     // ** UPDATED Wedding Videos **
     videos: [
-        'https://youtu.be/59J2D45cBlo',
-        'https://youtu.be/t0OQ11V8Orc',
-        'https://youtu.be/DvHxQ9RdZiI',
-        'https://youtu.be/bThTutu6Py8',
-        // Kept previous ones too, remove if needed
-        'https://youtu.be/7VXcWCwqI88',
-        'https://youtu.be/e11WgcN4MWU'
+        'https://youtu.be/59J2D45cBlo?si=4snnYCwIbi0PhCzB',
+        'https://youtu.be/t0OQ11V8Orc?si=diWcMALafZ9gjgEO',
+        'https://youtu.be/DvHxQ9RdZiI?si=Rct2EsljpqSasZ2Y',
+        'https://youtu.be/bThTutu6Py8?si=TqKj-xWO0J70xy6o'
     ]
   },
   {
@@ -146,10 +143,10 @@ export const servicesData: Service[] = [
     galleryImages: [prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8],
     // ** ADDED Pre-wedding Videos **
     videos: [
-        'https://youtu.be/e11WgcN4MWU',
-        'https://youtu.be/dxT8FTf3ApQ',
-        'https://youtu.be/81NzuUg_AaE',
-        'https://youtu.be/7VXcWCwqI88'
+        'https://youtu.be/e11WgcN4MWU?si=FZ3mf3XScynqTbmz',
+        'https://youtu.be/dxT8FTf3ApQ?si=enC23y-4o4CartuR',
+        'https://youtu.be/81NzuUg_AaE?si=96EVqATrfy48zBjn',
+        'https://youtu.be/7VXcWCwqI88?si=TBzg_5gnl9Kh_euw'
     ]
   },
   {
