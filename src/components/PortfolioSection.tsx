@@ -16,10 +16,10 @@ const portfolioImages = [
   modelOw,
   matOw,
   whm17Ow,
-  
   whm3Ow,
   wildhors8Ow,
   whm443Ow,
+  
   whm1460Ow,
 
 ];

@@ -14,13 +14,13 @@ import familyLanding from '../assets/family-landing.jpg';
 
 // --- Updated slides array with new images ---
 const slides = [
-  { image: wedLanding, title: 'Wedding Photography', description: 'Capturing the magic' },
-  { image: pweLanding, title: 'Pre-Wedding Photoshoot', description: 'Your love story' },
-  { image: matLanding, title: 'Maternity Shoots', description: 'Anticipation & celebration' },
-  { image: babysLanding, title: 'Baby Shower', description: 'Joyful new beginnings' },
-  { image: babyLanding, title: 'Baby Photoshoots', description: 'Precious early moments' },
-  { image: brideLanding, title: 'Bridal Portraits', description: 'The Princess Bride' },
-  { image: familyLanding, title: 'Family Photoshoots', description: 'Timeless memories' },
+  { image: wedLanding, title: 'Wedding Photography', description: 'Looking for the best wedding photographers in South India? Contact Wild horse Media today!' },
+  { image: pweLanding, title: 'Pre-Wedding Photoshoot', description: 'Searching for the Most Romantic Pre-Wedding Photographers in South India? Book your dreamy pre-wedding photography session with Wild Horse Media today!' },
+  { image: matLanding, title: 'Maternity Shoots', description: 'Where Can I Find the Best Maternity Photographers in Bengaluru? Cherish this journey forever. Contact Wild Horse Media for elegant maternity photoshoots!' },
+  { image: babysLanding, title: 'Baby Shower', description: 'Need Creative Baby Shower Photographers and Coverage in South India? Capture the joy of your celebration! Enquire about Wild Horse Media baby shower packages now!' },
+  { image: babyLanding, title: 'Baby Photoshoots', description: 'Looking for Professional Newborn and Baby Photographers in Bengaluru? Tiny moments, lifelong memories. Schedule your baby photoshoot with Wild Horse Media!' },
+  { image: brideLanding, title: 'Bridal Portraits', description: 'Discover the Best Bridal Portrait Photographers for Your Stunning Wedding Day Look? Your solo moment to shine! Get a breathtaking bridal photoshoot package from Wild Horse Media.' },
+  { image: familyLanding, title: 'Family Photoshoots', description: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!' },
 ];
 
 
