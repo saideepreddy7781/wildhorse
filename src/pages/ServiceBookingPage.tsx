@@ -4,6 +4,26 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingForm from '@/components/BookingForm'; // Import the reusable form
 import { getServiceBySlug } from '@/lib/servicesData'; // Import data helper and getter
+import { PlayCircle } from 'lucide-react'; // Import PlayCircle icon
+
+// Helper function to extract YouTube Video ID from URL
+const getYouTubeVideoId = (url: string): string | null => {
+  if (!url) return null;
+  try {
+    const urlObj = new URL(url);
+    if (urlObj.hostname === 'youtu.be') {
+      return urlObj.pathname.substring(1); // Get path after "/"
+    }
+    if (urlObj.hostname.includes('youtube.com')) {
+      const params = new URLSearchParams(urlObj.search);
+      return params.get('v'); // Get the 'v' parameter
+    }
+  } catch (e) {
+    console.error("Error parsing YouTube URL:", e);
+  }
+  return null;
+};
+
 
 const ServiceBookingPage = () => {
     const { serviceSlug } = useParams<{ serviceSlug: string }>();
@@ -13,6 +33,9 @@ const ServiceBookingPage = () => {
         console.error(`Service not found for slug: ${serviceSlug}`);
         return <Navigate to="/" replace />;
     }
+
+    // Extract video IDs
+    const videoIds = (service.videos ?? []).map(getYouTubeVideoId).filter(id => id !== null) as string[];
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -44,7 +67,7 @@ const ServiceBookingPage = () => {
                     </div>
                 </div>
 
-                {/* --- NEW Section 2: Service-Specific Gallery --- */}
+                {/* Section 2: Service-Specific Gallery */}
                 {service.galleryImages && service.galleryImages.length > 0 && (
                     <section className="py-16 md:py-20 bg-background">
                         <div className="container mx-auto px-4">
@@ -66,6 +89,32 @@ const ServiceBookingPage = () => {
                         </div>
                     </section>
                 )}
+
+                 {/* ** NEW Section 3: Service-Specific Videos ** */}
+                {videoIds.length > 0 && (
+                    <section className="py-16 md:py-20 bg-muted/30"> {/* Different background */}
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-10 text-center text-foreground">
+                                {service.title} Videos
+                            </h2>
+                            {/* Grid layout for videos */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                                {videoIds.map((videoId) => (
+                                    <div key={videoId} className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
+                                        <iframe
+                                            src={`https://www.youtube.com/embed/${videoId}`}
+                                            title={`YouTube video player - ${service.title}`}
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                            className="w-full h-full"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
                  {/* Optional: Add more sections below if needed */}
             </main>
             <Footer />
