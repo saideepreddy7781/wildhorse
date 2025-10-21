@@ -45,7 +45,6 @@ import engTile7 from '@/assets/eng-tile7.png';
 import engTile8 from '@/assets/eng-tile8.png';
 
 // Bridal Gallery
-import brideFullLanding from '@/assets/Bride-landing.jpg';
 import copyWhm17Ow from '@/assets/Copy-of-whm-17ow.jpg';
 import copyWhm348Ow from '@/assets/Copy-of-wildhorse-348ow.jpg';
 
@@ -162,7 +161,7 @@ export const servicesData: Service[] = [
     description: 'Your solo moment to shine with stunning bridal portraits',
     image: brideLanding, // Card image (br-2.jpeg)
     fullDescription: 'Want Stunning Bridal Portraits? Discover the Best Photographers for Your Wedding Day Look! Your solo moment to shine! Get a breathtaking bridal photoshoot package from Wild Horse Media.',
-    galleryImages: [brideLanding, brideFullLanding, copyWhm17Ow, copyWhm348Ow]
+    galleryImages: [brideLanding, copyWhm17Ow, copyWhm348Ow]
   },
   {
     slug: 'maternity',
