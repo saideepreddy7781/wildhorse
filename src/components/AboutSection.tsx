@@ -1,8 +1,10 @@
+// src/components/AboutSection.tsx
 import { Button } from './ui/button';
 
 const AboutSection = () => {
+  // Function to scroll to the Contact section
   const scrollToContact = () => {
-    const element = document.getElementById('contact');
+    const element = document.getElementById('contact'); // Make sure ContactSection has id="contact"
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -12,9 +14,11 @@ const AboutSection = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-center text-foreground">
             About Wild Horse Media
+              
           </h2>
 
           <div className="space-y-6 font-poppins text-foreground/80 text-lg leading-relaxed">
+             {/* Your existing paragraphs are good here */}
             <p>
               Welcome to Wild Horse Media! We are one of the Top Rated Photographers providing
               exceptional photography and videography services. We are also one of the leading
@@ -37,15 +41,17 @@ const AboutSection = () => {
             </p>
           </div>
 
+          {/* "Hire Best Photographers" CTA Section (Inspired by Phometo PDF) */}
           <div className="mt-12 text-center">
             <h3 className="text-2xl font-playfair font-bold mb-6 text-foreground">
               Hire Best Photographers
+              
             </h3>
             <p className="font-poppins text-muted-foreground mb-6">
               Top Rated photographers, videographers, candid photographers
             </p>
             <Button onClick={scrollToContact} size="lg" className="font-poppins">
-              Book Now
+              Book Now {/* Matches Phometo's "BOOK NOW" */}
             </Button>
           </div>
         </div>
