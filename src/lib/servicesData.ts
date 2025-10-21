@@ -126,10 +126,7 @@ export const servicesData: Service[] = [
     image: wedding2Wwd,
     fullDescription: 'Looking for the best wedding photographers in South India? Contact Wild horse Media today!',
     galleryImages: [wedTile1, wedTile2, wedTile3, wedTile4, wedTile5, wedTile6],
-    videos: [
-      'https://youtu.be/7VXcWCwqI88',
-      'https://youtu.be/e11WgcN4MWU'
-    ]
+    
   },
   {
     slug: 'pre-wedding',
@@ -137,7 +134,11 @@ export const servicesData: Service[] = [
     description: 'Beautiful pre-wedding shoots at stunning locations to celebrate your love story',
     image: preWeddingWwd,
     fullDescription: 'Searching for the Most Romantic Pre-Wedding Photographers in South India? Book your dreamy pre-wedding photography session with Wild Horse Media today!',
-    galleryImages: [prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8]
+    galleryImages: [prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8],
+    videos: [
+      'https://youtu.be/7VXcWCwqI88',
+      'https://youtu.be/e11WgcN4MWU'
+    ]
   },
   {
     slug: 'engagement-ceremony',
