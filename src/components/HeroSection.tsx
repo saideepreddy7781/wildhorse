@@ -43,29 +43,29 @@ const HeroSection = () => {
   };
 
   return (
-    // --- Adjusted height for mobile ---
+    // --- ** REVERTED HEIGHT ** Changed back to h-[75vh] md:h-screen ---
     <section id="home" className="relative h-[75vh] md:h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
             key={index}
-            // --- Removed background style, added opacity transition container ---
+            // Opacity transition container
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
           >
-             {/* --- Added img tag for better aspect ratio control --- */}
+             {/* Image tag with object-cover */}
              <img
                 src={slide.image}
                 alt={slide.title}
-                className="absolute inset-0 w-full h-full object-cover" // Use object-cover (or object-contain if needed)
+                className="absolute inset-0 w-full h-full object-cover" // object-cover will fill the container
              />
-             {/* Gradient overlay can be added back here if needed */}
+             {/* Optional Gradient overlay */}
              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div> */}
           </div>
         ))}
       </div>
 
-      {/* Navigation Arrows (Unchanged) */}
+      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-card/80 hover:bg-card backdrop-blur-sm p-2 md:p-3 rounded-full transition-all"
@@ -81,7 +81,7 @@ const HeroSection = () => {
         <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
       </button>
 
-      {/* Slide Indicators (Unchanged) */}
+      {/* Slide Indicators */}
       <div className="absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, index) => (
           <button
@@ -95,7 +95,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Caption overlay (Unchanged) */}
+      {/* Caption overlay */}
       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 bg-card/80 backdrop-blur-sm px-4 py-2 md:px-5 md:py-3 rounded-lg shadow-[var(--shadow-soft)] text-right">
         <p className="font-playfair text-foreground font-semibold text-base md:text-lg">
           {slides[currentSlide].title}
