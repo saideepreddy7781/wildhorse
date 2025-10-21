@@ -343,17 +343,17 @@ function doGet(e) {
 function handleContactForm(data) {
   const sheet = getOrCreateSheet(CONFIG.SHEETS.CONTACT);
   
-  // Define column headers
-  const headers = ['Timestamp', 'Name', 'Mobile', 'Email', 'Service', 'City', 'Message'];
+  // Define column headers - TIMESTAMP FIRST, SERVICE SECOND for easy filtering!
+  const headers = ['Timestamp', 'Service', 'Name', 'Mobile', 'Email', 'City', 'Message'];
   ensureHeaders(sheet, headers);
   
   // Prepare row data in the same order as headers
   const rowData = [
-    new Date(),              // Timestamp - current date/time
+    new Date(),              // Timestamp - current date/time - FIRST COLUMN!
+    data.service || '',      // Service they're interested in - SECOND COLUMN!
     data.name || '',         // Name from form
     data.mobile || '',       // Mobile number
     data.email || '',        // Email address
-    data.service || '',      // Service they're interested in
     data.city || '',         // Their city
     data.message || ''       // Any message they wrote
   ];
@@ -379,17 +379,17 @@ function handleContactForm(data) {
 function handleServiceBookingForm(data) {
   const sheet = getOrCreateSheet(CONFIG.SHEETS.SERVICE_BOOKING);
   
-  // Define column headers
-  const headers = ['Timestamp', 'Name', 'Mobile', 'Email', 'Service', 'City', 'Message'];
+  // Define column headers - TIMESTAMP FIRST, SERVICE SECOND for easy filtering!
+  const headers = ['Timestamp', 'Service', 'Name', 'Mobile', 'Email', 'City', 'Message'];
   ensureHeaders(sheet, headers);
   
   // Prepare row data
   const rowData = [
-    new Date(),
+    new Date(),              // FIRST COLUMN!
+    data.service || '',      // This will be pre-filled (Wedding, Maternity, etc.) - SECOND COLUMN!
     data.name || '',
     data.mobile || '',
     data.email || '',
-    data.service || '',      // This will be pre-filled (Wedding, Maternity, etc.)
     data.city || '',
     data.message || ''
   ];
@@ -415,17 +415,17 @@ function handleServiceBookingForm(data) {
 function handleCameraRentalForm(data) {
   const sheet = getOrCreateSheet(CONFIG.SHEETS.CAMERA_RENTAL);
   
-  // Define column headers
-  const headers = ['Timestamp', 'Name', 'Mobile', 'Email', 'Service', 'City', 'Message'];
+  // Define column headers - TIMESTAMP FIRST, SERVICE SECOND for easy filtering!
+  const headers = ['Timestamp', 'Service', 'Name', 'Mobile', 'Email', 'City', 'Message'];
   ensureHeaders(sheet, headers);
   
   // Prepare row data
   const rowData = [
-    new Date(),
+    new Date(),              // FIRST COLUMN!
+    'Camera Rentals',        // Service is always "Camera Rentals" for this form - SECOND COLUMN!
     data.name || '',
     data.mobile || '',
     data.email || '',
-    'Camera Rentals',        // Service is always "Camera Rentals" for this form
     data.city || '',
     data.message || ''       // This contains equipment details
   ];
@@ -837,6 +837,17 @@ function handleContactForm(data) {
 }
 ```
 These functions take the data and write it to the correct sheet.
+
+**IMPORTANT - Service Tracking:**
+Notice the `service` field in every handler? This is how you know which form was filled:
+- **Service Booking Forms** (Wedding, Maternity, etc.): The service name is automatically pre-filled (e.g., "Wedding", "Maternity", "Baby Shower")
+- **Contact Form**: User manually types the service they're interested in
+- **Camera Rental Form**: Always shows "Camera Rentals"
+
+When you open your Google Sheet, the **Service column** will clearly show which specific service the customer is interested in! This makes it super easy to:
+- Sort inquiries by service type
+- Know which service page they came from
+- Respond with relevant information
 
 ### **Helper Functions**
 ```javascript

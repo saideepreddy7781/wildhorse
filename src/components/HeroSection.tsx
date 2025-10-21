@@ -58,6 +58,7 @@ const HeroSection = () => {
                 src={slide.image}
                 alt={slide.title}
                 className="absolute inset-0 w-full h-full object-cover" // Use object-cover (or object-contain if needed)
+                loading={index === 0 ? "eager" : "lazy"} // Eager load first image, lazy load others
              />
              {/* Gradient overlay can be added back here if needed */}
              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div> */}

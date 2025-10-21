@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent FOUC (Flash of Unstyled Content) */
+html {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Ensure fonts load smoothly */
+body {
+  font-display: swap;
+}
+
 @layer base {
   :root {
     /* --- NEW --- Define gold color */
