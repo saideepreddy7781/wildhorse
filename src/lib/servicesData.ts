@@ -10,9 +10,9 @@ import preWeddingWwd from '@/assets/pre-wedding-wwd.jpg';
 import wedding2Wwd from '@/assets/wedding-2-wwd.jpg';
 import albumDesignWwd from '@/assets/album-design-wwd.jpg';
 import brideLanding from '@/assets/br-2.jpeg';
-import housewarming from '@/assets/hpusewarming.jpeg'; // Card image for House Warming
-import interior from '@/assets/pr-1.jpg'; // Card image for Product & Interior
-import eng1 from '@/assets/eng-1.jpeg'; // Card image for Engagement
+import housewarming from '@/assets/hpusewarming.jpeg';
+import interior from '@/assets/pr-1.jpg';
+import eng1 from '@/assets/eng-1.jpeg';
 
 // --- Gallery Images (Import specific images for galleries) ---
 
@@ -45,7 +45,6 @@ import engTile7 from '@/assets/eng-tile7.png';
 import engTile8 from '@/assets/eng-tile8.png';
 
 // Bridal Gallery
-import brideFullLanding from '@/assets/Bride-landing.jpg';
 import copyWhm17Ow from '@/assets/Copy-of-whm-17ow.jpg';
 import copyWhm348Ow from '@/assets/Copy-of-wildhorse-348ow.jpg';
 
@@ -89,6 +88,7 @@ import modelTile3 from '@/assets/model-tile3.png';
 import modelOw from '@/assets/model-ow.jpg';
 import model3 from '@/assets/model-3.jpeg';
 
+
 // House Warming Gallery (using existing import)
 
 // Product & Interior Gallery
@@ -116,7 +116,7 @@ export interface Service {
     videos?: string[]; // Array for YouTube video URLs
 }
 
-// ** REORDERED Array holding all service details **
+// Array holding all service details
 export const servicesData: Service[] = [
   // --- Row 1 ---
   {
@@ -126,7 +126,16 @@ export const servicesData: Service[] = [
     image: wedding2Wwd,
     fullDescription: 'Looking for the best wedding photographers in South India? Contact Wild horse Media today!',
     galleryImages: [wedTile1, wedTile2, wedTile3, wedTile4, wedTile5, wedTile6],
-    
+    // ** UPDATED Wedding Videos **
+    videos: [
+        'https://youtu.be/59J2D45cBlo',
+        'https://youtu.be/t0OQ11V8Orc',
+        'https://youtu.be/DvHxQ9RdZiI',
+        'https://youtu.be/bThTutu6Py8',
+        // Kept previous ones too, remove if needed
+        'https://youtu.be/7VXcWCwqI88',
+        'https://youtu.be/e11WgcN4MWU'
+    ]
   },
   {
     slug: 'pre-wedding',
@@ -135,9 +144,12 @@ export const servicesData: Service[] = [
     image: preWeddingWwd,
     fullDescription: 'Searching for the Most Romantic Pre-Wedding Photographers in South India? Book your dreamy pre-wedding photography session with Wild Horse Media today!',
     galleryImages: [prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8],
+    // ** ADDED Pre-wedding Videos **
     videos: [
-      'https://youtu.be/7VXcWCwqI88',
-      'https://youtu.be/e11WgcN4MWU'
+        'https://youtu.be/e11WgcN4MWU',
+        'https://youtu.be/dxT8FTf3ApQ',
+        'https://youtu.be/81NzuUg_AaE',
+        'https://youtu.be/7VXcWCwqI88'
     ]
   },
   {
@@ -187,7 +199,7 @@ export const servicesData: Service[] = [
     description: 'Your solo moment to shine with stunning bridal portraits',
     image: brideLanding,
     fullDescription: 'Want Stunning Bridal Portraits? Discover the Best Photographers for Your Wedding Day Look! Your solo moment to shine! Get a breathtaking bridal photoshoot package from Wild Horse Media.',
-    galleryImages: [brideLanding, brideFullLanding, copyWhm17Ow, copyWhm348Ow]
+    galleryImages: [brideLanding, copyWhm17Ow, copyWhm348Ow]
   },
   // --- Row 3 ---
   {
@@ -218,13 +230,12 @@ export const servicesData: Service[] = [
     image: interior, // Card image (pr-1.jpg)
     fullDescription: 'Showcase your products or property with high-quality interior and product photography.',
     galleryImages: [interior, interiorJpeg],
-    // ** ADDED Videos **
     videos: [
       'https://youtu.be/sKNIkPRAG7g',
       'https://youtu.be/jLkcyBHz420'
     ]
   },
-  { // Placing House Warming here to complete the third row of 4 (if needed)
+  {
     slug: 'house-warming',
     title: 'House Warming',
     description: 'Capture the memories of your new home with our photography services',
