@@ -154,7 +154,7 @@ export const servicesData: Service[] = [
     slug: 'product-interior',
     title: 'Product & Interior',
     description: 'Professional shots for your products and interior spaces',
-    image: interiorTileCard,
+    image: productInteriorTileCard,
     fullDescription: 'Showcase your products or property with high-quality interior and product photography.',
     galleryImages: productInteriorGalleryImages,
     videos: [

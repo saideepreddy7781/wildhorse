@@ -177,7 +177,7 @@ const ContactSection = () => {
             </div>
              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
                <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/20 rounded-full"><MapPin className="h-6 w-6 text-accent-foreground" /></div>
+                <div className="p-3 bg-accent/20 rounded-full"><MapPin className="h-6 w-6 text-secondary-foreground" /></div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Visit Us</h3>
                   <p className="font-poppins text-muted-foreground">3901, 13th main kumaraswamy layout, 2nd stage, Bangalore - 560048</p>
