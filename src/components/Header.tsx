@@ -46,7 +46,7 @@ const Header = () => {
           </button>
 
           {/* Desktop Navigation - Updated onClick handlers */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             <button onClick={() => handleNavigation('home')} className="font-poppins text-foreground hover:text-primary transition-colors">Home</button>
             <button onClick={() => handleNavigation('services')} className="font-poppins text-foreground hover:text-primary transition-colors">Services</button>
             <button onClick={() => handleNavigation('rentals')} className="font-poppins text-foreground hover:text-primary transition-colors">Camera Rentals</button>
@@ -56,12 +56,14 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" /* ... */ > {/* ... icon ... */}</button>
+          <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
         {/* Mobile Navigation - Updated onClick handlers */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <div className="lg:hidden mt-4 pb-4 space-y-4">
             <button onClick={() => handleNavigation('home')} className="block w-full text-left font-poppins text-foreground hover:text-primary transition-colors py-2">Home</button>
             <button onClick={() => handleNavigation('services')} className="block w-full text-left font-poppins text-foreground hover:text-primary transition-colors py-2">Services</button>
             <button onClick={() => handleNavigation('rentals')} className="block w-full text-left font-poppins text-foreground hover:text-primary transition-colors py-2">Camera Rentals</button>
