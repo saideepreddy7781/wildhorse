@@ -12,6 +12,7 @@ const videos = [
 
 const YouTubeGallery = () => {
   const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
+  const [isVideoActive, setIsVideoActive] = useState(false);
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30">
@@ -29,7 +30,19 @@ const YouTubeGallery = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
 
           {/* Main Video Player */}
-          <div className="md:col-span-2 aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
+          <div 
+            className="md:col-span-2 aspect-video rounded-lg overflow-hidden shadow-lg border border-border relative"
+            onClick={() => setIsVideoActive(true)}
+            onMouseLeave={() => setIsVideoActive(false)}
+          >
+            {/* Overlay to prevent scroll capture until user clicks */}
+            {!isVideoActive && (
+              <div className="absolute inset-0 z-10 cursor-pointer bg-transparent flex items-center justify-center">
+                <div className="bg-black/30 backdrop-blur-sm px-6 py-3 rounded-lg">
+                  <p className="text-white font-poppins text-sm">Click to interact with video</p>
+                </div>
+              </div>
+            )}
             <iframe
               key={currentVideoId}
               // --- REMOVED ?autoplay=1 from src ---
@@ -38,18 +51,17 @@ const YouTubeGallery = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               className="w-full h-full"
-              style={{ scrollBehavior: 'auto' }}
             />
           </div>
 
-          {/* Thumbnail List - Scrollable */}
-          <div className="md:col-span-1 flex flex-col gap-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40">
+          {/* Thumbnail List */}
+          <div className="md:col-span-1 flex flex-col gap-4">
             {videos.map((video) => (
               <button
                 key={video.id}
                 onClick={() => setCurrentVideoId(video.id)}
                 className={cn(
-                  "relative aspect-video rounded-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-transform duration-200 flex-shrink-0",
+                  "relative aspect-video rounded-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-transform duration-200",
                   currentVideoId === video.id ? "opacity-70 scale-95 cursor-default" : "hover:scale-[1.03]"
                 )}
                 disabled={currentVideoId === video.id}
