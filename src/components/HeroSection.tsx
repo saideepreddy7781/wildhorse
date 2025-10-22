@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // --- Import hero carousel images from landing folder ---
-import wedLanding from '../assets/landing/wed-landing-new.png';
-import pweLanding from '../assets/landing/pwe-landing-new.jpg';
-import matLanding from '../assets/landing/mat-landing-new.jpg';
-import babysLanding from '../assets/landing/babys-landing-new.jpg';
-import babyLanding from '../assets/landing/baby-landing-new.jpg';
-import brideLanding from '../assets/landing/bride-landing-new.jpeg';
-import familyLanding from '../assets/landing/family-landing-new.jpg';
+import wedLanding from '../assets/landing/wedding.jpg';
+import pweLanding from '../assets/landing/Copy of _WHM1566.jpg';
+import matLanding from '../assets/landing/Copy of WHM-443.jpg';
+import babysLanding from '../assets/landing/Copy of whm (17).jpg';
+import babyLanding from '../assets/landing/Copy of DSC02110 copy.jpg';
+import brideLanding from '../assets/landing/WHM-1460.jpg';
+import familyLanding from '../assets/landing/DSC08189.jpg';
 
 // --- Updated slides array with service descriptions ---
 const slides = [

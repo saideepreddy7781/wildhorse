@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { ZoomIn } from 'lucide-react';
 import ImageLightbox from './ImageLightbox';
 
-// --- Import images from the selected folder (Our Works section) ---
-const portfolioModules = import.meta.glob('@/assets/gallery/engagement/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+// --- Import images from the Our Works folder ---
+const portfolioModules = import.meta.glob('@/assets/ourworks/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 const portfolioImages = Object.values(portfolioModules) as string[];
 
 

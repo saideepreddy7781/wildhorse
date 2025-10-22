@@ -26,6 +26,7 @@ const babyshootGalleryModules = import.meta.glob('@/assets/gallery/babyshoot/*.{
 const modelGalleryModules = import.meta.glob('@/assets/gallery/model/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 const albumsGalleryModules = import.meta.glob('@/assets/gallery/albums/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 const engagementGalleryModules = import.meta.glob('@/assets/gallery/engagement/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const productInteriorGalleryModules = import.meta.glob('@/assets/gallery/product-interior/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 
 // Convert glob imports to arrays of image URLs
 const weddingGalleryImages = Object.values(weddingGalleryModules) as string[];
@@ -36,6 +37,7 @@ const babyshootGalleryImages = Object.values(babyshootGalleryModules) as string[
 const modelGalleryImages = Object.values(modelGalleryModules) as string[];
 const albumsGalleryImages = Object.values(albumsGalleryModules) as string[];
 const engagementGalleryImages = Object.values(engagementGalleryModules) as string[];
+const productInteriorGalleryImages = Object.values(productInteriorGalleryModules) as string[];
 
 
 // Define the structure for service data
@@ -153,7 +155,7 @@ export const servicesData: Service[] = [
     description: 'Professional shots for your products and interior spaces',
     image: interiorTileCard,
     fullDescription: 'Showcase your products or property with high-quality interior and product photography.',
-    galleryImages: [interiorTileCard],
+    galleryImages: productInteriorGalleryImages,
     videos: [
       'https://youtu.be/sKNIkPRAG7g',
       'https://youtu.be/jLkcyBHz420'
