@@ -49,7 +49,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
+    <section id="contact" className="py-16 md:py-9 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
 
         {/* --- Added Intro Text Section (Inspired by Phometo PDF) --- */}
