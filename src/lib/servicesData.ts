@@ -172,7 +172,11 @@ export const servicesData: Service[] = [
     description: "Capture the joy and celebration of your baby shower",
     image: babyShowerWwd,
     fullDescription: 'Need Creative Baby Shower Photographers and Coverage in South India? Capture the joy of your celebration! Enquire about Wild Horse Media\'s baby shower packages now!',
-    galleryImages: [babysTile1, babysTile2, babysTile3, babysTile4, babysTile5, babysTile6, babysTile7, babysTile8]
+    galleryImages: [babysTile1, babysTile2, babysTile3, babysTile4, babysTile5, babysTile6, babysTile7, babysTile8],
+    videos: [
+      'https://youtu.be/upxSk4dhwoc',
+      'https://youtu.be/_Wm9iFbuJHY',
+    ]
   },
   {
     slug: 'baby-photoshoots',
@@ -230,7 +234,12 @@ export const servicesData: Service[] = [
     description: 'Capture the memories of your new home with our photography services',
     image: housewarming,
     fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.',
-    galleryImages: [housewarming]
+    galleryImages: [housewarming],
+    videos: [
+      'https://youtu.be/pV4UcdYM30s',
+      'https://youtu.be/pV4UcdYM30s'
+    ]
+      
   },
 ];
 
