@@ -11,6 +11,19 @@ const PortfolioSection = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Individual position control for each image (format: 'horizontal% vertical%')
+  const imagePositions = [
+    '50% 25%', // Image 1
+    '50% 30%', // Image 2
+    '50% 20%', // Image 3
+    '50% 35%', // Image 4
+    '50% 25%', // Image 5
+    '50% 30%', // Image 6
+    '50% 25%', // Image 7
+    '50% 30%', // Image 8
+    '50% 25%', // Image 9
+  ];
+
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
     setLightboxOpen(true);
@@ -53,7 +66,7 @@ const PortfolioSection = () => {
                 src={imageSrc}
                 alt={`Portfolio image ${index + 1}`}
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
-                style={{ objectPosition: '50% 30%' }}
+                style={{ objectPosition: imagePositions[index] || '50% 30%' }}
                 loading="lazy"
               />
               
