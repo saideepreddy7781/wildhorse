@@ -12,7 +12,6 @@ const videos = [
 
 const YouTubeGallery = () => {
   const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
-  const [isVideoActive, setIsVideoActive] = useState(false);
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30">
@@ -29,29 +28,19 @@ const YouTubeGallery = () => {
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
 
-          {/* Main Video Player */}
-          <div 
-            className="md:col-span-2 aspect-video rounded-lg overflow-hidden shadow-lg border border-border relative"
-            onClick={() => setIsVideoActive(true)}
-            onMouseLeave={() => setIsVideoActive(false)}
-          >
-            {/* Overlay to prevent scroll capture until user clicks */}
-            {!isVideoActive && (
-              <div className="absolute inset-0 z-10 cursor-pointer bg-transparent flex items-center justify-center">
-                <div className="bg-black/30 backdrop-blur-sm px-6 py-3 rounded-lg">
-                  <p className="text-white font-poppins text-sm">Click to interact with video</p>
-                </div>
-              </div>
-            )}
-            <iframe
-              key={currentVideoId}
-              // --- REMOVED ?autoplay=1 from src ---
-              src={`https://www.youtube.com/embed/${currentVideoId}`}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            />
+          {/* Main Video Player - Sticky on desktop */}
+          <div className="md:col-span-2 md:sticky md:top-24">
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
+              <iframe
+                key={currentVideoId}
+                // --- REMOVED ?autoplay=1 from src ---
+                src={`https://www.youtube.com/embed/${currentVideoId}`}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
           </div>
 
           {/* Thumbnail List */}
