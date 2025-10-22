@@ -11,6 +11,7 @@ import babyPhotoshootTileCard from '@/assets/categories/baby-photoshoot.jpg';
 import modelPhotoshootTileCard from '@/assets/categories/model-photoshoot.jpg';
 import familyTileCard from '@/assets/categories/family.jpg';
 import interiorTileCard from '@/assets/categories/interior-photoshoot.jpg';
+import productInteriorTileCard from '@/assets/gallery/product-interior/pr-1.jpg';
 import housewarmingTileCard from '@/assets/categories/house-warming.jpg';
 
 // Bridal image (kept for legacy bridal gallery)
