@@ -48,25 +48,33 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="hover:shadow-[var(--shadow-pastel)] transition-all duration-300 border-border flex flex-col"
+              className="group hover:shadow-2xl transition-all duration-500 border-border flex flex-col relative overflow-hidden hover:-translate-y-2"
             >
-              <CardContent className="pt-6 flex flex-col flex-grow">
+              {/* Warm gradient overlay on hover */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(139, 90, 60, 0.05) 0%, rgba(184, 134, 11, 0.08) 100%)',
+                }}
+              />
+              
+              <CardContent className="pt-6 flex flex-col flex-grow relative z-10">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    <Star key={i} className="h-5 w-5 fill-primary text-primary group-hover:fill-[hsl(var(--gold))] group-hover:text-[hsl(var(--gold))] transition-colors duration-300" />
                   ))}
                 </div>
-                <p className="font-poppins text-muted-foreground mb-6 italic flex-grow">
+                <p className="font-poppins text-muted-foreground mb-6 italic flex-grow group-hover:text-foreground transition-colors duration-300">
                   "{testimonial.text}"
                 </p>
                 <div className="flex items-center gap-3 mt-auto">
-                  <Avatar className="bg-primary/10">
-                    <AvatarFallback className="text-primary font-poppins font-semibold">
+                  <Avatar className="bg-primary/10 group-hover:bg-[hsl(var(--gold)/0.2)] transition-colors duration-300">
+                    <AvatarFallback className="text-primary font-poppins font-semibold group-hover:text-[hsl(var(--gold))] transition-colors duration-300">
                       {testimonial.initials}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h4 className="font-playfair font-semibold text-foreground">
+                    <h4 className="font-playfair font-semibold text-foreground group-hover:text-[hsl(var(--gold))] transition-colors duration-300">
                       {testimonial.name}
                     </h4>
                     <p className="text-sm font-poppins text-muted-foreground">

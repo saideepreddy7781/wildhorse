@@ -3,24 +3,24 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-// --- Import your new images with corrected relative paths ---
-import wedLanding from '../assets/wed-landing.png';
-import pweLanding from '../assets/pwe-landing.jpg';
-import matLanding from '../assets/mat-landing page.jpg';
-import babysLanding from '../assets/Babys-landing.jpg';
-import babyLanding from '../assets/baby-landing.jpg';
-import brideLanding from '../assets/br-2.jpeg';
-import familyLanding from '../assets/family-landing.jpg';
+// --- Import hero carousel images from landing folder ---
+import wedLanding from '../assets/landing/wed-landing-new.png';
+import pweLanding from '../assets/landing/pwe-landing-new.jpg';
+import matLanding from '../assets/landing/mat-landing-new.jpg';
+import babysLanding from '../assets/landing/babys-landing-new.jpg';
+import babyLanding from '../assets/landing/baby-landing-new.jpg';
+import brideLanding from '../assets/landing/bride-landing-new.jpeg';
+import familyLanding from '../assets/landing/family-landing-new.jpg';
 
-// --- Updated slides array descriptions ---
+// --- Updated slides array with service descriptions ---
 const slides = [
-  { image: wedLanding, title: 'Wedding Photography', description: 'Looking for the Best Wedding Photographers in Bangalore? Contact Phometo today' },
-  { image: pweLanding, title: 'Pre-Wedding Photoshoot', description: 'Searching for the Most Romantic Pre-Wedding Photographers? Book your dreamy session!' },
-  { image: matLanding, title: 'Maternity Shoots', description: 'Contact Phometo today to get the Best Photography Service in Bangalore.' },
-  { image: babysLanding, title: 'Baby Shower', description: 'Need Creative Baby Shower Photographers? Enquire about packages now!' },
-  { image: babyLanding, title: 'Baby Photoshoots', description: 'Professional Newborn and Baby Photographers in Bengaluru. Tiny moments, lifelong memories.' },
-  { image: brideLanding, title: 'Bridal Portraits', description: 'Looking for the Best Photographers in Bangalore? Contact Phometo today' },
-  { image: familyLanding, title: 'Family Photoshoots', description: 'Create stunning family heirlooms with memorable family photoshoots!' },
+  { image: wedLanding, title: 'Wedding Photography', description: 'Looking for the best wedding photographers in South India?' },
+  { image: pweLanding, title: 'Pre-Wedding Photoshoot', description: 'Searching for the Most Romantic Pre-Wedding Photographers?' },
+  { image: matLanding, title: 'Maternity Shoots', description: 'Where Can I Find the Best Maternity Photographers in Bengaluru?' },
+  { image: babysLanding, title: 'Baby Shower', description: 'Need Creative Baby Shower Photographers and Coverage?' },
+  { image: babyLanding, title: 'Baby Photoshoots', description: 'Looking for Professional Newborn and Baby Photographers?' },
+  { image: brideLanding, title: 'Bridal Portraits', description: 'Discover the Best Bridal Portrait Photographers!' },
+  { image: familyLanding, title: 'Family Photoshoots', description: 'Create stunning family heirlooms!' },
 ];
 
 
@@ -43,7 +43,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-[50vh] md:h-[84vh] mt-[50px] flex items-center justify-center overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
            {slides.map((slide, index) => (
@@ -51,11 +51,34 @@ const HeroSection = () => {
                key={index}
                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
              >
-               <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-               />
+               {/* Check if image needs blur background (portrait) or can be cropped (landscape) */}
+               {/* For now, we'll detect this with CSS - portrait images will show blur background */}
+               <div className="absolute inset-0 flex items-center justify-center">
+                 {/* Blurred background layer - only visible for portrait images */}
+                 <img
+                    src={slide.image}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover blur-3xl scale-110 brightness-75"
+                    aria-hidden="true"
+                 />
+                 {/* Main image - will use object-cover for landscape, object-contain for portrait */}
+                 <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="relative w-full h-full object-cover"
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                    onLoad={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      const aspectRatio = img.naturalWidth / img.naturalHeight;
+                      // If portrait (aspect ratio < 1), use contain with blur background
+                      if (aspectRatio < 1) {
+                        img.style.objectFit = 'contain';
+                      }
+                    }}
+                 />
+               </div>
              </div>
            ))}
       </div>
