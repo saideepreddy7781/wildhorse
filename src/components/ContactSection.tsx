@@ -150,7 +150,7 @@ const ContactSection = () => {
           <div className="space-y-8 pt-6 md:pt-0"> {/* Optional padding top for better alignment */}
              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-full"><Phone className="h-6 w-6 text-primary" /></div>
+                <div className="p-3 bg-secondary/20 rounded-full"><Phone className="h-6 w-6 text-primary" /></div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Call Us</h3>
                   <p className="font-poppins text-muted-foreground">+91 97409 44666</p>
@@ -159,7 +159,7 @@ const ContactSection = () => {
             </div>
             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
                <div className="flex items-start gap-4">
-                <div className="p-3 bg-pink-500/10 rounded-full"><Instagram className="h-6 w-6 text-pink-500" /></div>
+                <div className="p-3 bg-secondary/20 rounded-full"><Instagram className="h-6 w-6 text-secondary-foreground" /></div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Instagram</h3>
                    <a href="https://www.instagram.com/wildhorsemedia/" target="_blank" rel="noopener noreferrer" className="font-poppins text-muted-foreground hover:text-primary transition-colors">@wildhorsemedia</a>
