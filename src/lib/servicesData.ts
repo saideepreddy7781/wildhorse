@@ -237,7 +237,6 @@ export const servicesData: Service[] = [
     galleryImages: [housewarming],
     videos: [
       'https://youtu.be/pV4UcdYM30s',
-      'https://youtu.be/pV4UcdYM30s'
     ]
       
   },
