@@ -13,15 +13,15 @@ const PortfolioSection = () => {
 
   // Individual position control for each image (format: 'horizontal% vertical%')
   const imagePositions = [
-    '50% 25%', // Image 1
-    '50% 30%', // Image 2
-    '50% 20%', // Image 3
-    '50% 35%', // Image 4
-    '50% 25%', // Image 5
-    '50% 30%', // Image 6
-    '50% 25%', // Image 7
-    '50% 30%', // Image 8
-    '50% 25%', // Image 9
+    '50% 22%', // Image 1
+    '50% 80%', // Image 2
+    '50% 35%', // Image 3
+    '50% 45%', // Image 4
+    '50% 35%', // Image 5
+    '50% 100%', // Image 6
+    '50% 85%', // Image 7
+    '50% 100%', // Image 8
+    '50% 85%', // Image 9
   ];
 
   const openLightbox = (index: number) => {
