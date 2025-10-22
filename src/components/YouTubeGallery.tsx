@@ -42,14 +42,14 @@ const YouTubeGallery = () => {
             />
           </div>
 
-          {/* Thumbnail List */}
-          <div className="md:col-span-1 flex flex-col gap-4">
+          {/* Thumbnail List - Scrollable */}
+          <div className="md:col-span-1 flex flex-col gap-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40">
             {videos.map((video) => (
               <button
                 key={video.id}
                 onClick={() => setCurrentVideoId(video.id)}
                 className={cn(
-                  "relative aspect-video rounded-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-transform duration-200",
+                  "relative aspect-video rounded-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-transform duration-200 flex-shrink-0",
                   currentVideoId === video.id ? "opacity-70 scale-95 cursor-default" : "hover:scale-[1.03]"
                 )}
                 disabled={currentVideoId === video.id}
