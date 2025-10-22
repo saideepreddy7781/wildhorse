@@ -43,7 +43,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
            {slides.map((slide, index) => (
@@ -51,19 +51,34 @@ const HeroSection = () => {
                key={index}
                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
              >
-               {/* Blurred background layer */}
-               <img
-                  src={slide.image}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110"
-                  aria-hidden="true"
-               />
-               {/* Main image with object-contain to prevent cropping */}
-               <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-contain"
-               />
+               {/* Check if image needs blur background (portrait) or can be cropped (landscape) */}
+               {/* For now, we'll detect this with CSS - portrait images will show blur background */}
+               <div className="absolute inset-0 flex items-center justify-center">
+                 {/* Blurred background layer - only visible for portrait images */}
+                 <img
+                    src={slide.image}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover blur-3xl scale-110 brightness-75"
+                    aria-hidden="true"
+                 />
+                 {/* Main image - will use object-cover for landscape, object-contain for portrait */}
+                 <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="relative w-full h-full object-cover"
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                    onLoad={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      const aspectRatio = img.naturalWidth / img.naturalHeight;
+                      // If portrait (aspect ratio < 1), use contain with blur background
+                      if (aspectRatio < 1) {
+                        img.style.objectFit = 'contain';
+                      }
+                    }}
+                 />
+               </div>
              </div>
            ))}
       </div>
