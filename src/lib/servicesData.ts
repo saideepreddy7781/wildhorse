@@ -174,7 +174,7 @@ export const servicesData: Service[] = [
     fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.',
     galleryImages: housewarmingGalleryImages,
     videos: [
-      'https://youtu.be/xbp_w0pJ1Ws'
+      'https://youtu.be/pV4UcdYM30s'
     ]
   },
 ];
