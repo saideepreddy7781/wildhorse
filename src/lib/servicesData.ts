@@ -1,21 +1,49 @@
 // src/lib/servicesData.ts
 
-// --- "What We Do" Images (Main Service Images) ---
-import babyShowerWwd from '@/assets/Baby-Shower-wwd.jpg';
-import babyWwd from '@/assets/Baby-wwd.jpg';
-import family2Wwd from '@/assets/family-2-wwd.jpg';
-import maternityWwd from '@/assets/Maternity-wwd.jpg';
-import modelPhotoshootWwd from '@/assets/model-title.jpeg'; // Main card image for model photoshoots
-import preWeddingWwd from '@/assets/pre-wedding-wwd.jpg';
-import wedding2Wwd from '@/assets/wedding-2-wwd.jpg';
-import albumDesignWwd from '@/assets/album-design-wwd.jpg';
+// --- "What We Do" Images (Main Service Images - Tile Cards) ---
+import weddingTileCard from '@/assets/categories/wedding.jpg';
+import preWeddingTileCard from '@/assets/categories/prewedding.jpg';
+import engagementTileCard from '@/assets/categories/engagement.jpg';
+import albumDesignTileCard from '@/assets/categories/album-designs.jpg';
+import maternityTileCard from '@/assets/categories/maternity.jpg';
+import babyShowerTileCard from '@/assets/categories/baby-shower.jpg';
+import babyPhotoshootTileCard from '@/assets/categories/baby-photoshoot.jpg';
+import modelPhotoshootTileCard from '@/assets/categories/model-photoshoot.jpg';
+import familyTileCard from '@/assets/categories/family.jpg';
+import interiorTileCard from '@/assets/categories/interior-photoshoot.jpg';
+import housewarmingTileCard from '@/assets/categories/house-warming.jpg';
+
+// Bridal image (kept for legacy bridal gallery)
 import brideLanding from '@/assets/br-2.jpeg';
+<<<<<<< HEAD
+=======
 import housewarming from '@/assets/hpusewarming.jpeg';
 import interior from '@/assets/pr-1.jpg';
 import eng1 from '@/assets/eng-1.jpeg';
+>>>>>>> b1f1739c20c761542645a23012a51ea3c909d497
 
-// --- Gallery Images (Import specific images for galleries) ---
+// --- Dynamic Gallery Image Imports using Vite Glob ---
+// Import ALL images from each gallery folder
+const weddingGalleryModules = import.meta.glob('@/assets/gallery/wedding/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const preweddingGalleryModules = import.meta.glob('@/assets/gallery/prewedding/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const maternityGalleryModules = import.meta.glob('@/assets/gallery/maternity/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const babyshowerGalleryModules = import.meta.glob('@/assets/gallery/babyshower/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const babyshootGalleryModules = import.meta.glob('@/assets/gallery/babyshoot/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const modelGalleryModules = import.meta.glob('@/assets/gallery/model/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const albumsGalleryModules = import.meta.glob('@/assets/gallery/albums/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const engagementGalleryModules = import.meta.glob('@/assets/gallery/engagement/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 
+<<<<<<< HEAD
+// Convert glob imports to arrays of image URLs
+const weddingGalleryImages = Object.values(weddingGalleryModules) as string[];
+const preweddingGalleryImages = Object.values(preweddingGalleryModules) as string[];
+const maternityGalleryImages = Object.values(maternityGalleryModules) as string[];
+const babyshowerGalleryImages = Object.values(babyshowerGalleryModules) as string[];
+const babyshootGalleryImages = Object.values(babyshootGalleryModules) as string[];
+const modelGalleryImages = Object.values(modelGalleryModules) as string[];
+const albumsGalleryImages = Object.values(albumsGalleryModules) as string[];
+const engagementGalleryImages = Object.values(engagementGalleryModules) as string[];
+=======
 // Wedding Gallery Images
 import wedTile1 from '@/assets/wed-tile1.png';
 import wedTile2 from '@/assets/wed-tile2.png';
@@ -103,6 +131,7 @@ import albTile5 from '@/assets/alb-tile5.png';
 import albTile6 from '@/assets/alb-tile6.png';
 import albTile7 from '@/assets/alb-tile7.png';
 import albTile8 from '@/assets/alb-tile8.png';
+>>>>>>> b1f1739c20c761542645a23012a51ea3c909d497
 
 
 // Define the structure for service data
@@ -123,19 +152,23 @@ export const servicesData: Service[] = [
     slug: 'wedding',
     title: 'Wedding',
     description: 'Capture your special day with our professional wedding photography and cinematography services',
-    image: wedding2Wwd,
+    image: weddingTileCard,
     fullDescription: 'Looking for the best wedding photographers in South India? Contact Wild horse Media today!',
-    galleryImages: [wedTile1, wedTile2, wedTile3, wedTile4, wedTile5, wedTile6],
+    galleryImages: weddingGalleryImages, // ALL 60 wedding images
     
   },
   {
     slug: 'pre-wedding',
     title: 'Pre-wedding',
     description: 'Beautiful pre-wedding shoots at stunning locations to celebrate your love story',
-    image: preWeddingWwd,
+    image: preWeddingTileCard,
     fullDescription: 'Searching for the Most Romantic Pre-Wedding Photographers in South India? Book your dreamy pre-wedding photography session with Wild Horse Media today!',
+<<<<<<< HEAD
+    galleryImages: preweddingGalleryImages, // ALL 34 prewedding images
+=======
     galleryImages: [prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8],
     // ** ADDED Pre-wedding Videos **
+>>>>>>> b1f1739c20c761542645a23012a51ea3c909d497
     videos: [
       'https://youtu.be/7VXcWCwqI88',
       'https://youtu.be/e11WgcN4MWU'
@@ -145,46 +178,50 @@ export const servicesData: Service[] = [
     slug: 'engagement-ceremony',
     title: 'Engagement Ceremony',
     description: 'Capture the joy and excitement of your engagement ceremony',
-    image: eng1,
+    image: engagementTileCard,
     fullDescription: 'Celebrate the beginning of your journey together. Book us for your engagement ceremony.',
-    galleryImages: [engTile1, engTile2, engTile3, engTile4, engTile5, engTile6, engTile7, engTile8]
+    galleryImages: engagementGalleryImages // ALL 9 engagement images
   },
   {
     slug: 'album-design',
     title: 'Album designs and printing',
     description: 'Beautiful album designs and premium printing services to preserve your memories',
-    image: albumDesignWwd,
+    image: albumDesignTileCard,
     fullDescription: 'Preserve your cherished memories in beautifully designed, high-quality, custom photo albums.',
-    galleryImages: [albTile1, albTile2, albTile3, albTile4, albTile5, albTile6, albTile7, albTile8]
+    galleryImages: albumsGalleryImages // ALL 43 album images
   },
   // --- Row 2 ---
   {
     slug: 'maternity',
     title: 'Maternity',
     description: 'Cherish the beautiful moments of motherhood with our maternity photography',
-    image: maternityWwd,
+    image: maternityTileCard,
     fullDescription: 'Where Can I Find the Best Maternity Photographers in Bengaluru? Cherish this journey forever. Contact Wild Horse Media for elegant maternity photoshoots!',
-    galleryImages: [matTile1, matTile2, matTile3, matTile4, matTile5, matTile6, matTile7, matTile8]
+    galleryImages: maternityGalleryImages // ALL 33 maternity images
   },
   {
     slug: 'baby-shower',
     title: 'Baby Shower',
     description: "Capture the joy and celebration of your baby shower",
-    image: babyShowerWwd,
+    image: babyShowerTileCard,
     fullDescription: 'Need Creative Baby Shower Photographers and Coverage in South India? Capture the joy of your celebration! Enquire about Wild Horse Media\'s baby shower packages now!',
+<<<<<<< HEAD
+    galleryImages: babyshowerGalleryImages // ALL 23 baby shower images
+=======
     galleryImages: [babysTile1, babysTile2, babysTile3, babysTile4, babysTile5, babysTile6, babysTile7, babysTile8],
     videos: [
       'https://youtu.be/upxSk4dhwoc',
       'https://youtu.be/_Wm9iFbuJHY',
     ]
+>>>>>>> b1f1739c20c761542645a23012a51ea3c909d497
   },
   {
     slug: 'baby-photoshoots',
     title: 'Baby photoshoots',
     description: 'Adorable baby photography capturing precious early moments',
-    image: babyWwd,
+    image: babyPhotoshootTileCard,
     fullDescription: 'Looking for Professional Newborn and Baby Photographers in Bengaluru? Tiny moments, lifelong memories. Schedule your baby photoshoot with Wild Horse Media!',
-    galleryImages: [babyshootTile1, babyshootTile2, babyshootTile3, babyshootTile4, babyshootTile5, babyshootTile6, babyshootTile7, babyshootTile8]
+    galleryImages: babyshootGalleryImages // ALL 38 baby photoshoot images
   },
   {
     slug: 'bridal-photoshoot',
@@ -192,16 +229,20 @@ export const servicesData: Service[] = [
     description: 'Your solo moment to shine with stunning bridal portraits',
     image: brideLanding,
     fullDescription: 'Want Stunning Bridal Portraits? Discover the Best Photographers for Your Wedding Day Look! Your solo moment to shine! Get a breathtaking bridal photoshoot package from Wild Horse Media.',
+<<<<<<< HEAD
+    galleryImages: [brideLanding] // Using wedding gallery for bridal photos
+=======
     galleryImages: [brideLanding, copyWhm17Ow, copyWhm348Ow]
+>>>>>>> b1f1739c20c761542645a23012a51ea3c909d497
   },
   // --- Row 3 ---
   {
     slug: 'model-photoshoots',
     title: 'Model photoshoots',
     description: 'Professional portfolio shoots for aspiring and established models',
-    image: modelPhotoshootWwd,
+    image: modelPhotoshootTileCard,
     fullDescription: 'Build a stunning and professional portfolio with our expert model photography services.',
-    galleryImages: [modelTile1, modelTile2, modelTile3, modelPhotoshootWwd, modelOw, model3],
+    galleryImages: modelGalleryImages, // ALL 38 model photography images
     videos: [
       'https://youtu.be/jtPGobSFe-o',
       'https://youtu.be/nn2xv4eq_Ro',
@@ -212,17 +253,22 @@ export const servicesData: Service[] = [
     slug: 'family-photoshoots',
     title: 'Family photoshoots',
     description: 'Create lasting memories with beautiful family portraits',
-    image: family2Wwd,
+    image: familyTileCard,
     fullDescription: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!',
-    galleryImages: [family2Wwd, familyLanding]
+    galleryImages: [familyTileCard]
   },
   {
     slug: 'product-interior',
     title: 'Product & Interior',
     description: 'Professional shots for your products and interior spaces',
-    image: interior, // Card image (pr-1.jpg)
+    image: interiorTileCard,
     fullDescription: 'Showcase your products or property with high-quality interior and product photography.',
+<<<<<<< HEAD
+    galleryImages: [interiorTileCard],
+    // ** ADDED Videos **
+=======
     galleryImages: [interior, interiorJpeg],
+>>>>>>> b1f1739c20c761542645a23012a51ea3c909d497
     videos: [
       'https://youtu.be/sKNIkPRAG7g',
       'https://youtu.be/jLkcyBHz420'
@@ -232,13 +278,17 @@ export const servicesData: Service[] = [
     slug: 'house-warming',
     title: 'House Warming',
     description: 'Capture the memories of your new home with our photography services',
-    image: housewarming,
+    image: housewarmingTileCard,
     fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.',
+<<<<<<< HEAD
+    galleryImages: [housewarmingTileCard]
+=======
     galleryImages: [housewarming],
     videos: [
       'https://youtu.be/pV4UcdYM30s',
     ]
       
+>>>>>>> b1f1739c20c761542645a23012a51ea3c909d497
   },
 ];
 

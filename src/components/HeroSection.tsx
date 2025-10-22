@@ -3,24 +3,24 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-// --- Import your new images with corrected relative paths ---
-import wedLanding from '../assets/wed-landing.png';
-import pweLanding from '../assets/pwe-landing.jpg';
-import matLanding from '../assets/mat-landing page.jpg';
-import babysLanding from '../assets/Babys-landing.jpg';
-import babyLanding from '../assets/baby-landing.jpg';
-import brideLanding from '../assets/br-2.jpeg';
-import familyLanding from '../assets/family-landing.jpg';
+// --- Import hero carousel images from landing folder ---
+import wedLanding from '../assets/landing/wed-landing.jpg';
+import pweLanding from '../assets/landing/pwe-landing.jpg';
+import matLanding from '../assets/landing/mat-landing.jpg';
+import babysLanding from '../assets/landing/babys-landing.jpg';
+import babyLanding from '../assets/landing/baby-landing.jpg';
+import brideLanding from '../assets/landing/bride-landing.jpg';
+import familyLanding from '../assets/landing/family-landing.jpg';
 
-// --- Updated slides array descriptions ---
+// --- Updated slides array with service descriptions ---
 const slides = [
-  { image: wedLanding, title: 'Wedding Photography', description: 'Looking for the Best Wedding Photographers in Bangalore? Contact Phometo today' },
-  { image: pweLanding, title: 'Pre-Wedding Photoshoot', description: 'Searching for the Most Romantic Pre-Wedding Photographers? Book your dreamy session!' },
-  { image: matLanding, title: 'Maternity Shoots', description: 'Contact Phometo today to get the Best Photography Service in Bangalore.' },
-  { image: babysLanding, title: 'Baby Shower', description: 'Need Creative Baby Shower Photographers? Enquire about packages now!' },
-  { image: babyLanding, title: 'Baby Photoshoots', description: 'Professional Newborn and Baby Photographers in Bengaluru. Tiny moments, lifelong memories.' },
-  { image: brideLanding, title: 'Bridal Portraits', description: 'Looking for the Best Photographers in Bangalore? Contact Phometo today' },
-  { image: familyLanding, title: 'Family Photoshoots', description: 'Create stunning family heirlooms with memorable family photoshoots!' },
+  { image: wedLanding, title: 'Wedding Photography', description: 'Looking for the best wedding photographers in South India?' },
+  { image: pweLanding, title: 'Pre-Wedding Photoshoot', description: 'Searching for the Most Romantic Pre-Wedding Photographers?' },
+  { image: matLanding, title: 'Maternity Shoots', description: 'Where Can I Find the Best Maternity Photographers in Bengaluru?' },
+  { image: babysLanding, title: 'Baby Shower', description: 'Need Creative Baby Shower Photographers and Coverage?' },
+  { image: babyLanding, title: 'Baby Photoshoots', description: 'Looking for Professional Newborn and Baby Photographers?' },
+  { image: brideLanding, title: 'Bridal Portraits', description: 'Discover the Best Bridal Portrait Photographers!' },
+  { image: familyLanding, title: 'Family Photoshoots', description: 'Create stunning family heirlooms!' },
 ];
 
 

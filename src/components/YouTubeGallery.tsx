@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 const videos = [
   { id: 'u6lmI0V14BQ', title: 'Wild Horse Media Portfolio' },
   { id: 'oIAkui8unzc', title: 'Wedding Highlights' },
-  { id: 'e11WgcN4MWU', title: 'Photography Showcase' },
-  // Add more videos here if needed
+  { id: 'e11WgcN4MWU', title: 'Varun ❤️ Priya | When Two Souls Met' },
+  { id: 'bThTutu6Py8', title: 'Cinematic Love Story' },
+  { id: '7VXcWCwqI88', title: 'Sathish & Ashwini\'s Magical Pre-Wedding' },
 ];
 
 const YouTubeGallery = () => {
