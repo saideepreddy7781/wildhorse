@@ -109,7 +109,6 @@ export const servicesData: Service[] = [
     fullDescription: 'Need Creative Baby Shower Photographers and Coverage in South India? Capture the joy of your celebration! Enquire about Wild Horse Media\'s baby shower packages now!',
     galleryImages: babyshowerGalleryImages, // ALL 23 baby shower images
     videos: [
-      'https://youtu.be/upxSk4dhwoc',
       'https://youtu.be/upxSk4dhwoc'
     ]
   },
