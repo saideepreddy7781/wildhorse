@@ -38,6 +38,7 @@ const YouTubeGallery = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               className="w-full h-full"
+              style={{ scrollBehavior: 'auto' }}
             />
           </div>
 
