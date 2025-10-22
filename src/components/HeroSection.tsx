@@ -51,10 +51,18 @@ const HeroSection = () => {
                key={index}
                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
              >
+               {/* Blurred background layer */}
+               <img
+                  src={slide.image}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110"
+                  aria-hidden="true"
+               />
+               {/* Main image with object-contain to prevent cropping */}
                <img
                   src={slide.image}
                   alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                />
              </div>
            ))}
