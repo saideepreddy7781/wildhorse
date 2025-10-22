@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react';
 
 // --- Import hero carousel images from landing folder ---
 import wedLanding from '../assets/landing/wedding.jpg';
-import pweLanding from '../assets/landing/Copy of _WHM1566.jpg';
-import matLanding from '../assets/landing/Copy of WHM-443.jpg';
-import babysLanding from '../assets/landing/Copy of whm (17).jpg';
-import babyLanding from '../assets/landing/Copy of DSC02110 copy.jpg';
-import brideLanding from '../assets/landing/WHM-1460.jpg';
-import familyLanding from '../assets/landing/DSC08189.jpg';
+import pweLanding from '../assets/landing/Pre-wedding.jpg';
+import matLanding from '../assets/landing/maternity_landing page.jpg';
+import babysLanding from '../assets/landing/Baby Shower.jpg';
+import babyLanding from '../assets/landing/Baby photoshoot.jpg';
+import brideLanding from '../assets/landing/Bride.jpg';
+import familyLanding from '../assets/landing/family Photoshoot.jpg';
 
 // --- Updated slides array with service descriptions ---
 const slides = [
