@@ -28,6 +28,8 @@ const modelGalleryModules = import.meta.glob('@/assets/gallery/model/*.{jpg,JPG,
 const albumsGalleryModules = import.meta.glob('@/assets/gallery/albums/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 const engagementGalleryModules = import.meta.glob('@/assets/gallery/engagement/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 const productInteriorGalleryModules = import.meta.glob('@/assets/gallery/product-interior/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const familyGalleryModules = import.meta.glob('@/assets/gallery/family/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const housewarmingGalleryModules = import.meta.glob('@/assets/gallery/housewarming/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
 
 // Convert glob imports to arrays of image URLs
 const weddingGalleryImages = Object.values(weddingGalleryModules) as string[];
@@ -39,6 +41,8 @@ const modelGalleryImages = Object.values(modelGalleryModules) as string[];
 const albumsGalleryImages = Object.values(albumsGalleryModules) as string[];
 const engagementGalleryImages = Object.values(engagementGalleryModules) as string[];
 const productInteriorGalleryImages = Object.values(productInteriorGalleryModules) as string[];
+const familyGalleryImages = Object.values(familyGalleryModules) as string[];
+const housewarmingGalleryImages = Object.values(housewarmingGalleryModules) as string[];
 
 
 // Define the structure for service data
@@ -148,7 +152,7 @@ export const servicesData: Service[] = [
     description: 'Create lasting memories with beautiful family portraits',
     image: familyTileCard,
     fullDescription: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!',
-    galleryImages: [familyTileCard]
+    galleryImages: familyGalleryImages
   },
   {
     slug: 'product-interior',
@@ -168,7 +172,7 @@ export const servicesData: Service[] = [
     description: 'Capture the memories of your new home with our photography services',
     image: housewarmingTileCard,
     fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.',
-    galleryImages: [housewarmingTileCard],
+    galleryImages: housewarmingGalleryImages,
     videos: [
       'https://youtu.be/xbp_w0pJ1Ws'
     ]
