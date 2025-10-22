@@ -43,47 +43,49 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative h-[84vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image Carousel */}
-      <div className="absolute inset-0">
-           {slides.map((slide, index) => (
-             <div
-               key={index}
-               className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-             >
-               {/* Check if image needs blur background (portrait) or can be cropped (landscape) */}
-               {/* For now, we'll detect this with CSS - portrait images will show blur background */}
-               <div className="absolute inset-0 flex items-center justify-center">
-                 {/* Blurred background layer - only visible for portrait images */}
-                 <img
-                    src={slide.image}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover blur-3xl scale-110 brightness-75"
-                    aria-hidden="true"
-                 />
-                 {/* Main image - will use object-cover for landscape, object-contain for portrait */}
-                 <img
-                    src={slide.image}
-                    alt={slide.title}
-                    className="relative w-full h-full object-cover"
-                    style={{
-                      objectFit: 'cover',
-                    }}
-                    onLoad={(e) => {
-                      const img = e.target as HTMLImageElement;
-                      const aspectRatio = img.naturalWidth / img.naturalHeight;
-                      // If portrait (aspect ratio < 1), use contain with blur background
-                      if (aspectRatio < 1) {
-                        img.style.objectFit = 'contain';
-                      }
-                    }}
-                 />
+    <section id="home" className="relative h-[84vh] flex items-center justify-center overflow-hidden bg-muted/30">
+      {/* Centered container for hero carousel - mobile width on all screens */}
+      <div className="relative w-full max-w-md h-full mx-auto">
+        {/* Background Image Carousel */}
+        <div className="absolute inset-0">
+             {slides.map((slide, index) => (
+               <div
+                 key={index}
+                 className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+               >
+                 {/* Check if image needs blur background (portrait) or can be cropped (landscape) */}
+                 {/* For now, we'll detect this with CSS - portrait images will show blur background */}
+                 <div className="absolute inset-0 flex items-center justify-center">
+                   {/* Blurred background layer - only visible for portrait images */}
+                   <img
+                      src={slide.image}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover blur-3xl scale-110 brightness-75"
+                      aria-hidden="true"
+                   />
+                   {/* Main image - will use object-cover for landscape, object-contain for portrait */}
+                   <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="relative w-full h-full object-cover"
+                      style={{
+                        objectFit: 'cover',
+                      }}
+                      onLoad={(e) => {
+                        const img = e.target as HTMLImageElement;
+                        const aspectRatio = img.naturalWidth / img.naturalHeight;
+                        // If portrait (aspect ratio < 1), use contain with blur background
+                        if (aspectRatio < 1) {
+                          img.style.objectFit = 'contain';
+                        }
+                      }}
+                   />
+                 </div>
                </div>
-             </div>
-           ))}
-      </div>
+             ))}
+        </div>
 
-      {/* Navigation Arrows */}
+        {/* Navigation Arrows */}
         <button
             onClick={prevSlide}
             className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-card/80 hover:bg-card backdrop-blur-sm p-2 md:p-3 rounded-full transition-all"
@@ -97,32 +99,33 @@ const HeroSection = () => {
             aria-label="Next slide"
         >
             <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
-      </button>
+        </button>
 
 
-      {/* Slide Indicators */}
-       <div className="absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-         {slides.map((_, index) => (
-           <button
-             key={index}
-             onClick={() => setCurrentSlide(index)}
-             className={`h-2 rounded-full transition-all duration-300 ${
-               index === currentSlide ? 'w-8 bg-primary' : 'w-2 bg-muted hover:bg-muted-foreground/50'
-             }`}
-             aria-label={`Go to slide ${index + 1}`}
-           />
-         ))}
-       </div>
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'w-8 bg-primary' : 'w-2 bg-muted hover:bg-muted-foreground/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
-      {/* Caption overlay */}
-      {/* --- ADJUSTED POSITIONING TO BOTTOM-RIGHT --- */}
-      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 bg-black/50 backdrop-blur-sm px-4 py-3 md:px-6 md:py-4 rounded-lg shadow-lg text-right max-w-sm">
-        <p className="font-playfair text-white font-bold text-xl md:text-3xl mb-1">
-          {slides[currentSlide].title}
-        </p>
-        <p className="font-poppins text-gray-200 text-sm md:text-base">
-          {slides[currentSlide].description}
-        </p>
+        {/* Caption overlay */}
+        {/* --- ADJUSTED POSITIONING TO BOTTOM-RIGHT --- */}
+        <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 bg-black/50 backdrop-blur-sm px-4 py-3 md:px-6 md:py-4 rounded-lg shadow-lg text-right max-w-sm">
+          <p className="font-playfair text-white font-bold text-xl md:text-3xl mb-1">
+            {slides[currentSlide].title}
+          </p>
+          <p className="font-poppins text-gray-200 text-sm md:text-base">
+            {slides[currentSlide].description}
+          </p>
+        </div>
       </div>
     </section>
   );
