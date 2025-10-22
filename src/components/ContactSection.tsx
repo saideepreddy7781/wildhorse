@@ -58,7 +58,7 @@ const ContactSection = () => {
                  Wild Horse Media - Best Photographers
              </h2>
              <p className="text-lg font-poppins text-muted-foreground mb-6">
-                 If you are searching for the Best Photographers, You are on the perfect page! We Team Wild Horse Media are a one-stop solution for all your photography needs. We offer professional photography services such as Wedding Photography, Cinematography, Couple shoots, Album designing, and printing, etc. 
+                 If you are searching for the Best Photographers, You are on the perfect page! We Team Wild Horse Media are a one-stop solution for all your photography needs. We offer professional photography services such as Wedding Photography, Cinematography, Couple shoots, Album designing, and printing, etc.
              </p>
              {/* Note: The submit button is now part of the form below */}
          </div>
