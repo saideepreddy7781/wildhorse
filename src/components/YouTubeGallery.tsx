@@ -1,17 +1,41 @@
+// src/components/YouTubeGallery.tsx
+
 import React, { useState } from 'react';
 import { PlayCircle } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
+// --- UPDATED video list ---
 const videos = [
-  { id: 'u6lmI0V14BQ', title: 'Wild Horse Media Portfolio' },
-  { id: 'oIAkui8unzc', title: 'Wedding Highlights' },
-  { id: 'e11WgcN4MWU', title: 'Varun ❤️ Priya | When Two Souls Met' },
-  { id: 'bThTutu6Py8', title: 'Cinematic Love Story' },
-  { id: '7VXcWCwqI88', title: 'Sathish & Ashwini\'s Magical Pre-Wedding' },
+  { id: 'u6lmI0V14BQ', title: 'Wild Horse Media Portfolio' }, // From your link
+  { id: 'bThTutu6Py8', title: 'Cinematic Love Story' },     // From your link
+  { id: 'e11WgcN4MWU', title: 'Photography Showcase' },     // From your link
+  { id: 'oIAkui8unzc', title: 'Wedding Highlights' },        // Added this video
+  // You can add more video objects here if needed
+  // { id: 'ANOTHER_ID', title: 'Another Video Title' },
 ];
 
 const YouTubeGallery = () => {
-  const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
+  // Ensure videos array is not empty before accessing index 0
+  const [currentVideoId, setCurrentVideoId] = useState(videos.length > 0 ? videos[0].id : '');
+
+  // Return null or a placeholder if there are no videos
+  if (videos.length === 0) {
+      return (
+          <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+              <div className="container mx-auto px-4">
+                   <div className="text-center">
+                       <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4 text-foreground">
+                          Our Work in Motion
+                       </h2>
+                       <p className="text-lg font-poppins text-muted-foreground">
+                          No videos available at the moment.
+                       </p>
+                   </div>
+              </div>
+          </section>
+      );
+  }
+
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30">
@@ -33,7 +57,6 @@ const YouTubeGallery = () => {
             <div className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
               <iframe
                 key={currentVideoId}
-                // --- REMOVED ?autoplay=1 from src ---
                 src={`https://www.youtube.com/embed/${currentVideoId}`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
