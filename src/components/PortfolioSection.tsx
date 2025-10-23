@@ -1,31 +1,46 @@
-// --- Import the new "Our Works" images ---
-import modelOw from '@/assets/model-3.jpeg';
-import matOw from '@/assets/mom-22.jpeg';
-import whm17Ow from '@/assets/Copy-of-whm-17ow.jpg';
-import whm443Ow from '@/assets/Copy-of-WHM-443ow.jpg';
-import whm3Ow from '@/assets/Copy-of-whm3ow.jpg';
-import wildhors8Ow from '@/assets/Copy-of-wildhorse-348ow.jpg'; // Assuming full filename is similar
-import dsc08189Ow from '@/assets/DSC08189ow.jpg';
-import weddingOw from '@/assets/weddingow.jpg';
-import whm1460Ow from '@/assets/WHM-1460ow.jpg';
+import { useState } from 'react';
+import { ZoomIn } from 'lucide-react';
+import ImageLightbox from './ImageLightbox';
 
-// --- Create an array with just the imported images ---
-const portfolioImages = [
-  dsc08189Ow,
-  weddingOw,
-  modelOw,
-  matOw,
-  whm17Ow,
-  whm3Ow,
-  wildhors8Ow,
-  whm443Ow,
-  
-  whm1460Ow,
-
-];
+// --- Import images from the Our Works folder ---
+const portfolioModules = import.meta.glob('@/assets/ourworks/*.{jpg,JPG,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const portfolioImages = Object.values(portfolioModules) as string[];
 
 
 const PortfolioSection = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Individual position control for each image (format: 'horizontal% vertical%')
+  const imagePositions = [
+    '50% 22%', // Image 1
+    '50% 80%', // Image 2
+    '50% 35%', // Image 3
+    '50% 45%', // Image 4
+    '50% 35%', // Image 5
+    '50% 100%', // Image 6
+    '50% 85%', // Image 7
+    '50% 100%', // Image 8
+    '50% 85%', // Image 9
+  ];
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % portfolioImages.length);
+  };
+
+  const previousImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + portfolioImages.length) % portfolioImages.length);
+  };
+
   return (
     <section id="portfolio" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -38,25 +53,55 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        {/* --- Updated Grid Layout --- */}
-        {/* Changed to 2 columns on medium screens and up, with a larger gap */}
+        {/* --- Updated Grid Layout with Hover Effects --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           {portfolioImages.map((imageSrc, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg aspect-video cursor-pointer" // Using aspect-video for a wider feel
+              onClick={() => openLightbox(index)}
+              className="group relative overflow-hidden rounded-lg aspect-video cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
             >
+              {/* Image */}
               <img
                 src={imageSrc}
                 alt={`Portfolio image ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
+                style={{ objectPosition: imagePositions[index] || '50% 30%' }}
                 loading="lazy"
               />
-              {/* The overlay div with title and category has been removed */}
+              
+              {/* Warm Overlay on Hover */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(139, 90, 60, 0.3) 0%, rgba(80, 50, 30, 0.4) 100%)',
+                }}
+              />
+              
+              {/* Zoom Icon */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-90">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-xl group-hover:rotate-90 transition-transform duration-700">
+                  <ZoomIn className="h-8 w-8 text-[hsl(var(--gold))]" />
+                </div>
+              </div>
+
+              {/* Bottom Gradient for Better Aesthetics */}
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <ImageLightbox
+          images={portfolioImages}
+          currentIndex={currentImageIndex}
+          onClose={closeLightbox}
+          onNext={nextImage}
+          onPrevious={previousImage}
+        />
+      )}
     </section>
   );
 };

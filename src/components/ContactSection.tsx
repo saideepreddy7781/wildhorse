@@ -49,7 +49,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
+    <section id="contact" className="py-16 md:py-4 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
 
         {/* --- Added Intro Text Section (Inspired by Phometo PDF) --- */}
@@ -58,7 +58,7 @@ const ContactSection = () => {
                  Wild Horse Media - Best Photographers
              </h2>
              <p className="text-lg font-poppins text-muted-foreground mb-6">
-                 If you are searching for the Best Photographers, You are on the perfect page! We Team Wild Horse Media are a one-stop solution for all your photography needs. We offer professional photography services such as Wedding Photography, Cinematography, Couple shoots, Album designing, and printing, etc. 
+                 If you are searching for the Best Photographers, You are on the perfect page! We Team Wild Horse Media are a one-stop solution for all your photography needs. We offer professional photography services such as Wedding Photography, Cinematography, Couple shoots, Album designing, and printing, etc.
              </p>
              {/* Note: The submit button is now part of the form below */}
          </div>
@@ -150,7 +150,7 @@ const ContactSection = () => {
           <div className="space-y-8 pt-6 md:pt-0"> {/* Optional padding top for better alignment */}
              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-full"><Phone className="h-6 w-6 text-primary" /></div>
+                <div className="p-3 bg-secondary/20 rounded-full"><Phone className="h-6 w-6 text-primary" /></div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Call Us</h3>
                   <p className="font-poppins text-muted-foreground">+91 97409 44666</p>
@@ -159,7 +159,7 @@ const ContactSection = () => {
             </div>
             <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
                <div className="flex items-start gap-4">
-                <div className="p-3 bg-pink-500/10 rounded-full"><Instagram className="h-6 w-6 text-pink-500" /></div>
+                <div className="p-3 bg-secondary/20 rounded-full"><Instagram className="h-6 w-6 text-secondary-foreground" /></div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Instagram</h3>
                    <a href="https://www.instagram.com/wildhorsemedia/" target="_blank" rel="noopener noreferrer" className="font-poppins text-muted-foreground hover:text-primary transition-colors">@wildhorsemedia</a>
@@ -177,7 +177,7 @@ const ContactSection = () => {
             </div>
              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-soft)]">
                <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/20 rounded-full"><MapPin className="h-6 w-6 text-accent-foreground" /></div>
+                <div className="p-3 bg-accent/20 rounded-full"><MapPin className="h-6 w-6 text-secondary-foreground" /></div>
                 <div>
                   <h3 className="font-playfair font-semibold text-lg mb-2">Visit Us</h3>
                   <p className="font-poppins text-muted-foreground">3901, 13th main kumaraswamy layout, 2nd stage, Bangalore - 560048</p>

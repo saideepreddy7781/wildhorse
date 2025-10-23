@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 const videos = [
   { id: 'u6lmI0V14BQ', title: 'Wild Horse Media Portfolio' },
   { id: 'oIAkui8unzc', title: 'Wedding Highlights' },
-  { id: 'e11WgcN4MWU', title: 'Photography Showcase' },
-  // Add more videos here if needed
+  { id: 'e11WgcN4MWU', title: 'Varun ❤️ Priya | When Two Souls Met' },
+  { id: 'bThTutu6Py8', title: 'Cinematic Love Story' },
+  { id: '7VXcWCwqI88', title: 'Sathish & Ashwini\'s Magical Pre-Wedding' },
 ];
 
 const YouTubeGallery = () => {
@@ -27,17 +28,19 @@ const YouTubeGallery = () => {
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
 
-          {/* Main Video Player */}
-          <div className="md:col-span-2 aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
-            <iframe
-              key={currentVideoId}
-              // --- REMOVED ?autoplay=1 from src ---
-              src={`https://www.youtube.com/embed/${currentVideoId}`}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            />
+          {/* Main Video Player - Sticky on desktop */}
+          <div className="md:col-span-2 md:sticky md:top-24">
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
+              <iframe
+                key={currentVideoId}
+                // --- REMOVED ?autoplay=1 from src ---
+                src={`https://www.youtube.com/embed/${currentVideoId}`}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
           </div>
 
           {/* Thumbnail List */}

@@ -1,10 +1,12 @@
 // src/pages/ServiceBookingPage.tsx
+import { useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingForm from '@/components/BookingForm'; // Import the reusable form
+import ImageLightbox from '@/components/ImageLightbox';
 import { getServiceBySlug } from '@/lib/servicesData'; // Import data helper and getter
-import { PlayCircle } from 'lucide-react'; // Import PlayCircle icon
+import { PlayCircle, ZoomIn } from 'lucide-react'; // Import icons
 
 // Helper function to extract YouTube Video ID from URL
 const getYouTubeVideoId = (url: string): string | null => {
@@ -28,6 +30,8 @@ const getYouTubeVideoId = (url: string): string | null => {
 const ServiceBookingPage = () => {
     const { serviceSlug } = useParams<{ serviceSlug: string }>();
     const service = getServiceBySlug(serviceSlug);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     if (!service) {
         console.error(`Service not found for slug: ${serviceSlug}`);
@@ -36,6 +40,27 @@ const ServiceBookingPage = () => {
 
     // Extract video IDs
     const videoIds = (service.videos ?? []).map(getYouTubeVideoId).filter(id => id !== null) as string[];
+
+    const openLightbox = (index: number) => {
+        setCurrentImageIndex(index);
+        setLightboxOpen(true);
+    };
+
+    const closeLightbox = () => {
+        setLightboxOpen(false);
+    };
+
+    const nextImage = () => {
+        if (service.galleryImages) {
+            setCurrentImageIndex((prev) => (prev + 1) % service.galleryImages!.length);
+        }
+    };
+
+    const previousImage = () => {
+        if (service.galleryImages) {
+            setCurrentImageIndex((prev) => (prev - 1 + service.galleryImages!.length) % service.galleryImages!.length);
+        }
+    };
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -76,13 +101,32 @@ const ServiceBookingPage = () => {
                             </h2>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
                                 {service.galleryImages.map((imgSrc, index) => (
-                                    <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                                    <div 
+                                        key={index} 
+                                        onClick={() => openLightbox(index)}
+                                        className="group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                                    >
                                         <img
                                             src={imgSrc}
                                             alt={`${service.title} example ${index + 1}`}
-                                            className="w-full h-full object-cover"
-                                            loading="lazy" // Add lazy loading for gallery images
+                                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
+                                            loading="lazy"
                                         />
+                                        
+                                        {/* Warm Overlay on Hover */}
+                                        <div 
+                                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                            style={{
+                                                background: 'linear-gradient(135deg, rgba(139, 90, 60, 0.3) 0%, rgba(80, 50, 30, 0.4) 100%)',
+                                            }}
+                                        />
+                                        
+                                        {/* Zoom Icon */}
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-90">
+                                            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-xl group-hover:rotate-90 transition-transform duration-700">
+                                                <ZoomIn className="h-6 w-6 text-[hsl(var(--gold))]" />
+                                            </div>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -118,6 +162,17 @@ const ServiceBookingPage = () => {
                  {/* Optional: Add more sections below if needed */}
             </main>
             <Footer />
+
+            {/* Lightbox */}
+            {lightboxOpen && service.galleryImages && (
+                <ImageLightbox
+                    images={service.galleryImages}
+                    currentIndex={currentImageIndex}
+                    onClose={closeLightbox}
+                    onNext={nextImage}
+                    onPrevious={previousImage}
+                />
+            )}
         </div>
     );
 };
