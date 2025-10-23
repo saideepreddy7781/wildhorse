@@ -5,14 +5,14 @@ import babyShowerWwd from '@/assets/Baby-Shower-wwd.jpg';
 import babyWwd from '@/assets/Baby-wwd.jpg';
 import family2Wwd from '@/assets/family-2-wwd.jpg';
 import maternityWwd from '@/assets/Maternity-wwd.jpg';
-import modelPhotoshootWwd from '@/assets/model-title.jpeg'; // Main card image for model photoshoots
+import modelPhotoshootWwd from '@/assets/model-title.jpeg';
 import preWeddingWwd from '@/assets/pre-wedding-wwd.jpg';
 import wedding2Wwd from '@/assets/wedding-2-wwd.jpg';
 import albumDesignWwd from '@/assets/album-design-wwd.jpg';
-import brideLanding from '@/assets/br-2.jpeg';
 import housewarming from '@/assets/hpusewarming.jpeg';
 import interior from '@/assets/pr-1.jpg';
 import eng1 from '@/assets/eng-1.jpeg';
+import namingTile from '@/assets/naming-tile.png';
 
 // --- Gallery Images (Import specific images for galleries) ---
 
@@ -44,9 +44,49 @@ import engTile6 from '@/assets/eng-tile6.png';
 import engTile7 from '@/assets/eng-tile7.png';
 import engTile8 from '@/assets/eng-tile8.png';
 
-// Bridal Gallery
-import copyWhm17Ow from '@/assets/Copy-of-whm-17ow.jpg';
-import copyWhm348Ow from '@/assets/Copy-of-wildhorse-348ow.jpg';
+// Naming Ceremony Gallery Images (Explicit Imports - Updated Paths)
+// ** Ensure these images (1.png to 40.png) exist directly in src/assets/ **
+import naming1 from '@/assets/1.png';
+import naming2 from '@/assets/2.png';
+import naming3 from '@/assets/3.png';
+import naming4 from '@/assets/4.png';
+import naming5 from '@/assets/5.png';
+import naming6 from '@/assets/6.png';
+import naming7 from '@/assets/7.png';
+import naming8 from '@/assets/8.png';
+import naming9 from '@/assets/9.png';
+import naming10 from '@/assets/10.png';
+import naming11 from '@/assets/11.png';
+import naming12 from '@/assets/12.png';
+import naming13 from '@/assets/13.png';
+import naming14 from '@/assets/14.png';
+import naming15 from '@/assets/15.png';
+import naming16 from '@/assets/16.png';
+import naming17 from '@/assets/17.png';
+import naming18 from '@/assets/18.png';
+import naming19 from '@/assets/19.png';
+import naming20 from '@/assets/20.png';
+import naming21 from '@/assets/21.png';
+import naming22 from '@/assets/22.png';
+import naming23 from '@/assets/23.png';
+import naming24 from '@/assets/24.png';
+import naming25 from '@/assets/25.png';
+import naming26 from '@/assets/26.png';
+import naming27 from '@/assets/27.png';
+import naming28 from '@/assets/28.png';
+import naming29 from '@/assets/29.png';
+import naming30 from '@/assets/30.png';
+import naming31 from '@/assets/31.png';
+import naming32 from '@/assets/32.png';
+import naming33 from '@/assets/33.png';
+import naming34 from '@/assets/34.png';
+import naming35 from '@/assets/35.png';
+import naming36 from '@/assets/36.png';
+import naming37 from '@/assets/37.png';
+import naming38 from '@/assets/38.png';
+import naming39 from '@/assets/39.png';
+import naming40 from '@/assets/40.png';
+
 
 // Maternity Gallery Images
 import matTile1 from '@/assets/mat-tile1.png';
@@ -116,7 +156,7 @@ export interface Service {
     videos?: string[]; // Array for YouTube video URLs
 }
 
-// Array holding all service details
+// ** REORDERED Array holding all service details **
 export const servicesData: Service[] = [
   // --- Row 1 ---
   {
@@ -126,7 +166,12 @@ export const servicesData: Service[] = [
     image: wedding2Wwd,
     fullDescription: 'Looking for the best wedding photographers in South India? Contact Wild horse Media today!',
     galleryImages: [wedTile1, wedTile2, wedTile3, wedTile4, wedTile5, wedTile6],
-    
+    videos: [
+        'https://youtu.be/59J2D45cBlo',
+        'https://youtu.be/t0OQ11V8Orc',
+        'https://youtu.be/DvHxQ9RdZiI',
+        'https://youtu.be/bThTutu6Py8'
+    ]
   },
   {
     slug: 'pre-wedding',
@@ -135,10 +180,11 @@ export const servicesData: Service[] = [
     image: preWeddingWwd,
     fullDescription: 'Searching for the Most Romantic Pre-Wedding Photographers in South India? Book your dreamy pre-wedding photography session with Wild Horse Media today!',
     galleryImages: [prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8],
-    // ** ADDED Pre-wedding Videos **
     videos: [
-      'https://youtu.be/7VXcWCwqI88',
-      'https://youtu.be/e11WgcN4MWU'
+        'https://youtu.be/e11WgcN4MWU',
+        'https://youtu.be/dxT8FTf3ApQ',
+        'https://youtu.be/81NzuUg_AaE',
+        'https://youtu.be/7VXcWCwqI88'
     ]
   },
   {
@@ -147,7 +193,11 @@ export const servicesData: Service[] = [
     description: 'Capture the joy and excitement of your engagement ceremony',
     image: eng1,
     fullDescription: 'Celebrate the beginning of your journey together. Book us for your engagement ceremony.',
-    galleryImages: [engTile1, engTile2, engTile3, engTile4, engTile5, engTile6, engTile7, engTile8]
+    galleryImages: [engTile1, engTile2, engTile3, engTile4, engTile5, engTile6, engTile7, engTile8],
+    videos: [
+        'https://youtu.be/u6lmI0V14BQ',
+        'https://youtu.be/eNqmqn9dB_E'
+    ]
   },
   {
     slug: 'album-design',
@@ -182,15 +232,36 @@ export const servicesData: Service[] = [
     fullDescription: 'Looking for Professional Newborn and Baby Photographers in Bengaluru? Tiny moments, lifelong memories. Schedule your baby photoshoot with Wild Horse Media!',
     galleryImages: [babyshootTile1, babyshootTile2, babyshootTile3, babyshootTile4, babyshootTile5, babyshootTile6, babyshootTile7, babyshootTile8]
   },
-  {
-    slug: 'bridal-photoshoot',
-    title: 'Bridal Photoshoot',
-    description: 'Your solo moment to shine with stunning bridal portraits',
-    image: brideLanding,
-    fullDescription: 'Want Stunning Bridal Portraits? Discover the Best Photographers for Your Wedding Day Look! Your solo moment to shine! Get a breathtaking bridal photoshoot package from Wild Horse Media.',
-    galleryImages: [brideLanding, copyWhm17Ow, copyWhm348Ow]
+  { // ** UPDATED Naming Ceremony with Corrected Import Paths **
+    slug: 'naming-ceremony',
+    title: 'Naming Ceremony',
+    description: 'Capture the special moments of your child\'s naming ceremony',
+    image: namingTile, // Main tile image
+    fullDescription: 'Document the traditions and joy of your baby\'s naming ceremony with beautiful photography. Contact us for packages.',
+    galleryImages: [ // Using the imported variables with corrected paths
+        naming1, naming2, naming3, naming4, naming5, naming6, naming7, naming8, naming9, naming10,
+        naming11, naming12, naming13, naming14, naming15, naming16, naming17, naming18, naming19, naming20,
+        naming21, naming22, naming23, naming24, naming25, naming26, naming27, naming28, naming29, naming30,
+        naming31, naming32, naming33, naming34, naming35, naming36, naming37, naming38, naming39, naming40
+    ]
   },
   // --- Row 3 ---
+  {
+    slug: 'house-warming',
+    title: 'House Warming',
+    description: 'Capture the memories of your new home with our photography services',
+    image: housewarming,
+    fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.',
+    galleryImages: [housewarming]
+  },
+  {
+    slug: 'family-photoshoots',
+    title: 'Family photoshoots',
+    description: 'Create lasting memories with beautiful family portraits',
+    image: family2Wwd,
+    fullDescription: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!',
+    galleryImages: [family2Wwd, familyLanding]
+  },
   {
     slug: 'model-photoshoots',
     title: 'Model photoshoots',
@@ -205,32 +276,16 @@ export const servicesData: Service[] = [
     ]
   },
   {
-    slug: 'family-photoshoots',
-    title: 'Family photoshoots',
-    description: 'Create lasting memories with beautiful family portraits',
-    image: family2Wwd,
-    fullDescription: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!',
-    galleryImages: [family2Wwd, familyLanding]
-  },
-  {
     slug: 'product-interior',
     title: 'Product & Interior',
     description: 'Professional shots for your products and interior spaces',
-    image: interior, // Card image (pr-1.jpg)
+    image: interior,
     fullDescription: 'Showcase your products or property with high-quality interior and product photography.',
     galleryImages: [interior, interiorJpeg],
     videos: [
       'https://youtu.be/sKNIkPRAG7g',
       'https://youtu.be/jLkcyBHz420'
     ]
-  },
-  {
-    slug: 'house-warming',
-    title: 'House Warming',
-    description: 'Capture the memories of your new home with our photography services',
-    image: housewarming,
-    fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.',
-    galleryImages: [housewarming]
   },
 ];
 
