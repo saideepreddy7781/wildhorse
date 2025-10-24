@@ -7,7 +7,7 @@ import family2Wwd from '@/assets/family-2-wwd.jpg';
 import maternityWwd from '@/assets/Maternity-wwd.jpg';
 import modelPhotoshootWwd from '@/assets/model-title.jpeg';
 import preWeddingWwd from '@/assets/pre-wedding-wwd.jpg';
-import wedding2Wwd from '@/assets/wedding-2-wwd.jpg';
+import wedding2Wwd from '@/assets/wed-tile.webp';
 import albumDesignWwd from '@/assets/album-design-wwd.jpg';
 import housewarming from '@/assets/hpusewarming.jpeg';
 import interior from '@/assets/pr-1.jpg';
@@ -17,12 +17,69 @@ import namingTile from '@/assets/naming-tile.png';
 // --- Gallery Images (Import specific images for galleries) ---
 
 // Wedding Gallery Images
-import wedTile1 from '@/assets/wed-tile1.png';
-import wedTile2 from '@/assets/wed-tile2.png';
-import wedTile3 from '@/assets/wed-tile3.png';
-import wedTile4 from '@/assets/wed-tile4.png';
-import wedTile5 from '@/assets/wed-tile5.png';
-import wedTile6 from '@/assets/wed-tile6.png';
+import wedTile1 from '@/assets/wedding-images/1.webp';
+import wedTile2 from '@/assets/wedding-images/2.webp';
+import wedTile3 from '@/assets/wedding-images/3.webp';
+import wedTile4 from '@/assets/wedding-images/4.webp';
+import wedTile5 from '@/assets/wedding-images/5.webp';
+import wedTile6 from '@/assets/wedding-images/6.webp';
+import wedTile7 from '@/assets/wedding-images/7.webp';
+import wedTile8 from '@/assets/wedding-images/8.webp';
+import wedTile9 from '@/assets/wedding-images/9.webp';
+import wedTile10 from '@/assets/wedding-images/10.webp';
+import wedTile11 from '@/assets/wedding-images/11.webp';
+import wedTile12 from '@/assets/wedding-images/12.webp';
+import wedTile14 from '@/assets/wedding-images/14.webp';
+import wedTile15 from '@/assets/wedding-images/15.webp';
+import wedTile16 from '@/assets/wedding-images/16.webp';
+import wedTile17 from '@/assets/wedding-images/17.webp';
+import wedTile18 from '@/assets/wedding-images/18.webp';
+import wedTile19 from '@/assets/wedding-images/19.webp';
+import wedTile20 from '@/assets/wedding-images/20.webp';
+import wedTile21 from '@/assets/wedding-images/21.webp';
+import wedTile22 from '@/assets/wedding-images/22.webp';
+import wedTile23 from '@/assets/wedding-images/23.webp';
+import wedTile24 from '@/assets/wedding-images/24.webp';
+import wedTile25 from '@/assets/wedding-images/25.webp';
+import wedTile26 from '@/assets/wedding-images/26.webp';
+import wedTile27 from '@/assets/wedding-images/27.webp';
+import wedTile28 from '@/assets/wedding-images/28.webp';
+import wedTile29 from '@/assets/wedding-images/29.webp';
+import wedTile30 from '@/assets/wedding-images/30.webp';
+import wedTile31 from '@/assets/wedding-images/31.webp';
+import wedTile32 from '@/assets/wedding-images/32.webp';
+import wedTile33 from '@/assets/wedding-images/33.webp';
+import wedTile34 from '@/assets/wedding-images/34.webp';
+import wedTile35 from '@/assets/wedding-images/35.webp';
+import wedTile36 from '@/assets/wedding-images/36.webp';
+import wedTile37 from '@/assets/wedding-images/37.webp';
+import wedTile38 from '@/assets/wedding-images/38.webp';
+import wedTile39 from '@/assets/wedding-images/39.webp';
+import wedTile40 from '@/assets/wedding-images/40.webp';
+import wedTile41 from '@/assets/wedding-images/41.webp';
+import wedTile42 from '@/assets/wedding-images/42.webp';
+import wedTile43 from '@/assets/wedding-images/43.webp';
+import wedTile45 from '@/assets/wedding-images/45.webp';
+import wedTile46 from '@/assets/wedding-images/46.webp';
+import wedTile47 from '@/assets/wedding-images/47.webp';
+import wedTile48 from '@/assets/wedding-images/48.webp';
+import wedTile49 from '@/assets/wedding-images/49.webp';
+import wedTile50 from '@/assets/wedding-images/50.webp';
+import wedTile51 from '@/assets/wedding-images/51.webp';
+import wedTile52 from '@/assets/wedding-images/52.webp';
+import wedTile53 from '@/assets/wedding-images/53.webp';
+import wedTile54 from '@/assets/wedding-images/54.webp';
+import wedTile55 from '@/assets/wedding-images/55.webp';
+import wedTile56 from '@/assets/wedding-images/56.webp';
+import wedTile57 from '@/assets/wedding-images/57.webp';
+import wedTile58 from '@/assets/wedding-images/58.webp';
+import wedTile59 from '@/assets/wedding-images/59.webp';
+import wedTile60 from '@/assets/wedding-images/60.webp';
+import wedTile61 from '@/assets/wedding-images/61.webp';
+import wedTile62 from '@/assets/wedding-images/62.webp';
+import wedTile63 from '@/assets/wedding-images/63.webp';
+import wedTile64 from '@/assets/wedding-images/64.webp';
+import wedTile65 from '@/assets/wedding-images/65.webp';
 
 // Pre-wedding Gallery Images
 import prewedTile1 from '@/assets/prewed-tile1.png';
@@ -165,7 +222,16 @@ export const servicesData: Service[] = [
     description: 'Capture your special day with our professional wedding photography and cinematography services',
     image: wedding2Wwd,
     fullDescription: 'Looking for the best wedding photographers in South India? Contact Wild horse Media today!',
-    galleryImages: [wedTile1, wedTile2, wedTile3, wedTile4, wedTile5, wedTile6],
+    galleryImages: [
+      wedTile1, wedTile2, wedTile3, wedTile4, wedTile5, wedTile6, wedTile7, wedTile8, wedTile9, wedTile10,
+      wedTile11, wedTile12, wedTile14, wedTile15, wedTile16, wedTile17, wedTile18, wedTile19, wedTile20,
+      wedTile21, wedTile22, wedTile23, wedTile24, wedTile25, wedTile26, wedTile27, wedTile28, wedTile29, wedTile30,
+      wedTile31, wedTile32, wedTile33, wedTile34, wedTile35, wedTile36, wedTile37, wedTile38, wedTile39, wedTile40,
+      wedTile41, wedTile42, wedTile43, wedTile45, wedTile46, wedTile47, wedTile48, wedTile49, wedTile50,
+      wedTile51, wedTile52, wedTile53, wedTile54, wedTile55, wedTile56, wedTile57, wedTile58, wedTile59, wedTile60,
+      wedTile61, wedTile62, wedTile63, wedTile64, wedTile65
+    ],
+    
     videos: [
         'https://youtu.be/59J2D45cBlo',
         'https://youtu.be/t0OQ11V8Orc',
