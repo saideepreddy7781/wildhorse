@@ -82,14 +82,44 @@ import wedTile64 from '@/assets/wedding-images/64.webp';
 import wedTile65 from '@/assets/wedding-images/65.webp';
 
 // Pre-wedding Gallery Images
-import prewedTile1 from '@/assets/prewed-tile1.png';
-import prewedTile2 from '@/assets/prewed-tile2.png';
-import prewedTile3 from '@/assets/prewed-tile3.png';
-import prewedTile4 from '@/assets/prewed-tile4.png';
-import prewedTile5 from '@/assets/prewed-tile5.png';
-import prewedTile6 from '@/assets/prewed-tile6.png';
-import prewedTile7 from '@/assets/prewed-tile7.png';
-import prewedTile8 from '@/assets/prewed-tile8.png';
+// Pre-wedding Gallery Images (1.webp to 29.webp)
+import prewedTile1 from '@/assets/prewedding-images/1.webp';
+import prewedTile2 from '@/assets/prewedding-images/2.webp';
+import prewedTile3 from '@/assets/prewedding-images/3.webp';
+import prewedTile4 from '@/assets/prewedding-images/3(1).webp';
+import prewedTile5 from '@/assets/prewedding-images/4(1).webp';
+import prewedTile6 from '@/assets/prewedding-images/4(2).webp';
+import prewedTile7 from '@/assets/prewedding-images/5.webp';
+import prewedTile8 from '@/assets/prewedding-images/5(1).webp';
+import prewedTile9 from '@/assets/prewedding-images/5(2).webp';
+import prewedTile10 from '@/assets/prewedding-images/6.webp';
+import prewedTile11 from '@/assets/prewedding-images/6(1).webp';
+import prewedTile12 from '@/assets/prewedding-images/6(2).webp';
+import prewedTile13 from '@/assets/prewedding-images/6(3).webp';
+import prewedTile14 from '@/assets/prewedding-images/7.webp';
+import prewedTile15 from '@/assets/prewedding-images/8.webp';
+import prewedTile16 from '@/assets/prewedding-images/9.webp';
+import prewedTile17 from '@/assets/prewedding-images/10.webp';
+import prewedTile18 from '@/assets/prewedding-images/10(1).webp';
+import prewedTile19 from '@/assets/prewedding-images/12.webp';
+import prewedTile20 from '@/assets/prewedding-images/13.webp';
+import prewedTile21 from '@/assets/prewedding-images/14.webp';
+import prewedTile22 from '@/assets/prewedding-images/15.webp';
+import prewedTile23 from '@/assets/prewedding-images/16.webp';
+import prewedTile24 from '@/assets/prewedding-images/17.webp';
+import prewedTile25 from '@/assets/prewedding-images/18.webp';
+import prewedTile26 from '@/assets/prewedding-images/19.webp';
+import prewedTile27 from '@/assets/prewedding-images/20.webp';
+import prewedTile28 from '@/assets/prewedding-images/20(1).webp';
+import prewedTile29 from '@/assets/prewedding-images/21.webp';
+import prewedTile31 from '@/assets/prewedding-images/22.webp';
+import prewedTile33 from '@/assets/prewedding-images/23.webp';
+import prewedTile34 from '@/assets/prewedding-images/24.webp';
+import prewedTile35 from '@/assets/prewedding-images/25.webp';
+
+import prewedTile38 from '@/assets/prewedding-images/28.webp';
+import prewedTile39 from '@/assets/prewedding-images/29.webp';
+
 
 // Engagement Gallery Images
 import engTile1 from '@/assets/eng-tile1.png';
@@ -245,7 +275,14 @@ export const servicesData: Service[] = [
     description: 'Beautiful pre-wedding shoots at stunning locations to celebrate your love story',
     image: preWeddingWwd,
     fullDescription: 'Searching for the Most Romantic Pre-Wedding Photographers in South India? Book your dreamy pre-wedding photography session with Wild Horse Media today!',
-    galleryImages: [prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8],
+    galleryImages: [
+      prewedTile1, prewedTile2, prewedTile3, prewedTile4, prewedTile5, prewedTile6, prewedTile7, prewedTile8, prewedTile9, prewedTile10,
+      prewedTile11, prewedTile12, prewedTile13, prewedTile14, prewedTile15, prewedTile16, prewedTile17, prewedTile18, prewedTile19, prewedTile20,
+      prewedTile21, prewedTile22, prewedTile23, prewedTile24, prewedTile25, prewedTile26, prewedTile27, prewedTile28, prewedTile29,
+      prewedTile31, prewedTile33, prewedTile34, prewedTile35, prewedTile38, prewedTile39
+    ],
+    
+    
     videos: [
         'https://youtu.be/e11WgcN4MWU',
         'https://youtu.be/dxT8FTf3ApQ',
