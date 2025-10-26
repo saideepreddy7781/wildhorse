@@ -122,14 +122,50 @@ import prewedTile39 from '@/assets/prewedding-images/29.webp';
 
 
 // Engagement Gallery Images
-import engTile1 from '@/assets/eng-tile1.png';
-import engTile2 from '@/assets/eng-tile2.png';
-import engTile3 from '@/assets/eng-tile3.png';
-import engTile4 from '@/assets/eng-tile4.png';
-import engTile5 from '@/assets/eng-tile5.png';
-import engTile6 from '@/assets/eng-tile6.png';
-import engTile7 from '@/assets/eng-tile7.png';
-import engTile8 from '@/assets/eng-tile8.png';
+// Engagement Gallery Images (1.webp to 42.webp)
+import engTile1 from '@/assets/engagement-images/1.webp';
+import engTile2 from '@/assets/engagement-images/2.webp';
+import engTile3 from '@/assets/engagement-images/3.webp';
+import engTile4 from '@/assets/engagement-images/4.webp';
+import engTile5 from '@/assets/engagement-images/5.webp';
+import engTile6 from '@/assets/engagement-images/6.webp';
+import engTile7 from '@/assets/engagement-images/7.webp';
+import engTile8 from '@/assets/engagement-images/8.webp';
+import engTile9 from '@/assets/engagement-images/9.webp';
+import engTile10 from '@/assets/engagement-images/10.webp';
+import engTile11 from '@/assets/engagement-images/11.webp';
+import engTile12 from '@/assets/engagement-images/12.webp';
+import engTile13 from '@/assets/engagement-images/13.webp';
+import engTile14 from '@/assets/engagement-images/14.webp';
+import engTile15 from '@/assets/engagement-images/15.webp';
+import engTile16 from '@/assets/engagement-images/16.webp';
+import engTile17 from '@/assets/engagement-images/17.webp';
+import engTile18 from '@/assets/engagement-images/18.webp';
+import engTile19 from '@/assets/engagement-images/19.webp';
+import engTile20 from '@/assets/engagement-images/20.webp';
+import engTile21 from '@/assets/engagement-images/21.webp';
+import engTile22 from '@/assets/engagement-images/22.webp';
+import engTile23 from '@/assets/engagement-images/23.webp';
+import engTile24 from '@/assets/engagement-images/24.webp';
+import engTile25 from '@/assets/engagement-images/25.webp';
+import engTile26 from '@/assets/engagement-images/26.webp';
+import engTile27 from '@/assets/engagement-images/27.webp';
+import engTile28 from '@/assets/engagement-images/28.webp';
+import engTile29 from '@/assets/engagement-images/29.webp';
+import engTile30 from '@/assets/engagement-images/30.webp';
+import engTile31 from '@/assets/engagement-images/31.webp';
+import engTile32 from '@/assets/engagement-images/32.webp';
+import engTile33 from '@/assets/engagement-images/33.webp';
+import engTile34 from '@/assets/engagement-images/34.webp';
+import engTile35 from '@/assets/engagement-images/35.webp';
+import engTile36 from '@/assets/engagement-images/36.webp';
+import engTile37 from '@/assets/engagement-images/37.webp';
+import engTile38 from '@/assets/engagement-images/38.webp';
+import engTile39 from '@/assets/engagement-images/39.webp';
+import engTile40 from '@/assets/engagement-images/40.webp';
+import engTile41 from '@/assets/engagement-images/41.webp';
+import engTile42 from '@/assets/engagement-images/42.webp';
+
 
 // Naming Ceremony Gallery Images (Explicit Imports - Updated Paths)
 // ** Ensure these images (1.png to 40.png) exist directly in src/assets/ **
@@ -296,8 +332,14 @@ export const servicesData: Service[] = [
     description: 'Capture the joy and excitement of your engagement ceremony',
     image: eng1,
     fullDescription: 'Celebrate the beginning of your journey together. Book us for your engagement ceremony.',
-    galleryImages: [engTile1, engTile2, engTile3, engTile4, engTile5, engTile6, engTile7, engTile8],
-    videos: [
+    galleryImages: [
+      engTile1, engTile2, engTile3, engTile4, engTile5, engTile6, engTile7, engTile8, engTile9, engTile10,
+      engTile11, engTile12, engTile13, engTile14, engTile15, engTile16, engTile17, engTile18, engTile19, engTile20,
+      engTile21, engTile22, engTile23, engTile24, engTile25, engTile26, engTile27, engTile28, engTile29, engTile30,
+      engTile31, engTile32, engTile33, engTile34, engTile35, engTile36, engTile37, engTile38, engTile39, engTile40,
+      engTile41, engTile42
+    ],
+        videos: [
         'https://youtu.be/u6lmI0V14BQ',
         'https://youtu.be/eNqmqn9dB_E'
     ]
