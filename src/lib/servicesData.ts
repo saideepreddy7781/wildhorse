@@ -1,7 +1,7 @@
 // src/lib/servicesData.ts
 
 // --- "What We Do" Images (Main Service Images) ---
-import babyShowerWwd from '@/assets/Baby-Shower-wwd.jpg';
+import babyShowerWwd from '@/assets/babys-tile.jpeg';
 import babyWwd from '@/assets/Baby-wwd.jpg';
 import family2Wwd from '@/assets/family-2-wwd.jpg';
 import maternityWwd from '@/assets/Maternity-wwd.jpg';
@@ -212,37 +212,167 @@ import naming40 from '@/assets/40.png';
 
 
 // Maternity Gallery Images
-import matTile1 from '@/assets/mat-tile1.png';
-import matTile2 from '@/assets/mat-tile2.png';
-import matTile3 from '@/assets/mat-tile3.png';
-import matTile4 from '@/assets/mat-tile4.png';
-import matTile5 from '@/assets/mat-tile5.png';
-import matTile6 from '@/assets/mat-tile6.png';
-import matTile7 from '@/assets/mat-tile7.png';
-import matTile8 from '@/assets/mat-tile8.png';
+// Maternity Gallery Images
+import matTile1 from '@/assets/maternity-images/1.webp';
+import matTile2 from '@/assets/maternity-images/2.webp';
+import matTile3 from '@/assets/maternity-images/3.webp';
+import matTile31 from '@/assets/maternity-images/3(1).webp';
+import matTile32 from '@/assets/maternity-images/3(2).webp';
+import matTile4 from '@/assets/maternity-images/4.webp';
+import matTile5 from '@/assets/maternity-images/5.webp';
+import matTile51 from '@/assets/maternity-images/5(1).webp';
+import matTile52 from '@/assets/maternity-images/5(2).webp';
+import matTile6 from '@/assets/maternity-images/6.webp';
+import matTile7 from '@/assets/maternity-images/7.webp';
+import matTile10 from '@/assets/maternity-images/10.webp';
+import matTile101 from '@/assets/maternity-images/10(1).webp';
+import matTile11 from '@/assets/maternity-images/11.webp';
+import matTile111 from '@/assets/maternity-images/11(1).webp';
+import matTile12 from '@/assets/maternity-images/12.webp';
+import matTile13 from '@/assets/maternity-images/13.webp';
+import matTile14 from '@/assets/maternity-images/14.webp';
+import matTile141 from '@/assets/maternity-images/14(1).webp';
+import matTile15 from '@/assets/maternity-images/15.webp';
+import matTile151 from '@/assets/maternity-images/15(1).webp';
+import matTile16 from '@/assets/maternity-images/16.webp';
+import matTile161 from '@/assets/maternity-images/16(1).webp';
+import matTile162 from '@/assets/maternity-images/16(2).webp';
+import matTile17 from '@/assets/maternity-images/17.webp';
+import matTile18 from '@/assets/maternity-images/18.webp';
+import matTile181 from '@/assets/maternity-images/18(1).webp';
+import matTile19 from '@/assets/maternity-images/19.webp';
+import matTile20 from '@/assets/maternity-images/20.webp';
+import matTile201 from '@/assets/maternity-images/20(1).webp';
+import matTile21 from '@/assets/maternity-images/21.webp';
+import matTile22 from '@/assets/maternity-images/22.webp';
+import matTile221 from '@/assets/maternity-images/22(1).webp';
+import matTile66 from '@/assets/maternity-images/66.webp';
+import matTileA9 from '@/assets/maternity-images/a (9).webp';
+import matTileCopy from '@/assets/maternity-images/Copy of WHM8.webp';
+import matTileWHM95 from '@/assets/maternity-images/WHM-95.webp';
+
 
 // Baby Shower Gallery Images
-import babysTile1 from '@/assets/babys-tile1_1.png';
-import babysTile2 from '@/assets/babys-tile2_1.png';
-import babysTile3 from '@/assets/babys-tile3_1.png';
-import babysTile4 from '@/assets/babys-tile4_1.png';
-import babysTile5 from '@/assets/babys-tile5_1.png';
-import babysTile6 from '@/assets/babys-tile6_1.png';
-import babysTile7 from '@/assets/babys-tile7_1.png';
-import babysTile8 from '@/assets/babys-tile8_1.png';
+// Baby Shower Gallery Images
+import babysTile54 from '@/assets/babyshower-images/WHM (54).webp';
+import babysTile56 from '@/assets/babyshower-images/WHM (56).webp';
+import babysTile87 from '@/assets/babyshower-images/WHM (87).webp';
+import babysTile92 from '@/assets/babyshower-images/WHM (92).webp';
+import babysTile98 from '@/assets/babyshower-images/WHM (98).webp';
+import babysTile18 from '@/assets/babyshower-images/WHM-18.webp';
+import babysTile23 from '@/assets/babyshower-images/WHM-23.webp';
+import babysTile41 from '@/assets/babyshower-images/WHM-41.webp';
+import babysTile42 from '@/assets/babyshower-images/WHM-42.webp';
+import babysTile65 from '@/assets/babyshower-images/WHM-65.webp';
+import babysTile78 from '@/assets/babyshower-images/WHM-78.webp';
+import babysTile94 from '@/assets/babyshower-images/WHM-94.webp';
+import babysTile102 from '@/assets/babyshower-images/WHM-102.webp';
+import babysTile112 from '@/assets/babyshower-images/WHM-112.webp';
+import babysTile1381 from '@/assets/babyshower-images/WHM-138 (1).webp';
+import babysTile138 from '@/assets/babyshower-images/WHM-138.webp';
+import babysTile141 from '@/assets/babyshower-images/WHM-141.webp';
+import babysTile150 from '@/assets/babyshower-images/WHM-150.webp';
+import babysTile161 from '@/assets/babyshower-images/WHM-161.webp';
+import babysTile185 from '@/assets/babyshower-images/WHM-185.webp';
+import babysTile191 from '@/assets/babyshower-images/WHM-191.webp';
+import babysTile198 from '@/assets/babyshower-images/WHM-198.webp';
+import babysTile2141 from '@/assets/babyshower-images/WHM-214 (1).webp';
+import babysTile214 from '@/assets/babyshower-images/WHM-214.webp';
+import babysTile268 from '@/assets/babyshower-images/WHM-268.webp';
+import babysTile316 from '@/assets/babyshower-images/WHM-316.webp';
+import babysTile341 from '@/assets/babyshower-images/WHM-341.webp';
+import babysTile377 from '@/assets/babyshower-images/WHM-377.webp';
+import babysTile388 from '@/assets/babyshower-images/WHM-388.webp';
+import babysTile401 from '@/assets/babyshower-images/WHM-401.webp';
+import babysTile04306 from '@/assets/babyshower-images/WHM04306.webp';
+import babysTile04450 from '@/assets/babyshower-images/WHM04450.webp';
+
 
 // Baby Photoshoot Gallery Images
-import babyshootTile1 from '@/assets/babyshoot-tile1.png';
-import babyshootTile2 from '@/assets/babyshoot-tile2.png';
-import babyshootTile3 from '@/assets/babyshoot-tile3.png';
-import babyshootTile4 from '@/assets/babyshoot-tile4.png';
-import babyshootTile5 from '@/assets/babyshoot-tile5.png';
-import babyshootTile6 from '@/assets/babyshoot-tile6.png';
-import babyshootTile7 from '@/assets/babyshoot-tile7.png';
-import babyshootTile8 from '@/assets/babyshoot-tile8.png';
+// Baby Photoshoot Gallery Images
+import babyshootTile1 from '@/assets/babyshoot-images/1.webp';
+import babyshootTile11 from '@/assets/babyshoot-images/1(1).webp';
+import babyshootTile12 from '@/assets/babyshoot-images/1(2).webp';
+import babyshootTile2 from '@/assets/babyshoot-images/2.webp';
+import babyshootTile3 from '@/assets/babyshoot-images/3.webp';
+import babyshootTile31 from '@/assets/babyshoot-images/3(1).webp';
+import babyshootTile4 from '@/assets/babyshoot-images/4.webp';
+import babyshootTile41 from '@/assets/babyshoot-images/4(1).webp';
+import babyshootTile42 from '@/assets/babyshoot-images/4(2).webp';
+import babyshootTile5 from '@/assets/babyshoot-images/5.webp';
+import babyshootTile6 from '@/assets/babyshoot-images/6.webp';
+import babyshootTile7 from '@/assets/babyshoot-images/7.webp';
+import babyshootTile8 from '@/assets/babyshoot-images/8.webp';
+import babyshootTile9 from '@/assets/babyshoot-images/9.webp';
+import babyshootTile10 from '@/assets/babyshoot-images/10.webp';
+import babyshootTile11Tile from '@/assets/babyshoot-images/11.webp';
+import babyshootTile12Tile from '@/assets/babyshoot-images/12.webp';
+import babyshootTile13 from '@/assets/babyshoot-images/13.webp';
+import babyshootTile131 from '@/assets/babyshoot-images/13(1).webp';
+import babyshootTile14 from '@/assets/babyshoot-images/14.webp';
+import babyshootTile141 from '@/assets/babyshoot-images/14(1).webp';
+import babyshootTile142 from '@/assets/babyshoot-images/14(2).webp';
+import babyshootTile15 from '@/assets/babyshoot-images/15.webp';
+import babyshootTile151 from '@/assets/babyshoot-images/15(1).webp';
+import babyshootTile152 from '@/assets/babyshoot-images/15(2).webp';
+import babyshootTile16 from '@/assets/babyshoot-images/16.webp';
+import babyshootTile161 from '@/assets/babyshoot-images/16(1).webp';
+import babyshootTile17 from '@/assets/babyshoot-images/17.webp';
+import babyshootTile171 from '@/assets/babyshoot-images/17(1).webp';
+import babyshootTile18 from '@/assets/babyshoot-images/18.webp';
+import babyshootTile19 from '@/assets/babyshoot-images/19.webp';
+import babyshootTile191 from '@/assets/babyshoot-images/19(1).webp';
+import babyshootTile20 from '@/assets/babyshoot-images/20.webp';
+import babyshootTile21 from '@/assets/babyshoot-images/21.webp';
+import babyshootTile22 from '@/assets/babyshoot-images/22.webp';
+import babyshootTile23 from '@/assets/babyshoot-images/23.webp';
+import babyshootTile25 from '@/assets/babyshoot-images/25.webp';
+import babyshootTile26 from '@/assets/babyshoot-images/26.webp';
+import babyshootTile27 from '@/assets/babyshoot-images/27.webp';
+import babyshootTile30 from '@/assets/babyshoot-images/30.webp';
+import babyshootTile49 from '@/assets/babyshoot-images/49.webp';
+import babyshootTileCopy39 from '@/assets/babyshoot-images/Copy of 39.webp';
+import babyshootTileCopy40 from '@/assets/babyshoot-images/Copy of 40.webp';
+import babyshootTileWHM42 from '@/assets/babyshoot-images/WHM (42).webp';
+import babyshootTileWHM43 from '@/assets/babyshoot-images/WHM (43).webp';
+import babyshootTileWHM44 from '@/assets/babyshoot-images/WHM (44).webp';
+import babyshootTileWHM17 from '@/assets/babyshoot-images/WHM17.webp';
+
 
 // Family Photoshoot Gallery
-import familyLanding from '@/assets/family-landing.jpg';
+// Family Photoshoot Gallery Images
+import familyTile1 from '@/assets/familyphotoshoot-images/1.webp';
+import familyTile2 from '@/assets/familyphotoshoot-images/2.webp';
+import familyTile3 from '@/assets/familyphotoshoot-images/3.webp';
+import familyTile4 from '@/assets/familyphotoshoot-images/4.webp';
+import familyTile5 from '@/assets/familyphotoshoot-images/5.webp';
+import familyTile6 from '@/assets/familyphotoshoot-images/6.webp';
+import familyTile7 from '@/assets/familyphotoshoot-images/7.webp';
+import familyTile8 from '@/assets/familyphotoshoot-images/8.webp';
+import familyTile9 from '@/assets/familyphotoshoot-images/9.webp';
+import familyTile91 from '@/assets/familyphotoshoot-images/9(1).webp';
+import familyTile10 from '@/assets/familyphotoshoot-images/10.webp';
+import familyTile101 from '@/assets/familyphotoshoot-images/10(1).webp';
+import familyTile102 from '@/assets/familyphotoshoot-images/10(2).webp';
+import familyTile103 from '@/assets/familyphotoshoot-images/10(3).webp';
+import familyTile11 from '@/assets/familyphotoshoot-images/11.webp';
+import familyTile111 from '@/assets/familyphotoshoot-images/11(1).webp';
+import familyTile12 from '@/assets/familyphotoshoot-images/12.webp';
+import familyTile14 from '@/assets/familyphotoshoot-images/14.webp';
+import familyTile141 from '@/assets/familyphotoshoot-images/14(1).webp';
+import familyTile15 from '@/assets/familyphotoshoot-images/15.webp';
+import familyTile16 from '@/assets/familyphotoshoot-images/16.webp';
+import familyTile17 from '@/assets/familyphotoshoot-images/17.webp';
+import familyTile18 from '@/assets/familyphotoshoot-images/18.webp';
+import familyTile181 from '@/assets/familyphotoshoot-images/18(1).webp';
+import familyTile20 from '@/assets/familyphotoshoot-images/20.webp';
+import familyTile201 from '@/assets/familyphotoshoot-images/20(1).webp';
+import familyTile202 from '@/assets/familyphotoshoot-images/20(2).webp';
+import familyTile203 from '@/assets/familyphotoshoot-images/20(3).webp';
+import familyTile204 from '@/assets/familyphotoshoot-images/20(4).webp';
+import familyTilePhoto from '@/assets/familyphotoshoot-images/PHOTO-2023-07-20-12-58-26 2.webp';
+import familyTileWHM89 from '@/assets/familyphotoshoot-images/WHM-89.webp';
+import familyTileWHM93 from '@/assets/familyphotoshoot-images/WHM-93.webp';
 
 // Model Photoshoot Gallery Images
 import modelTile1 from '@/assets/model-tile1.png';
@@ -253,6 +383,46 @@ import model3 from '@/assets/model-3.jpeg';
 
 
 // House Warming Gallery (using existing import)
+// House Warming Gallery Images
+import hwTile1 from '@/assets/housewarming-images/1.webp';
+import hwTile2 from '@/assets/housewarming-images/2.webp';
+import hwTile3 from '@/assets/housewarming-images/3.webp';
+import hwTile4 from '@/assets/housewarming-images/4.webp';
+import hwTile5 from '@/assets/housewarming-images/5.webp';
+import hwTile51 from '@/assets/housewarming-images/5(1).webp';
+import hwTile6 from '@/assets/housewarming-images/6.webp';
+import hwTile7 from '@/assets/housewarming-images/7.webp';
+import hwTile8 from '@/assets/housewarming-images/8.webp';
+import hwTile81 from '@/assets/housewarming-images/8(1).webp';
+import hwTile82 from '@/assets/housewarming-images/8(2).webp';
+import hwTile9 from '@/assets/housewarming-images/9.webp';
+import hwTile10 from '@/assets/housewarming-images/10.webp';
+import hwTile101 from '@/assets/housewarming-images/10(1).webp';
+import hwTile11 from '@/assets/housewarming-images/11.webp';
+import hwTile12 from '@/assets/housewarming-images/12.webp';
+import hwTile13 from '@/assets/housewarming-images/13.webp';
+import hwTile14 from '@/assets/housewarming-images/14.webp';
+import hwTile15 from '@/assets/housewarming-images/15.webp';
+import hwTile16 from '@/assets/housewarming-images/16.webp';
+import hwTile17 from '@/assets/housewarming-images/17.webp';
+import hwTile18 from '@/assets/housewarming-images/18.webp';
+import hwTile19 from '@/assets/housewarming-images/19.webp';
+import hwTile20 from '@/assets/housewarming-images/20.webp';
+import hwTile21 from '@/assets/housewarming-images/21.webp';
+import hwTile22 from '@/assets/housewarming-images/22.webp';
+import hwTile23 from '@/assets/housewarming-images/23.webp';
+import hwTile24 from '@/assets/housewarming-images/24.webp';
+import hwTile25 from '@/assets/housewarming-images/25.webp';
+import hwTile251 from '@/assets/housewarming-images/25(1).webp';
+import hwTileDSC07484 from '@/assets/housewarming-images/DSC07484.webp';
+import hwTileDSC07491 from '@/assets/housewarming-images/DSC07491.webp';
+import hwTileDSC07503 from '@/assets/housewarming-images/DSC07503.webp';
+import hwTileDSC07647 from '@/assets/housewarming-images/DSC07647.webp';
+import hwTileDSC07881 from '@/assets/housewarming-images/DSC07881.webp';
+import hwTileDSC07924 from '@/assets/housewarming-images/DSC07924.webp';
+import hwTileDSC07965 from '@/assets/housewarming-images/DSC07965.webp';
+import hwTileDSC08050 from '@/assets/housewarming-images/DSC08050.webp';
+import hwTileDSC08344 from '@/assets/housewarming-images/DSC08344.webp';
 
 // Product & Interior Gallery
 import interiorJpeg from '@/assets/interior.jpeg';
@@ -359,24 +529,40 @@ export const servicesData: Service[] = [
     description: 'Cherish the beautiful moments of motherhood with our maternity photography',
     image: maternityWwd,
     fullDescription: 'Where Can I Find the Best Maternity Photographers in Bengaluru? Cherish this journey forever. Contact Wild Horse Media for elegant maternity photoshoots!',
-    galleryImages: [matTile1, matTile2, matTile3, matTile4, matTile5, matTile6, matTile7, matTile8]
-  },
+    galleryImages: [
+      matTile1, matTile2, matTile3, matTile31, matTile32, matTile4, matTile5, matTile51, matTile52, matTile6,
+      matTile7, matTile10, matTile101, matTile11, matTile111, matTile12, matTile13, matTile14, matTile141, matTile15,
+      matTile151, matTile16, matTile161, matTile162, matTile17, matTile18, matTile181, matTile19, matTile20, matTile201,
+      matTile21, matTile22, matTile221, matTile66, matTileA9, matTileCopy, matTileWHM95
+    ],
+      },
   {
     slug: 'baby-shower',
     title: 'Baby Shower',
     description: "Capture the joy and celebration of your baby shower",
     image: babyShowerWwd,
     fullDescription: 'Need Creative Baby Shower Photographers and Coverage in South India? Capture the joy of your celebration! Enquire about Wild Horse Media\'s baby shower packages now!',
-    galleryImages: [babysTile1, babysTile2, babysTile3, babysTile4, babysTile5, babysTile6, babysTile7, babysTile8]
-  },
+    galleryImages: [
+      babysTile54, babysTile56, babysTile87, babysTile92, babysTile98, babysTile18, babysTile23, babysTile41, babysTile42, babysTile65,
+      babysTile78, babysTile94, babysTile102, babysTile112, babysTile1381, babysTile138, babysTile141, babysTile150, babysTile161, babysTile185,
+      babysTile191, babysTile198, babysTile2141, babysTile214, babysTile268, babysTile316, babysTile341, babysTile377, babysTile388, babysTile401,
+      babysTile04306, babysTile04450
+    ],
+      },
   {
     slug: 'baby-photoshoots',
     title: 'Baby photoshoots',
     description: 'Adorable baby photography capturing precious early moments',
     image: babyWwd,
     fullDescription: 'Looking for Professional Newborn and Baby Photographers in Bengaluru? Tiny moments, lifelong memories. Schedule your baby photoshoot with Wild Horse Media!',
-    galleryImages: [babyshootTile1, babyshootTile2, babyshootTile3, babyshootTile4, babyshootTile5, babyshootTile6, babyshootTile7, babyshootTile8]
-  },
+    galleryImages: [
+      babyshootTile1, babyshootTile11, babyshootTile12, babyshootTile2, babyshootTile3, babyshootTile31, babyshootTile4, babyshootTile41, babyshootTile42, babyshootTile5,
+      babyshootTile6, babyshootTile7, babyshootTile8, babyshootTile9, babyshootTile10, babyshootTile11Tile, babyshootTile12Tile, babyshootTile13, babyshootTile131, babyshootTile14,
+      babyshootTile141, babyshootTile142, babyshootTile15, babyshootTile151, babyshootTile152, babyshootTile16, babyshootTile161, babyshootTile17, babyshootTile171, babyshootTile18,
+      babyshootTile19, babyshootTile191, babyshootTile20, babyshootTile21, babyshootTile22, babyshootTile23, babyshootTile25, babyshootTile26, babyshootTile27, babyshootTile30,
+      babyshootTile49, babyshootTileCopy39, babyshootTileCopy40, babyshootTileWHM42, babyshootTileWHM43, babyshootTileWHM44, babyshootTileWHM17
+    ],
+      },
   { // ** UPDATED Naming Ceremony with Corrected Import Paths **
     slug: 'naming-ceremony',
     title: 'Naming Ceremony',
@@ -397,16 +583,26 @@ export const servicesData: Service[] = [
     description: 'Capture the memories of your new home with our photography services',
     image: housewarming,
     fullDescription: 'Celebrate your new beginning. We cover house warming ceremonies to capture every moment.',
-    galleryImages: [housewarming]
-  },
+    galleryImages: [
+      hwTile1, hwTile2, hwTile3, hwTile4, hwTile5, hwTile51, hwTile6, hwTile7, hwTile8, hwTile81,
+      hwTile82, hwTile9, hwTile10, hwTile101, hwTile11, hwTile12, hwTile13, hwTile14, hwTile15, hwTile16,
+      hwTile17, hwTile18, hwTile19, hwTile20, hwTile21, hwTile22, hwTile23, hwTile24, hwTile25, hwTile251,
+      hwTileDSC07484, hwTileDSC07491, hwTileDSC07503, hwTileDSC07647, hwTileDSC07881, hwTileDSC07924, hwTileDSC07965, hwTileDSC08050, hwTileDSC08344
+    ],
+      },
   {
     slug: 'family-photoshoots',
     title: 'Family photoshoots',
     description: 'Create lasting memories with beautiful family portraits',
     image: family2Wwd,
     fullDescription: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!',
-    galleryImages: [family2Wwd, familyLanding]
-  },
+    galleryImages: [
+      familyTile1, familyTile2, familyTile3, familyTile4, familyTile5, familyTile6, familyTile7, familyTile8, familyTile9, familyTile91,
+      familyTile10, familyTile101, familyTile102, familyTile103, familyTile11, familyTile111, familyTile12, familyTile14, familyTile141, familyTile15,
+      familyTile16, familyTile17, familyTile18, familyTile181, familyTile20, familyTile201, familyTile202, familyTile203, familyTile204, familyTilePhoto,
+      familyTileWHM89, familyTileWHM93
+    ],
+      },
   {
     slug: 'model-photoshoots',
     title: 'Model photoshoots',
