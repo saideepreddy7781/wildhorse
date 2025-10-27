@@ -519,6 +519,7 @@ export interface Service {
     fullDescription?: string; // Optional longer description for the booking page
     galleryImages?: string[]; // Array for gallery images on the service page
     videos?: string[]; // Array for YouTube video URLs
+    
 }
 
 // ** REORDERED Array holding all service details **
