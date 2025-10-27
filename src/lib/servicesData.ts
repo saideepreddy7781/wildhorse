@@ -541,10 +541,10 @@ export const servicesData: Service[] = [
     ],
     
     videos: [
-        'https://youtu.be/59J2D45cBlo',
-        'https://youtu.be/t0OQ11V8Orc',
-        'https://youtu.be/DvHxQ9RdZiI',
-        'https://youtu.be/bThTutu6Py8'
+      'https://youtu.be/t0OQ11V8Orc',
+      'https://youtu.be/AWJJ6fmDMxM',
+      'https://youtu.be/59J2D45cBlo',
+      'https://youtu.be/oIAkui8unzc'
     ]
   },
   {
@@ -561,11 +561,12 @@ export const servicesData: Service[] = [
     ],
     
     
+    
     videos: [
-        'https://youtu.be/e11WgcN4MWU',
-        'https://youtu.be/dxT8FTf3ApQ',
-        'https://youtu.be/81NzuUg_AaE',
-        'https://youtu.be/7VXcWCwqI88'
+      'https://youtu.be/dxT8FTf3ApQ',
+      'https://youtu.be/81NzuUg_AaE',
+      'https://youtu.be/e11WgcN4MWU',
+      'https://youtu.be/7VXcWCwqI88'
     ]
   },
   {
@@ -581,9 +582,10 @@ export const servicesData: Service[] = [
       engTile31, engTile32, engTile33, engTile34, engTile35, engTile36, engTile37, engTile38, engTile39, engTile40,
       engTile41, engTile42
     ],
-        videos: [
-        'https://youtu.be/u6lmI0V14BQ',
-        'https://youtu.be/eNqmqn9dB_E'
+    videos: [
+      'https://youtu.be/eNqmqn9dB_E',
+      'https://youtu.be/u6lmI0V14BQ',
+      'https://youtu.be/tPV4cpL-ELs'
     ]
   },
   {
@@ -634,6 +636,10 @@ export const servicesData: Service[] = [
       babyshootTile19, babyshootTile191, babyshootTile20, babyshootTile21, babyshootTile22, babyshootTile23, babyshootTile25, babyshootTile26, babyshootTile27, babyshootTile30,
       babyshootTile49, babyshootTileCopy39, babyshootTileCopy40, babyshootTileWHM42, babyshootTileWHM43, babyshootTileWHM44, babyshootTileWHM17
     ],
+    videos: [
+      'https://youtu.be/upxSk4dhwoc',
+      'https://youtu.be/78HOldeKRmc'
+    ]
       },
   { // ** UPDATED Naming Ceremony with Corrected Import Paths **
     slug: 'naming-ceremony',
@@ -646,6 +652,13 @@ export const servicesData: Service[] = [
         naming11, naming12, naming13, naming14, naming15, naming16, naming17, naming18, naming19, naming20,
         naming21, naming22, naming23, naming24, naming25, naming26, naming27, naming28, naming29, naming30,
         naming31, naming32, naming33, naming34, naming35, naming36, naming37, naming38, naming39, naming40
+    ],
+    videos: [
+      'https://youtu.be/_Wm9iFbuJHY',
+      'https://youtu.be/ytla1Stsa64',
+      'https://youtu.be/KP2ny-OhSlU',
+      'https://youtu.be/-BjwDmj7jlU',
+      'https://youtu.be/Y24y5QByfQk'
     ]
   },
   // --- Row 3 ---
@@ -661,6 +674,11 @@ export const servicesData: Service[] = [
       hwTile17, hwTile18, hwTile19, hwTile20, hwTile21, hwTile22, hwTile23, hwTile24, hwTile25, hwTile251,
       hwTileDSC07484, hwTileDSC07491, hwTileDSC07503, hwTileDSC07647, hwTileDSC07881, hwTileDSC07924, hwTileDSC07965, hwTileDSC08050, hwTileDSC08344
     ],
+    videos: [
+      'https://youtu.be/cbiSOjEV6UA',
+      'https://youtu.be/pV4UcdYM30s',
+      'https://youtu.be/Jez6X1SFHs4'
+    ]
       },
   {
     slug: 'family-photoshoots',
@@ -705,9 +723,12 @@ export const servicesData: Service[] = [
       interiorTileWHM01850, interiorTileWHM01870, interiorTileWHM01876, interiorTileWHM01885, interiorTileWHM01895, interiorTileWHM01903, interiorTileWHM03611, interiorTileWHM03616, interiorTileWHM03636, interiorTileWHM03648,
       interiorTileWHM03655, interiorTileWildhorse7, interiorTileWildhorse9, interiorTileWildhorse10, interiorTileWildhorse11
     ],
-        videos: [
+    videos: [
+      'https://youtu.be/jLkcyBHz420',
       'https://youtu.be/sKNIkPRAG7g',
-      'https://youtu.be/jLkcyBHz420'
+      'https://youtu.be/fJ9_rF9Ljj8',
+      'https://youtu.be/AyzxlV1R0OQ',
+      'https://youtu.be/Ye6EQqeuX_A'
     ]
   },
 ];
