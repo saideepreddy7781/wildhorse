@@ -622,6 +622,10 @@ export const servicesData: Service[] = [
       babysTile191, babysTile198, babysTile2141, babysTile214, babysTile268, babysTile316, babysTile341, babysTile377, babysTile388, babysTile401,
       babysTile04306, babysTile04450
     ],
+    videos: [
+      'https://youtu.be/upxSk4dhwoc',
+      'https://youtu.be/78HOldeKRmc'
+    ]
       },
   {
     slug: 'baby-photoshoots',
@@ -635,10 +639,6 @@ export const servicesData: Service[] = [
       babyshootTile141, babyshootTile142, babyshootTile15, babyshootTile151, babyshootTile152, babyshootTile16, babyshootTile161, babyshootTile17, babyshootTile171, babyshootTile18,
       babyshootTile19, babyshootTile191, babyshootTile20, babyshootTile21, babyshootTile22, babyshootTile23, babyshootTile25, babyshootTile26, babyshootTile27, babyshootTile30,
       babyshootTile49, babyshootTileCopy39, babyshootTileCopy40, babyshootTileWHM42, babyshootTileWHM43, babyshootTileWHM44, babyshootTileWHM17
-    ],
-    videos: [
-      'https://youtu.be/upxSk4dhwoc',
-      'https://youtu.be/78HOldeKRmc'
     ]
       },
   { // ** UPDATED Naming Ceremony with Corrected Import Paths **
