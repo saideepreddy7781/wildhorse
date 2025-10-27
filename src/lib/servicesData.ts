@@ -375,11 +375,48 @@ import familyTileWHM89 from '@/assets/familyphotoshoot-images/WHM-89.webp';
 import familyTileWHM93 from '@/assets/familyphotoshoot-images/WHM-93.webp';
 
 // Model Photoshoot Gallery Images
-import modelTile1 from '@/assets/model-tile1.png';
-import modelTile2 from '@/assets/model-tile2.png';
-import modelTile3 from '@/assets/model-tile3.png';
-import modelOw from '@/assets/model-ow.jpg';
-import model3 from '@/assets/model-3.jpeg';
+// Portfolio Gallery Images
+import portfolioTile1 from '@/assets/portfolio-images/1.webp';
+import portfolioTile11 from '@/assets/portfolio-images/1(1).webp';
+import portfolioTile2 from '@/assets/portfolio-images/2.webp';
+import portfolioTile21 from '@/assets/portfolio-images/2(1).webp';
+import portfolioTile3 from '@/assets/portfolio-images/3.webp';
+import portfolioTile4 from '@/assets/portfolio-images/4.webp';
+import portfolioTile5 from '@/assets/portfolio-images/5.webp';
+import portfolioTile51 from '@/assets/portfolio-images/5(1).webp';
+import portfolioTile52 from '@/assets/portfolio-images/5(2).webp';
+import portfolioTile53 from '@/assets/portfolio-images/5(3).webp';
+import portfolioTile6 from '@/assets/portfolio-images/6.webp';
+import portfolioTile61 from '@/assets/portfolio-images/6(1).webp';
+import portfolioTile62 from '@/assets/portfolio-images/6(2).webp';
+import portfolioTile7 from '@/assets/portfolio-images/7.webp';
+import portfolioTile71 from '@/assets/portfolio-images/7(1).webp';
+import portfolioTile8 from '@/assets/portfolio-images/8.webp';
+import portfolioTile81 from '@/assets/portfolio-images/8(1).webp';
+import portfolioTile82 from '@/assets/portfolio-images/8(2).webp';
+import portfolioTile9 from '@/assets/portfolio-images/9.webp';
+import portfolioTile10 from '@/assets/portfolio-images/10.webp';
+import portfolioTile101 from '@/assets/portfolio-images/10(1).webp';
+import portfolioTile11Tile from '@/assets/portfolio-images/11.webp';
+import portfolioTile111 from '@/assets/portfolio-images/11(1).webp';
+import portfolioTile112 from '@/assets/portfolio-images/11(2).webp';
+import portfolioTile12 from '@/assets/portfolio-images/12..webp';
+import portfolioTile13 from '@/assets/portfolio-images/13.webp';
+import portfolioTile14 from '@/assets/portfolio-images/14.webp';
+import portfolioTile15 from '@/assets/portfolio-images/15.webp';
+import portfolioTile17 from '@/assets/portfolio-images/17.webp';
+import portfolioTile18 from '@/assets/portfolio-images/18.webp';
+import portfolioTile19 from '@/assets/portfolio-images/19.webp';
+import portfolioTile20 from '@/assets/portfolio-images/20.webp';
+import portfolioTile201 from '@/assets/portfolio-images/20(1).webp';
+import portfolioTile21Tile from '@/assets/portfolio-images/21.webp';
+import portfolioTile22 from '@/assets/portfolio-images/22.webp';
+import portfolioTile23 from '@/assets/portfolio-images/23.webp';
+import portfolioTile51Main from '@/assets/portfolio-images/51.webp';
+import portfolioTile531 from '@/assets/portfolio-images/53 (1).webp';
+import portfolioTileWHM21 from '@/assets/portfolio-images/WHM-21 copy.webp';
+import portfolioTileWHM6 from '@/assets/portfolio-images/WHM6.webp';
+
 
 
 // House Warming Gallery (using existing import)
@@ -425,7 +462,42 @@ import hwTileDSC08050 from '@/assets/housewarming-images/DSC08050.webp';
 import hwTileDSC08344 from '@/assets/housewarming-images/DSC08344.webp';
 
 // Product & Interior Gallery
-import interiorJpeg from '@/assets/interior.jpeg';
+// Product & Interior Gallery Images
+import interiorTileWHM0098 from '@/assets/interior&product-images/_WHM0098.webp';
+import interiorTileWHM0274 from '@/assets/interior&product-images/_WHM0274.webp';
+import interiorTileWHM9431 from '@/assets/interior&product-images/_WHM9431.webp';
+import interiorTileWHM9482 from '@/assets/interior&product-images/_WHM9482 copy 2.webp';
+import interiorTileWHM9557 from '@/assets/interior&product-images/_WHM9557.webp';
+import interiorTileWHM9612 from '@/assets/interior&product-images/_WHM9612.webp';
+import interiorTileWHM9615 from '@/assets/interior&product-images/_WHM9615.webp';
+import interiorTile4 from '@/assets/interior&product-images/4.webp';
+import interiorTileDSC01287 from '@/assets/interior&product-images/DSC01287.webp';
+import interiorTileDSC02269 from '@/assets/interior&product-images/DSC02269.webp';
+import interiorTileDSC02273 from '@/assets/interior&product-images/DSC02273.webp';
+import interiorTileDSC02275 from '@/assets/interior&product-images/DSC02275.webp';
+import interiorTileDSC02285 from '@/assets/interior&product-images/DSC02285.webp';
+import interiorTileDSC02322 from '@/assets/interior&product-images/DSC02322.webp';
+import interiorTileDSC02345 from '@/assets/interior&product-images/DSC02345.webp';
+import interiorTileWHM21 from '@/assets/interior&product-images/WHM-21.webp';
+import interiorTileWHM22 from '@/assets/interior&product-images/WHM-22.webp';
+import interiorTileWHM23 from '@/assets/interior&product-images/WHM-23.webp';
+import interiorTileWHM44 from '@/assets/interior&product-images/WHM-44.webp';
+import interiorTileWHM50 from '@/assets/interior&product-images/WHM-50.webp';
+import interiorTileWHM01850 from '@/assets/interior&product-images/WHM01850.webp';
+import interiorTileWHM01870 from '@/assets/interior&product-images/WHM01870.webp';
+import interiorTileWHM01876 from '@/assets/interior&product-images/WHM01876.webp';
+import interiorTileWHM01885 from '@/assets/interior&product-images/WHM01885.webp';
+import interiorTileWHM01895 from '@/assets/interior&product-images/WHM01895.webp';
+import interiorTileWHM01903 from '@/assets/interior&product-images/WHM01903.webp';
+import interiorTileWHM03611 from '@/assets/interior&product-images/WHM03611.webp';
+import interiorTileWHM03616 from '@/assets/interior&product-images/WHM03616.webp';
+import interiorTileWHM03636 from '@/assets/interior&product-images/WHM03636.webp';
+import interiorTileWHM03648 from '@/assets/interior&product-images/WHM03648.webp';
+import interiorTileWHM03655 from '@/assets/interior&product-images/WHM03655.webp';
+import interiorTileWildhorse7 from '@/assets/interior&product-images/wildhorse-7.webp';
+import interiorTileWildhorse9 from '@/assets/interior&product-images/wildhorse-9.webp';
+import interiorTileWildhorse10 from '@/assets/interior&product-images/wildhorse-10.webp';
+import interiorTileWildhorse11 from '@/assets/interior&product-images/wildhorse-11.webp';
 
 // Album Design Gallery Images
 import albTile1 from '@/assets/alb-tile1.png';
@@ -604,13 +676,18 @@ export const servicesData: Service[] = [
     ],
       },
   {
-    slug: 'model-photoshoots',
-    title: 'Model photoshoots',
+    slug: 'portfolio-photoshoots',
+    title: 'Portfolio photoshoots',
     description: 'Professional portfolio shoots for aspiring and established models',
     image: modelPhotoshootWwd,
     fullDescription: 'Build a stunning and professional portfolio with our expert model photography services.',
-    galleryImages: [modelTile1, modelTile2, modelTile3, modelPhotoshootWwd, modelOw, model3],
-    videos: [
+    galleryImages: [
+      portfolioTile1, portfolioTile11, portfolioTile2, portfolioTile21, portfolioTile3, portfolioTile4, portfolioTile5, portfolioTile51, portfolioTile52, portfolioTile53,
+      portfolioTile6, portfolioTile61, portfolioTile62, portfolioTile7, portfolioTile71, portfolioTile8, portfolioTile81, portfolioTile82, portfolioTile9, portfolioTile10,
+      portfolioTile101, portfolioTile11Tile, portfolioTile111, portfolioTile112, portfolioTile12, portfolioTile13, portfolioTile14, portfolioTile15, portfolioTile17, portfolioTile18,
+      portfolioTile19, portfolioTile20, portfolioTile201, portfolioTile21Tile, portfolioTile22, portfolioTile23, portfolioTile51Main, portfolioTile531, portfolioTileWHM21, portfolioTileWHM6
+    ],
+        videos: [
       'https://youtu.be/jtPGobSFe-o',
       'https://youtu.be/nn2xv4eq_Ro',
       'https://youtu.be/hzjD77lEy8M'
@@ -622,8 +699,13 @@ export const servicesData: Service[] = [
     description: 'Professional shots for your products and interior spaces',
     image: interior,
     fullDescription: 'Showcase your products or property with high-quality interior and product photography.',
-    galleryImages: [interior, interiorJpeg],
-    videos: [
+    galleryImages: [
+      interiorTileWHM0098, interiorTileWHM0274, interiorTileWHM9431, interiorTileWHM9482, interiorTileWHM9557, interiorTileWHM9612, interiorTileWHM9615, interiorTile4, interiorTileDSC01287, interiorTileDSC02269,
+      interiorTileDSC02273, interiorTileDSC02275, interiorTileDSC02285, interiorTileDSC02322, interiorTileDSC02345, interiorTileWHM21, interiorTileWHM22, interiorTileWHM23, interiorTileWHM44, interiorTileWHM50,
+      interiorTileWHM01850, interiorTileWHM01870, interiorTileWHM01876, interiorTileWHM01885, interiorTileWHM01895, interiorTileWHM01903, interiorTileWHM03611, interiorTileWHM03616, interiorTileWHM03636, interiorTileWHM03648,
+      interiorTileWHM03655, interiorTileWildhorse7, interiorTileWildhorse9, interiorTileWildhorse10, interiorTileWildhorse11
+    ],
+        videos: [
       'https://youtu.be/sKNIkPRAG7g',
       'https://youtu.be/jLkcyBHz420'
     ]
