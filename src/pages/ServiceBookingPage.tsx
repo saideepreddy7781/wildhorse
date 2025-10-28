@@ -94,9 +94,9 @@ const ServiceBookingPage = () => {
 
                 {/* Section 2: Packages Section */}
                 {service.packages && service.packages.length > 0 && (
-                    <section className="py-16 md:py-20 bg-muted/30">
+                    <section className="py-16 md:py-20 bg-gradient-to-b from-amber-50/50 via-orange-50/30 to-background dark:from-amber-950/20 dark:via-orange-950/10 dark:to-background">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-center text-foreground">
+                            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-center bg-gradient-to-r from-amber-700 to-orange-600 bg-clip-text text-transparent">
                                 Our {service.title} Packages
                             </h2>
                             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -108,29 +108,31 @@ const ServiceBookingPage = () => {
                                 {service.packages.map((pkg, index) => (
                                     <div
                                         key={index}
-                                        className={`relative bg-card rounded-lg border-2 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
-                                            pkg.popular ? 'border-primary shadow-md' : 'border-border'
+                                        className={`relative bg-card rounded-xl border-2 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-amber-200/50 hover:-translate-y-2 ${
+                                            pkg.popular 
+                                                ? 'border-amber-500 shadow-xl shadow-amber-200/40 ring-2 ring-amber-400/20' 
+                                                : 'border-amber-200/60 hover:border-amber-400/80'
                                         }`}
                                     >
                                         {pkg.popular && (
-                                            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 text-sm font-semibold">
-                                                Popular
+                                            <div className="absolute top-0 right-0 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-2 text-sm font-bold shadow-lg">
+                                                ⭐ Most Popular
                                             </div>
                                         )}
-                                        <div className="p-6 md:p-8">
-                                            <h3 className="text-2xl font-playfair font-bold mb-2 text-foreground">
+                                        <div className="p-6 md:p-8 bg-gradient-to-br from-white via-amber-50/30 to-orange-50/20 dark:from-card dark:via-amber-950/10 dark:to-orange-950/5">
+                                            <h3 className="text-2xl font-playfair font-bold mb-2 bg-gradient-to-r from-amber-800 to-orange-700 bg-clip-text text-transparent">
                                                 {pkg.name}
                                             </h3>
                                             {pkg.price && (
-                                                <p className="text-lg font-semibold text-primary mb-6">
+                                                <p className="text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-6">
                                                     {pkg.price}
                                                 </p>
                                             )}
-                                            <ul className="space-y-3 mb-6">
+                                            <ul className="space-y-3 mb-8">
                                                 {pkg.features.map((feature, idx) => (
-                                                    <li key={idx} className="flex items-start gap-2 text-muted-foreground">
+                                                    <li key={idx} className="flex items-start gap-3 text-foreground/80">
                                                         <svg
-                                                            className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                                                            className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0"
                                                             fill="none"
                                                             stroke="currentColor"
                                                             viewBox="0 0 24 24"
@@ -138,11 +140,11 @@ const ServiceBookingPage = () => {
                                                             <path
                                                                 strokeLinecap="round"
                                                                 strokeLinejoin="round"
-                                                                strokeWidth={2}
+                                                                strokeWidth={2.5}
                                                                 d="M5 13l4 4L19 7"
                                                             />
                                                         </svg>
-                                                        <span className="text-sm">{feature}</span>
+                                                        <span className="text-sm font-medium">{feature}</span>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -153,7 +155,7 @@ const ServiceBookingPage = () => {
                                                         formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                                                     }
                                                 }}
-                                                className="w-full py-3 px-6 bg-primary text-primary-foreground rounded-md font-semibold hover:bg-primary/90 transition-colors"
+                                                className="w-full py-3 px-6 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                                             >
                                                 Get Quote
                                             </button>

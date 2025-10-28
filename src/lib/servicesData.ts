@@ -509,6 +509,13 @@ import albTile6 from '@/assets/alb-tile6.png';
 import albTile7 from '@/assets/alb-tile7.png';
 import albTile8 from '@/assets/alb-tile8.png';
 
+// Package interface for service packages
+export interface Package {
+    name: string; // Package name (e.g., "Silver", "Gold", "Platinum")
+    price?: string; // Price (optional, can be "Starting from ₹XX,XXX" or specific price)
+    features: string[]; // List of features included in the package
+    popular?: boolean; // Flag to highlight popular packages
+}
 
 // Define the structure for service data
 export interface Service {
@@ -519,6 +526,7 @@ export interface Service {
     fullDescription?: string; // Optional longer description for the booking page
     galleryImages?: string[]; // Array for gallery images on the service page
     videos?: string[]; // Array for YouTube video URLs
+    packages?: Package[]; // Array of packages for the service
     
 }
 
@@ -546,6 +554,53 @@ export const servicesData: Service[] = [
       'https://youtu.be/AWJJ6fmDMxM',
       'https://youtu.be/59J2D45cBlo',
       'https://youtu.be/oIAkui8unzc'
+    ],
+    packages: [
+      {
+        name: 'Silver Package',
+        price: 'Starting from ₹50,000',
+        features: [
+          '1 Photographer',
+          '1 Videographer',
+          '300+ Edited Photos',
+          'Cinematic Video Highlights (3-5 mins)',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Gold Package',
+        price: 'Starting from ₹80,000',
+        popular: true,
+        features: [
+          '2 Photographers',
+          '1 Videographer',
+          '500+ Edited Photos',
+          'Cinematic Video Highlights (5-8 mins)',
+          'Traditional Video Coverage',
+          'Drone Coverage',
+          'Online Gallery',
+          'All Raw Files',
+          'Premium Album (20 pages)'
+        ]
+      },
+      {
+        name: 'Platinum Package',
+        price: 'Starting from ₹1,20,000',
+        features: [
+          '2 Photographers',
+          '2 Videographers',
+          '800+ Edited Photos',
+          'Cinematic Video Highlights (8-12 mins)',
+          'Traditional Video Coverage',
+          'Drone Coverage',
+          'Pre-wedding Shoot',
+          'Online Gallery',
+          'All Raw Files',
+          'Premium Album (30 pages)',
+          'Same Day Edit Video'
+        ]
+      }
     ]
   },
   {
@@ -568,6 +623,51 @@ export const servicesData: Service[] = [
       'https://youtu.be/81NzuUg_AaE',
       'https://youtu.be/e11WgcN4MWU',
       'https://youtu.be/7VXcWCwqI88'
+    ],
+    packages: [
+      {
+        name: 'Basic Package',
+        price: 'Starting from ₹25,000',
+        features: [
+          '1 Photographer',
+          '1 Location',
+          '4 Hours Coverage',
+          '150+ Edited Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Premium Package',
+        price: 'Starting from ₹40,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Videographer',
+          '2 Locations',
+          '6 Hours Coverage',
+          '250+ Edited Photos',
+          'Cinematic Video Highlights (3-5 mins)',
+          'Drone Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Luxury Package',
+        price: 'Starting from ₹60,000',
+        features: [
+          '2 Photographers + 1 Videographer',
+          '3 Locations',
+          '8 Hours Coverage',
+          '400+ Edited Photos',
+          'Cinematic Video Highlights (5-8 mins)',
+          'Drone Coverage',
+          'Premium Costumes & Props',
+          'Online Gallery',
+          'All Raw Files',
+          'Photo Album (15 pages)'
+        ]
+      }
     ]
   },
   {
@@ -587,6 +687,35 @@ export const servicesData: Service[] = [
       'https://youtu.be/eNqmqn9dB_E',
       'https://youtu.be/u6lmI0V14BQ',
       'https://youtu.be/tPV4cpL-ELs'
+    ],
+    packages: [
+      {
+        name: 'Basic Coverage',
+        price: 'Starting from ₹20,000',
+        features: [
+          '1 Photographer',
+          '3 Hours Coverage',
+          '150+ Edited Photos',
+          'Ceremony Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Complete Package',
+        price: 'Starting from ₹35,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Videographer',
+          '5 Hours Coverage',
+          '300+ Edited Photos',
+          'Event Highlights Video (3-5 mins)',
+          'Ceremony & Ring Exchange Coverage',
+          'Family & Candid Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      }
     ]
   },
   {
@@ -610,7 +739,37 @@ export const servicesData: Service[] = [
       matTile151, matTile16, matTile161, matTile162, matTile17, matTile18, matTile181, matTile19, matTile20, matTile201,
       matTile21, matTile22, matTile221, matTile66, matTileA9, matTileCopy, matTileWHM95
     ],
+    packages: [
+      {
+        name: 'Standard Package',
+        price: 'Starting from ₹15,000',
+        features: [
+          '1 Photographer',
+          'Indoor/Outdoor Shoot',
+          '2 Hours Coverage',
+          '100+ Edited Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
       },
+      {
+        name: 'Deluxe Package',
+        price: 'Starting from ₹25,000',
+        popular: true,
+        features: [
+          '1 Photographer',
+          'Indoor & Outdoor Shoot',
+          '3 Hours Coverage',
+          '150+ Edited Photos',
+          '2 Outfit Changes',
+          'Props & Accessories',
+          'Online Gallery',
+          'All Raw Files',
+          'Printed Photos (10 prints)'
+        ]
+      }
+    ]
+  },
   {
     slug: 'baby-shower',
     title: 'Baby Shower',
@@ -626,8 +785,37 @@ export const servicesData: Service[] = [
     videos: [
       'https://youtu.be/upxSk4dhwoc',
       'https://youtu.be/78HOldeKRmc'
-    ]
+    ],
+    packages: [
+      {
+        name: 'Basic Package',
+        price: 'Starting from ₹12,000',
+        features: [
+          '1 Photographer',
+          '2 Hours Coverage',
+          '100+ Edited Photos',
+          'Event Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
       },
+      {
+        name: 'Premium Package',
+        price: 'Starting from ₹20,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Videographer',
+          '4 Hours Coverage',
+          '200+ Edited Photos',
+          'Event Highlights Video (2-3 mins)',
+          'Decoration Coverage',
+          'Games & Activities Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      }
+    ]
+  },
   {
     slug: 'baby-photoshoots',
     title: 'Baby photoshoots',
@@ -640,8 +828,40 @@ export const servicesData: Service[] = [
       babyshootTile141, babyshootTile142, babyshootTile15, babyshootTile151, babyshootTile152, babyshootTile16, babyshootTile161, babyshootTile17, babyshootTile171, babyshootTile18,
       babyshootTile19, babyshootTile191, babyshootTile20, babyshootTile21, babyshootTile22, babyshootTile23, babyshootTile25, babyshootTile26, babyshootTile27, babyshootTile30,
       babyshootTile49, babyshootTileCopy39, babyshootTileCopy40, babyshootTileWHM42, babyshootTileWHM43, babyshootTileWHM44, babyshootTileWHM17
-    ]
+    ],
+    packages: [
+      {
+        name: 'Newborn Package',
+        price: 'Starting from ₹10,000',
+        features: [
+          '1 Photographer',
+          'Home/Studio Shoot',
+          '2 Hours Coverage',
+          '80+ Edited Photos',
+          'Baby Props & Accessories',
+          'Online Gallery',
+          'All Raw Files'
+        ]
       },
+      {
+        name: 'Baby Milestone Package',
+        price: 'Starting from ₹15,000',
+        popular: true,
+        features: [
+          '1 Photographer',
+          'Home/Studio Shoot',
+          '3 Hours Coverage',
+          '120+ Edited Photos',
+          'Multiple Outfit Changes',
+          'Themed Props & Backgrounds',
+          'Cake Smash (if applicable)',
+          'Online Gallery',
+          'All Raw Files',
+          'Photo Album (10 pages)'
+        ]
+      }
+    ]
+  },
   { // ** UPDATED Naming Ceremony with Corrected Import Paths **
     slug: 'naming-ceremony',
     title: 'Naming Ceremony',
@@ -679,8 +899,37 @@ export const servicesData: Service[] = [
       'https://youtu.be/cbiSOjEV6UA',
       'https://youtu.be/pV4UcdYM30s',
       'https://youtu.be/Jez6X1SFHs4'
-    ]
+    ],
+    packages: [
+      {
+        name: 'Basic Coverage',
+        price: 'Starting from ₹10,000',
+        features: [
+          '1 Photographer',
+          '3 Hours Coverage',
+          '100+ Edited Photos',
+          'Ceremony Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
       },
+      {
+        name: 'Complete Package',
+        price: 'Starting from ₹18,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Videographer',
+          '5 Hours Coverage',
+          '200+ Edited Photos',
+          'Event Highlights Video (3-5 mins)',
+          'Ceremony & Celebration Coverage',
+          'Guest Candid Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      }
+    ]
+  },
   {
     slug: 'family-photoshoots',
     title: 'Family photoshoots',
@@ -693,7 +942,37 @@ export const servicesData: Service[] = [
       familyTile16, familyTile17, familyTile18, familyTile181, familyTile20, familyTile201, familyTile202, familyTile203, familyTile204, familyTilePhoto,
       familyTileWHM89, familyTileWHM93
     ],
+    packages: [
+      {
+        name: 'Family Session',
+        price: 'Starting from ₹12,000',
+        features: [
+          '1 Photographer',
+          'Indoor/Outdoor Location',
+          '2 Hours Coverage',
+          '100+ Edited Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
       },
+      {
+        name: 'Extended Family Package',
+        price: 'Starting from ₹20,000',
+        popular: true,
+        features: [
+          '1 Photographer',
+          'Indoor & Outdoor Locations',
+          '4 Hours Coverage',
+          '200+ Edited Photos',
+          'Multiple Family Groupings',
+          'Individual Portraits',
+          'Online Gallery',
+          'All Raw Files',
+          'Printed Photos (15 prints)'
+        ]
+      }
+    ]
+  },
   {
     slug: 'portfolio-photoshoots',
     title: 'Portfolio photoshoots',
@@ -706,10 +985,41 @@ export const servicesData: Service[] = [
       portfolioTile101, portfolioTile11Tile, portfolioTile111, portfolioTile112, portfolioTile12, portfolioTile13, portfolioTile14, portfolioTile15, portfolioTile17, portfolioTile18,
       portfolioTile19, portfolioTile20, portfolioTile201, portfolioTile21Tile, portfolioTile22, portfolioTile23, portfolioTile51Main, portfolioTile531, portfolioTileWHM21, portfolioTileWHM6
     ],
-        videos: [
+    videos: [
       'https://youtu.be/jtPGobSFe-o',
       'https://youtu.be/nn2xv4eq_Ro',
       'https://youtu.be/hzjD77lEy8M'
+    ],
+    packages: [
+      {
+        name: 'Portfolio Starter',
+        price: 'Starting from ₹15,000',
+        features: [
+          '1 Photographer',
+          'Studio/Outdoor Location',
+          '3 Hours Coverage',
+          '100+ Edited Photos',
+          '3 Outfit Changes',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Professional Portfolio',
+        price: 'Starting from ₹25,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Assistant',
+          'Studio & Outdoor Locations',
+          '5 Hours Coverage',
+          '200+ Edited Photos',
+          '5 Outfit Changes',
+          'Professional Makeup & Hair',
+          'Online Gallery',
+          'All Raw Files',
+          'Digital Portfolio Book'
+        ]
+      }
     ]
   },
   {
@@ -730,6 +1040,51 @@ export const servicesData: Service[] = [
       'https://youtu.be/fJ9_rF9Ljj8',
       'https://youtu.be/AyzxlV1R0OQ',
       'https://youtu.be/Ye6EQqeuX_A'
+    ],
+    packages: [
+      {
+        name: 'Product Photography',
+        price: 'Starting from ₹8,000',
+        features: [
+          '1 Photographer',
+          'Studio Setup',
+          'Up to 20 Products',
+          '50+ Edited Photos',
+          'White Background',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Interior Photography',
+        price: 'Starting from ₹15,000',
+        features: [
+          '1 Photographer',
+          'On-Location Shoot',
+          'Up to 10 Rooms/Spaces',
+          '100+ Edited Photos',
+          'HDR Processing',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Commercial Package',
+        price: 'Starting from ₹30,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Assistant',
+          'Full Property/Product Line Coverage',
+          'Full Day Coverage',
+          '200+ Edited Photos',
+          'Drone Footage (for properties)',
+          'Professional Lighting Setup',
+          'HDR & 360° Views',
+          'Online Gallery',
+          'All Raw Files',
+          'Commercial Usage Rights'
+        ]
+      }
     ]
   },
 ];
