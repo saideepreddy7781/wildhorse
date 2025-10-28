@@ -121,14 +121,15 @@ function handleContactForm(data) {
 function handleServiceBookingForm(data) {
   const sheet = getOrCreateSheet(CONFIG.SHEETS.SERVICE_BOOKING);
   
-  // Ensure headers exist - TIMESTAMP FIRST, THEN SERVICE
-  const headers = ['Timestamp', 'Service', 'Name', 'Mobile', 'Email', 'City', 'Message'];
+  // Ensure headers exist - TIMESTAMP FIRST, THEN SERVICE, THEN PACKAGE
+  const headers = ['Timestamp', 'Service', 'Package', 'Name', 'Mobile', 'Email', 'City', 'Message'];
   ensureHeaders(sheet, headers);
   
-  // Prepare row data - TIMESTAMP FIRST, SERVICE SECOND for easy filtering
+  // Prepare row data - TIMESTAMP FIRST, SERVICE SECOND, PACKAGE THIRD for easy filtering
   const rowData = [
     new Date(),              // TIMESTAMP FIRST!
     data.service || '',      // SERVICE SECOND!
+    data.package || '',      // PACKAGE THIRD!
     data.name || '',
     data.mobile || '',
     data.email || '',

@@ -4,20 +4,30 @@ import { Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from './ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { submitServiceBookingForm } from '@/lib/formApi';
+import { Package } from '@/lib/servicesData';
 
 interface BookingFormProps {
   defaultService: string; // The service name to pre-fill
+  packages?: Package[]; // Optional packages for the service
 }
 
-const BookingForm: React.FC<BookingFormProps> = ({ defaultService }) => {
+const BookingForm: React.FC<BookingFormProps> = ({ defaultService, packages }) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
     email: '',
     city: '',
+    package: '', // Add package field
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,7 +48,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ defaultService }) => {
           description: "Thank you, we'll get back to you soon.",
         });
         // Reset form
-        setFormData({ name: '', mobile: '', email: '', city: '', message: '' });
+        setFormData({ name: '', mobile: '', email: '', city: '', package: '', message: '' });
       } else {
         throw new Error(result.error || 'Submission failed');
       }
@@ -79,6 +89,30 @@ const BookingForm: React.FC<BookingFormProps> = ({ defaultService }) => {
       <div>
          <Input type="text" placeholder="Your City" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} required className="font-poppins bg-background/80 placeholder:text-muted-foreground/80 focus:bg-background" />
       </div>
+      {/* Package Selection */}
+      {packages && packages.length > 0 && (
+        <div>
+          <Select
+            value={formData.package}
+            onValueChange={(value) => setFormData({ ...formData, package: value })}
+          >
+            <SelectTrigger className="font-poppins bg-background/80 focus:bg-background">
+              <SelectValue placeholder="Select Package (Optional)" />
+            </SelectTrigger>
+            <SelectContent>
+              {packages.map((pkg, index) => (
+                <SelectItem key={index} value={pkg.name} className="font-poppins">
+                  <div className="flex items-center gap-2">
+                    <span>{pkg.name}</span>
+                    {pkg.price && <span className="text-amber-600 font-semibold">- {pkg.price}</span>}
+                    {pkg.popular && <span className="text-xs text-amber-500">⭐</span>}
+                  </div>
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      )}
       {/* Message */}
       <div>
         <Textarea placeholder="Requirements / Event Date / Message (Optional)" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="font-poppins min-h-[100px] bg-background/80 placeholder:text-muted-foreground/80 focus:bg-background" />

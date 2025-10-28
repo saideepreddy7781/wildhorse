@@ -87,7 +87,7 @@ const ServiceBookingPage = () => {
                             </ul>
                         </div>
                         <div className="w-full max-w-lg mx-auto md:mx-0">
-                            <BookingForm defaultService={service.title} />
+                            <BookingForm defaultService={service.title} packages={service.packages} />
                         </div>
                     </div>
                 </div>
