@@ -92,7 +92,80 @@ const ServiceBookingPage = () => {
                     </div>
                 </div>
 
-                {/* Section 2: Service-Specific Gallery */}
+                {/* Section 2: Packages Section */}
+                {service.packages && service.packages.length > 0 && (
+                    <section className="py-16 md:py-20 bg-muted/30">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-center text-foreground">
+                                Our {service.title} Packages
+                            </h2>
+                            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+                                Choose the perfect package for your needs. All packages can be customized to suit your requirements.
+                            </p>
+                            
+                            {/* Packages Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                                {service.packages.map((pkg, index) => (
+                                    <div
+                                        key={index}
+                                        className={`relative bg-card rounded-lg border-2 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+                                            pkg.popular ? 'border-primary shadow-md' : 'border-border'
+                                        }`}
+                                    >
+                                        {pkg.popular && (
+                                            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 text-sm font-semibold">
+                                                Popular
+                                            </div>
+                                        )}
+                                        <div className="p-6 md:p-8">
+                                            <h3 className="text-2xl font-playfair font-bold mb-2 text-foreground">
+                                                {pkg.name}
+                                            </h3>
+                                            {pkg.price && (
+                                                <p className="text-lg font-semibold text-primary mb-6">
+                                                    {pkg.price}
+                                                </p>
+                                            )}
+                                            <ul className="space-y-3 mb-6">
+                                                {pkg.features.map((feature, idx) => (
+                                                    <li key={idx} className="flex items-start gap-2 text-muted-foreground">
+                                                        <svg
+                                                            className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            viewBox="0 0 24 24"
+                                                        >
+                                                            <path
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                                strokeWidth={2}
+                                                                d="M5 13l4 4L19 7"
+                                                            />
+                                                        </svg>
+                                                        <span className="text-sm">{feature}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <button
+                                                onClick={() => {
+                                                    const formSection = document.querySelector('[defaultService]');
+                                                    if (formSection) {
+                                                        formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                                    }
+                                                }}
+                                                className="w-full py-3 px-6 bg-primary text-primary-foreground rounded-md font-semibold hover:bg-primary/90 transition-colors"
+                                            >
+                                                Get Quote
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* Section 3: Service-Specific Gallery */}
                 {service.galleryImages && service.galleryImages.length > 0 && (
                     <section className="py-16 md:py-20 bg-background">
                         <div className="container mx-auto px-4">
@@ -134,7 +207,7 @@ const ServiceBookingPage = () => {
                     </section>
                 )}
 
-                 {/* ** NEW Section 3: Service-Specific Videos ** */}
+                 {/* Section 4: Service-Specific Videos */}
                 {videoIds.length > 0 && (
                     <section className="py-16 md:py-20 bg-muted/30"> {/* Different background */}
                         <div className="container mx-auto px-4">

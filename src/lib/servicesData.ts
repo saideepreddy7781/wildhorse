@@ -44,6 +44,13 @@ const productInteriorGalleryImages = Object.values(productInteriorGalleryModules
 const familyGalleryImages = Object.values(familyGalleryModules) as string[];
 const housewarmingGalleryImages = Object.values(housewarmingGalleryModules) as string[];
 
+// Package interface for service packages
+export interface Package {
+    name: string; // Package name (e.g., "Silver", "Gold", "Platinum")
+    price?: string; // Price (optional, can be "Starting from ₹XX,XXX" or specific price)
+    features: string[]; // List of features included in the package
+    popular?: boolean; // Flag to highlight popular packages
+}
 
 // Define the structure for service data
 export interface Service {
@@ -54,6 +61,7 @@ export interface Service {
     fullDescription?: string; // Optional longer description for the booking page
     galleryImages?: string[]; // Array for gallery images on the service page
     videos?: string[]; // Array for YouTube video URLs
+    packages?: Package[]; // Array of packages for the service
 }
 
 // Array holding all service details
@@ -66,7 +74,53 @@ export const servicesData: Service[] = [
     image: weddingTileCard,
     fullDescription: 'Looking for the best wedding photographers in South India? Contact Wild horse Media today!',
     galleryImages: weddingGalleryImages, // ALL 60 wedding images
-    
+    packages: [
+      {
+        name: 'Silver Package',
+        price: 'Starting from ₹50,000',
+        features: [
+          '1 Photographer',
+          '1 Videographer',
+          '300+ Edited Photos',
+          'Cinematic Video Highlights (3-5 mins)',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Gold Package',
+        price: 'Starting from ₹80,000',
+        popular: true,
+        features: [
+          '2 Photographers',
+          '1 Videographer',
+          '500+ Edited Photos',
+          'Cinematic Video Highlights (5-8 mins)',
+          'Traditional Video Coverage',
+          'Drone Coverage',
+          'Online Gallery',
+          'All Raw Files',
+          'Premium Album (20 pages)'
+        ]
+      },
+      {
+        name: 'Platinum Package',
+        price: 'Starting from ₹1,20,000',
+        features: [
+          '2 Photographers',
+          '2 Videographers',
+          '800+ Edited Photos',
+          'Cinematic Video Highlights (8-12 mins)',
+          'Traditional Video Coverage',
+          'Drone Coverage',
+          'Pre-wedding Shoot',
+          'Online Gallery',
+          'All Raw Files',
+          'Premium Album (30 pages)',
+          'Same Day Edit Video'
+        ]
+      }
+    ]
   },
   {
     slug: 'pre-wedding',
@@ -78,6 +132,51 @@ export const servicesData: Service[] = [
     videos: [
       'https://youtu.be/7VXcWCwqI88',
       'https://youtu.be/e11WgcN4MWU'
+    ],
+    packages: [
+      {
+        name: 'Basic Package',
+        price: 'Starting from ₹25,000',
+        features: [
+          '1 Photographer',
+          '1 Location',
+          '4 Hours Coverage',
+          '150+ Edited Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Premium Package',
+        price: 'Starting from ₹40,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Videographer',
+          '2 Locations',
+          '6 Hours Coverage',
+          '250+ Edited Photos',
+          'Cinematic Video Highlights (3-5 mins)',
+          'Drone Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Luxury Package',
+        price: 'Starting from ₹60,000',
+        features: [
+          '2 Photographers + 1 Videographer',
+          '3 Locations',
+          '8 Hours Coverage',
+          '400+ Edited Photos',
+          'Cinematic Video Highlights (5-8 mins)',
+          'Drone Coverage',
+          'Premium Costumes & Props',
+          'Online Gallery',
+          'All Raw Files',
+          'Photo Album (15 pages)'
+        ]
+      }
     ]
   },
   {
@@ -103,7 +202,37 @@ export const servicesData: Service[] = [
     description: 'Cherish the beautiful moments of motherhood with our maternity photography',
     image: maternityTileCard,
     fullDescription: 'Where Can I Find the Best Maternity Photographers in Bengaluru? Cherish this journey forever. Contact Wild Horse Media for elegant maternity photoshoots!',
-    galleryImages: maternityGalleryImages // ALL 33 maternity images
+    galleryImages: maternityGalleryImages, // ALL 33 maternity images
+    packages: [
+      {
+        name: 'Standard Package',
+        price: 'Starting from ₹15,000',
+        features: [
+          '1 Photographer',
+          'Indoor/Outdoor Shoot',
+          '2 Hours Coverage',
+          '100+ Edited Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Deluxe Package',
+        price: 'Starting from ₹25,000',
+        popular: true,
+        features: [
+          '1 Photographer',
+          'Indoor & Outdoor Shoot',
+          '3 Hours Coverage',
+          '150+ Edited Photos',
+          '2 Outfit Changes',
+          'Props & Accessories',
+          'Online Gallery',
+          'All Raw Files',
+          'Printed Photos (10 prints)'
+        ]
+      }
+    ]
   },
   {
     slug: 'baby-shower',
@@ -114,6 +243,35 @@ export const servicesData: Service[] = [
     galleryImages: babyshowerGalleryImages, // ALL 23 baby shower images
     videos: [
       'https://youtu.be/upxSk4dhwoc'
+    ],
+    packages: [
+      {
+        name: 'Basic Package',
+        price: 'Starting from ₹12,000',
+        features: [
+          '1 Photographer',
+          '2 Hours Coverage',
+          '100+ Edited Photos',
+          'Event Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Premium Package',
+        price: 'Starting from ₹20,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Videographer',
+          '4 Hours Coverage',
+          '200+ Edited Photos',
+          'Event Highlights Video (2-3 mins)',
+          'Decoration Coverage',
+          'Games & Activities Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      }
     ]
   },
   {
@@ -122,7 +280,39 @@ export const servicesData: Service[] = [
     description: 'Adorable baby photography capturing precious early moments',
     image: babyPhotoshootTileCard,
     fullDescription: 'Looking for Professional Newborn and Baby Photographers in Bengaluru? Tiny moments, lifelong memories. Schedule your baby photoshoot with Wild Horse Media!',
-    galleryImages: babyshootGalleryImages // ALL 38 baby photoshoot images
+    galleryImages: babyshootGalleryImages, // ALL 38 baby photoshoot images
+    packages: [
+      {
+        name: 'Newborn Package',
+        price: 'Starting from ₹10,000',
+        features: [
+          '1 Photographer',
+          'Home/Studio Shoot',
+          '2 Hours Coverage',
+          '80+ Edited Photos',
+          'Baby Props & Accessories',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Baby Milestone Package',
+        price: 'Starting from ₹15,000',
+        popular: true,
+        features: [
+          '1 Photographer',
+          'Home/Studio Shoot',
+          '3 Hours Coverage',
+          '120+ Edited Photos',
+          'Multiple Outfit Changes',
+          'Themed Props & Backgrounds',
+          'Cake Smash (if applicable)',
+          'Online Gallery',
+          'All Raw Files',
+          'Photo Album (10 pages)'
+        ]
+      }
+    ]
   },
   {
     slug: 'bridal-photoshoot',
@@ -144,6 +334,37 @@ export const servicesData: Service[] = [
       'https://youtu.be/jtPGobSFe-o',
       'https://youtu.be/nn2xv4eq_Ro',
       'https://youtu.be/hzjD77lEy8M'
+    ],
+    packages: [
+      {
+        name: 'Portfolio Starter',
+        price: 'Starting from ₹15,000',
+        features: [
+          '1 Photographer',
+          'Studio/Outdoor Location',
+          '3 Hours Coverage',
+          '100+ Edited Photos',
+          '3 Outfit Changes',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Professional Portfolio',
+        price: 'Starting from ₹25,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Assistant',
+          'Studio & Outdoor Locations',
+          '5 Hours Coverage',
+          '200+ Edited Photos',
+          '5 Outfit Changes',
+          'Professional Makeup & Hair',
+          'Online Gallery',
+          'All Raw Files',
+          'Digital Portfolio Book'
+        ]
+      }
     ]
   },
   {
@@ -152,7 +373,37 @@ export const servicesData: Service[] = [
     description: 'Create lasting memories with beautiful family portraits',
     image: familyTileCard,
     fullDescription: 'Searching for the Top Family Portrait Photographers to Capture Your Bond in South India? Create stunning family heirlooms. Contact Wild Horse Media for memorable family photoshoots!',
-    galleryImages: familyGalleryImages
+    galleryImages: familyGalleryImages,
+    packages: [
+      {
+        name: 'Family Session',
+        price: 'Starting from ₹12,000',
+        features: [
+          '1 Photographer',
+          'Indoor/Outdoor Location',
+          '2 Hours Coverage',
+          '100+ Edited Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Extended Family Package',
+        price: 'Starting from ₹20,000',
+        popular: true,
+        features: [
+          '1 Photographer',
+          'Indoor & Outdoor Locations',
+          '4 Hours Coverage',
+          '200+ Edited Photos',
+          'Multiple Family Groupings',
+          'Individual Portraits',
+          'Online Gallery',
+          'All Raw Files',
+          'Printed Photos (15 prints)'
+        ]
+      }
+    ]
   },
   {
     slug: 'product-interior',
@@ -164,6 +415,51 @@ export const servicesData: Service[] = [
     videos: [
       'https://youtu.be/sKNIkPRAG7g',
       'https://youtu.be/jLkcyBHz420'
+    ],
+    packages: [
+      {
+        name: 'Product Photography',
+        price: 'Starting from ₹8,000',
+        features: [
+          '1 Photographer',
+          'Studio Setup',
+          'Up to 20 Products',
+          '50+ Edited Photos',
+          'White Background',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Interior Photography',
+        price: 'Starting from ₹15,000',
+        features: [
+          '1 Photographer',
+          'On-Location Shoot',
+          'Up to 10 Rooms/Spaces',
+          '100+ Edited Photos',
+          'HDR Processing',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Commercial Package',
+        price: 'Starting from ₹30,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Assistant',
+          'Full Property/Product Line Coverage',
+          'Full Day Coverage',
+          '200+ Edited Photos',
+          'Drone Footage (for properties)',
+          'Professional Lighting Setup',
+          'HDR & 360° Views',
+          'Online Gallery',
+          'All Raw Files',
+          'Commercial Usage Rights'
+        ]
+      }
     ]
   },
   {
@@ -175,6 +471,35 @@ export const servicesData: Service[] = [
     galleryImages: housewarmingGalleryImages,
     videos: [
       'https://youtu.be/pV4UcdYM30s'
+    ],
+    packages: [
+      {
+        name: 'Basic Coverage',
+        price: 'Starting from ₹10,000',
+        features: [
+          '1 Photographer',
+          '3 Hours Coverage',
+          '100+ Edited Photos',
+          'Ceremony Coverage',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      },
+      {
+        name: 'Complete Package',
+        price: 'Starting from ₹18,000',
+        popular: true,
+        features: [
+          '1 Photographer + 1 Videographer',
+          '5 Hours Coverage',
+          '200+ Edited Photos',
+          'Event Highlights Video (3-5 mins)',
+          'Ceremony & Celebration Coverage',
+          'Guest Candid Photos',
+          'Online Gallery',
+          'All Raw Files'
+        ]
+      }
     ]
   },
 ];
