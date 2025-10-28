@@ -92,7 +92,49 @@ const ServiceBookingPage = () => {
                     </div>
                 </div>
 
-                {/* Section 2: Packages Section */}
+                {/* Section 2: Service-Specific Gallery */}
+                {service.galleryImages && service.galleryImages.length > 0 && (
+                    <section className="py-16 md:py-20 bg-background">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-10 text-center text-foreground">
+                                Our {service.title} Work
+                            </h2>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+                                {service.galleryImages.map((imgSrc, index) => (
+                                    <div 
+                                        key={index} 
+                                        onClick={() => openLightbox(index)}
+                                        className="group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                                    >
+                                        <img
+                                            src={imgSrc}
+                                            alt={`${service.title} example ${index + 1}`}
+                                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
+                                            loading="lazy"
+                                        />
+                                        
+                                        {/* Warm Overlay on Hover */}
+                                        <div 
+                                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                            style={{
+                                                background: 'linear-gradient(135deg, rgba(139, 90, 60, 0.3) 0%, rgba(80, 50, 30, 0.4) 100%)',
+                                            }}
+                                        />
+                                        
+                                        {/* Zoom Icon */}
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-90">
+                                            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-xl group-hover:rotate-90 transition-transform duration-700">
+                                                <ZoomIn className="h-6 w-6 text-[hsl(var(--gold))]" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* Section 3: Packages Section */}
                 {service.packages && service.packages.length > 0 && (
                     <section className="py-16 md:py-20 bg-gradient-to-b from-amber-50/50 via-orange-50/30 to-background dark:from-amber-950/20 dark:via-orange-950/10 dark:to-background">
                         <div className="container mx-auto px-4">
@@ -159,48 +201,6 @@ const ServiceBookingPage = () => {
                                             >
                                                 Get Quote
                                             </button>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* Section 3: Service-Specific Gallery */}
-                {service.galleryImages && service.galleryImages.length > 0 && (
-                    <section className="py-16 md:py-20 bg-background">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-10 text-center text-foreground">
-                                Our {service.title} Work
-                            </h2>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-                                {service.galleryImages.map((imgSrc, index) => (
-                                    <div 
-                                        key={index} 
-                                        onClick={() => openLightbox(index)}
-                                        className="group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
-                                    >
-                                        <img
-                                            src={imgSrc}
-                                            alt={`${service.title} example ${index + 1}`}
-                                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
-                                            loading="lazy"
-                                        />
-                                        
-                                        {/* Warm Overlay on Hover */}
-                                        <div 
-                                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                            style={{
-                                                background: 'linear-gradient(135deg, rgba(139, 90, 60, 0.3) 0%, rgba(80, 50, 30, 0.4) 100%)',
-                                            }}
-                                        />
-                                        
-                                        {/* Zoom Icon */}
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-90">
-                                            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-xl group-hover:rotate-90 transition-transform duration-700">
-                                                <ZoomIn className="h-6 w-6 text-[hsl(var(--gold))]" />
-                                            </div>
                                         </div>
                                     </div>
                                 ))}
