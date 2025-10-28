@@ -32,6 +32,7 @@ const ServiceBookingPage = () => {
     const service = getServiceBySlug(serviceSlug);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [selectedPackage, setSelectedPackage] = useState<string>('');
 
     if (!service) {
         console.error(`Service not found for slug: ${serviceSlug}`);
@@ -87,7 +88,7 @@ const ServiceBookingPage = () => {
                             </ul>
                         </div>
                         <div className="w-full max-w-lg mx-auto md:mx-0">
-                            <BookingForm defaultService={service.title} packages={service.packages} />
+                            <BookingForm defaultService={service.title} packages={service.packages} selectedPackage={selectedPackage} />
                         </div>
                     </div>
                 </div>
@@ -150,17 +151,8 @@ const ServiceBookingPage = () => {
                                 {service.packages.map((pkg, index) => (
                                     <div
                                         key={index}
-                                        className={`relative bg-card rounded-xl border-2 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-amber-200/50 hover:-translate-y-2 ${
-                                            pkg.popular 
-                                                ? 'border-amber-500 shadow-xl shadow-amber-200/40 ring-2 ring-amber-400/20' 
-                                                : 'border-amber-200/60 hover:border-amber-400/80'
-                                        }`}
+                                        className="relative bg-card rounded-xl border-2 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-amber-200/50 hover:-translate-y-2 border-amber-200/60 hover:border-amber-400/80"
                                     >
-                                        {pkg.popular && (
-                                            <div className="absolute top-0 right-0 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-2 text-sm font-bold shadow-lg">
-                                                ⭐ Most Popular
-                                            </div>
-                                        )}
                                         <div className="p-6 md:p-8 bg-gradient-to-br from-white via-amber-50/30 to-orange-50/20 dark:from-card dark:via-amber-950/10 dark:to-orange-950/5">
                                             <h3 className="text-2xl font-playfair font-bold mb-2 bg-gradient-to-r from-amber-800 to-orange-700 bg-clip-text text-transparent">
                                                 {pkg.name}
@@ -191,7 +183,10 @@ const ServiceBookingPage = () => {
                                                 ))}
                                             </ul>
                                             <button
-                                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                                onClick={() => {
+                                                    setSelectedPackage(pkg.name);
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }}
                                                 className="w-full py-3 px-6 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                                             >
                                                 Get Quote

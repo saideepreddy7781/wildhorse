@@ -557,7 +557,7 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Rs 30000',
+        name: 'Basic',
         price: '₹30,000',
         features: [
           'Duration: 4-5 hrs',
@@ -573,7 +573,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Rs 75000',
+        name: 'Basic',
         price: '₹75,000',
         features: [
           'Duration: 4-5 hrs',
@@ -589,7 +589,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Rs 85000',
+        name: 'Standard',
         price: '₹85,000',
         popular: true,
         features: [
@@ -605,7 +605,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Rs 125000',
+        name: 'Standard',
         price: '₹1,25,000',
         features: [
           'Duration: 3-4 hrs',
@@ -620,7 +620,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Rs 155000',
+        name: 'Premium',
         price: '₹1,55,000',
         features: [
           'Duration: 3-4 hrs',
@@ -635,7 +635,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Rs 205000',
+        name: 'Premium',
         price: '₹2,05,000',
         features: [
           'Duration: 3-4 hrs',
@@ -726,7 +726,7 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Traditional Photography',
+        name: 'Basic - Traditional Photography',
         price: '₹8,000',
         features: [
           'Duration: Upto 5 hrs',
@@ -734,24 +734,24 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Candid Photography',
+        name: 'Basic - Candid Photography',
         price: '₹15,000',
-        popular: true,
         features: [
           'Duration: Upto 5 hrs',
           'Deliverables: Unlimited soft copies + 50 Edited'
         ]
       },
       {
-        name: 'Traditional Photography+ Videography',
+        name: 'Standard - Photography + Videography',
         price: '₹15,000',
+        popular: true,
         features: [
           'Duration: Upto 5 Hrs',
           'Deliverables: Unlimited soft copies + 20 mins- 1hrs Full HD Video'
         ]
       },
       {
-        name: 'Traditional Photography+ Cinematography',
+        name: 'Premium - Photography + Cinematography',
         price: '₹30,000',
         features: [
           'Duration: Upto 5 Hrs',
@@ -783,7 +783,7 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Basic',
+        name: 'Basic - Photography Only',
         price: '₹8,000',
         features: [
           'Duration: 2 Hours',
@@ -795,7 +795,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Combo 1',
+        name: 'Basic - With Costume & Makeup',
         price: '₹14,000',
         features: [
           'Duration: 2 Hours',
@@ -807,7 +807,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Combo 2',
+        name: 'Basic - Studio Session',
         price: '₹20,000',
         features: [
           'Duration: 2 Hours',
@@ -819,7 +819,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Standard',
+        name: 'Standard - Photography Only',
         price: '₹12,000',
         popular: true,
         features: [
@@ -832,7 +832,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Combo 1 (Gold)',
+        name: 'Standard - With Costume & Makeup',
         price: '₹18,000',
         features: [
           'Duration: 3 Hours',
@@ -844,7 +844,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Combo 2 (Gold)',
+        name: 'Standard - Studio Session',
         price: '₹22,000',
         features: [
           'Duration: 3 Hours',
@@ -856,7 +856,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Premium',
+        name: 'Premium - Photography Only',
         price: '₹20,000',
         features: [
           'Duration: 3-4 Hours',
@@ -868,7 +868,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Combo 1 (Platinum)',
+        name: 'Premium - With Costume & Makeup',
         price: '₹25,000',
         features: [
           'Duration: 3-4 Hours',
@@ -880,7 +880,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Combo 2 (Platinum)',
+        name: 'Premium - Studio Session',
         price: '₹30,000',
         features: [
           'Duration: 3-4 Hours',
@@ -911,7 +911,7 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Traditional Photography',
+        name: 'Basic - Traditional Photography',
         price: '₹10,000',
         features: [
           'Duration: Upto 5 hrs',
@@ -919,7 +919,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Candid Photography',
+        name: 'Basic - Candid Photography',
         price: '₹15,000',
         popular: true,
         features: [
@@ -928,7 +928,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Traditional Photography+ Videography',
+        name: 'Standard - Photography + Videography',
         price: '₹16,000',
         features: [
           'Duration: Upto 5 Hrs',
@@ -936,7 +936,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Traditional Photography+ Cinematography',
+        name: 'Premium - Photography + Cinematography',
         price: '₹30,000',
         features: [
           'Duration: Upto 5 Hrs',
@@ -1073,7 +1073,7 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Traditional Photography',
+        name: 'Basic - Traditional Photography',
         price: '₹8,000',
         features: [
           'Duration: Upto 5 hrs',
@@ -1081,7 +1081,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Candid Photography',
+        name: 'Basic - Candid Photography',
         price: '₹15,000',
         popular: true,
         features: [
@@ -1090,7 +1090,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Traditional Photography+ Videography',
+        name: 'Standard - Photography + Videography',
         price: '₹15,000',
         features: [
           'Duration: Upto 5 Hrs',
@@ -1098,7 +1098,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Traditional Photography+ Cinematography',
+        name: 'Premium - Photography + Cinematography',
         price: '₹25,000',
         features: [
           'Duration: Upto 5 Hrs',
@@ -1127,7 +1127,7 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Rs 8,000',
+        name: 'Basic - Conventional Photography',
         price: '₹8,000',
         features: [
           'Duration: 4-5 hrs (1 Session)',
@@ -1137,7 +1137,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Rs 10,000',
+        name: 'Basic - Semi-Candid Photography',
         price: '₹10,000',
         popular: true,
         features: [
@@ -1148,7 +1148,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Traditional Photography+ Videography',
+        name: 'Standard - Photography + Videography',
         price: '₹15,000',
         features: [
           'Duration: Upto 6 Hrs',
@@ -1156,7 +1156,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Traditional Photography+ Cinematography',
+        name: 'Premium - Photography + Cinematography',
         price: '₹30,000',
         features: [
           'Duration: Upto 6 Hrs',
@@ -1227,7 +1227,7 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Basic',
+        name: 'Basic - 1 Hour Session',
         price: '₹5,000',
         features: [
           'Duration: 1 hrs',
@@ -1236,7 +1236,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Basic (Higher)',
+        name: 'Basic - 3 Hour Session',
         price: '₹10,000',
         popular: true,
         features: [
@@ -1246,7 +1246,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Standard',
+        name: 'Standard - 5 Hour Session',
         price: '₹15,000',
         features: [
           'Duration: 5 hrs',
@@ -1255,7 +1255,7 @@ export const servicesData: Service[] = [
         ]
       },
       {
-        name: 'Premium',
+        name: 'Premium - 6 Hour Session',
         price: '₹20,000',
         features: [
           'Duration: 6 hrs',

@@ -18,19 +18,27 @@ import { Package } from '@/lib/servicesData';
 interface BookingFormProps {
   defaultService: string; // The service name to pre-fill
   packages?: Package[]; // Optional packages for the service
+  selectedPackage?: string; // Pre-selected package from Get Quote button
 }
 
-const BookingForm: React.FC<BookingFormProps> = ({ defaultService, packages }) => {
+const BookingForm: React.FC<BookingFormProps> = ({ defaultService, packages, selectedPackage }) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
     email: '',
     city: '',
-    package: '', // Add package field
+    package: selectedPackage || '', // Initialize with selected package
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Update package when selectedPackage prop changes
+  React.useEffect(() => {
+    if (selectedPackage) {
+      setFormData(prev => ({ ...prev, package: selectedPackage }));
+    }
+  }, [selectedPackage]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -105,7 +113,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ defaultService, packages }) =
                   <div className="flex items-center gap-2">
                     <span>{pkg.name}</span>
                     {pkg.price && <span className="text-amber-600 font-semibold">- {pkg.price}</span>}
-                    {pkg.popular && <span className="text-xs text-amber-500">⭐</span>}
                   </div>
                 </SelectItem>
               ))}
