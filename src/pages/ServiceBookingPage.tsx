@@ -32,6 +32,7 @@ const ServiceBookingPage = () => {
     const service = getServiceBySlug(serviceSlug);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [selectedPackage, setSelectedPackage] = useState<string>('');
 
     if (!service) {
         console.error(`Service not found for slug: ${serviceSlug}`);
@@ -87,7 +88,7 @@ const ServiceBookingPage = () => {
                             </ul>
                         </div>
                         <div className="w-full max-w-lg mx-auto md:mx-0">
-                            <BookingForm defaultService={service.title} />
+                            <BookingForm defaultService={service.title} packages={service.packages} selectedPackage={selectedPackage} />
                         </div>
                     </div>
                 </div>
@@ -134,7 +135,71 @@ const ServiceBookingPage = () => {
                     </section>
                 )}
 
-                 {/* ** NEW Section 3: Service-Specific Videos ** */}
+                {/* Section 3: Packages Section */}
+                {service.packages && service.packages.length > 0 && (
+                    <section className="py-16 md:py-20 bg-gradient-to-b from-amber-50/50 via-orange-50/30 to-background dark:from-amber-950/20 dark:via-orange-950/10 dark:to-background">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-center bg-gradient-to-r from-amber-700 to-orange-600 bg-clip-text text-transparent">
+                                Our {service.title} Packages
+                            </h2>
+                            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+                                Choose the perfect package for your needs. All packages can be customized to suit your requirements.
+                            </p>
+                            
+                            {/* Packages Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                                {service.packages.map((pkg, index) => (
+                                    <div
+                                        key={index}
+                                        className="relative bg-card rounded-xl border-2 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-amber-200/50 hover:-translate-y-2 border-amber-200/60 hover:border-amber-400/80"
+                                    >
+                                        <div className="p-6 md:p-8 bg-gradient-to-br from-white via-amber-50/30 to-orange-50/20 dark:from-card dark:via-amber-950/10 dark:to-orange-950/5">
+                                            <h3 className="text-2xl font-playfair font-bold mb-2 bg-gradient-to-r from-amber-800 to-orange-700 bg-clip-text text-transparent">
+                                                {pkg.name}
+                                            </h3>
+                                            {pkg.price && (
+                                                <p className="text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-6">
+                                                    {pkg.price}
+                                                </p>
+                                            )}
+                                            <ul className="space-y-3 mb-8">
+                                                {pkg.features.map((feature, idx) => (
+                                                    <li key={idx} className="flex items-start gap-3 text-foreground/80">
+                                                        <svg
+                                                            className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            viewBox="0 0 24 24"
+                                                        >
+                                                            <path
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                                strokeWidth={2.5}
+                                                                d="M5 13l4 4L19 7"
+                                                            />
+                                                        </svg>
+                                                        <span className="text-sm font-medium">{feature}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <button
+                                                onClick={() => {
+                                                    setSelectedPackage(pkg.name);
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }}
+                                                className="w-full py-3 px-6 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                                            >
+                                                Get Quote
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                 {/* Section 4: Service-Specific Videos */}
                 {videoIds.length > 0 && (
                     <section className="py-16 md:py-20 bg-muted/30"> {/* Different background */}
                         <div className="container mx-auto px-4">

@@ -13,6 +13,7 @@ export interface FormSubmissionData {
   email: string;
   service?: string;
   city: string;
+  package?: string; // Selected package from service packages
   message?: string;
 }
 
