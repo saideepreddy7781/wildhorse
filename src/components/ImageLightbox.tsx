@@ -1,5 +1,5 @@
 // src/components/ImageLightbox.tsx
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -12,17 +12,28 @@ interface ImageLightboxProps {
 }
 
 const ImageLightbox = ({ images, currentIndex, onClose, onNext, onPrevious }: ImageLightboxProps) => {
+  const [isClosing, setIsClosing] = useState(false);
+
+  // Handle closing with animation
+  const handleClose = () => {
+    setIsClosing(true);
+    // Wait for animation to complete before actually closing
+    setTimeout(() => {
+      onClose();
+    }, 300); // Match animation duration
+  };
+
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') handleClose();
       if (e.key === 'ArrowRight') onNext();
       if (e.key === 'ArrowLeft') onPrevious();
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose, onNext, onPrevious]);
+  }, [onNext, onPrevious]);
 
   // Prevent body scroll when lightbox is open
   useEffect(() => {
@@ -34,7 +45,12 @@ const ImageLightbox = ({ images, currentIndex, onClose, onNext, onPrevious }: Im
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center animate-in fade-in duration-300"
+      className={cn(
+        "fixed inset-0 z-50 flex items-center justify-center",
+        isClosing 
+          ? "animate-out fade-out duration-300" 
+          : "animate-in fade-in duration-300"
+      )}
       style={{
         background: 'linear-gradient(135deg, rgba(139, 90, 60, 0.95) 0%, rgba(80, 50, 30, 0.95) 50%, rgba(60, 40, 25, 0.98) 100%)',
         backdropFilter: 'blur(10px)',
@@ -42,7 +58,7 @@ const ImageLightbox = ({ images, currentIndex, onClose, onNext, onPrevious }: Im
     >
       {/* Close Button */}
       <button
-        onClick={onClose}
+        onClick={handleClose}
         className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110"
         aria-label="Close lightbox"
       >
@@ -79,14 +95,16 @@ const ImageLightbox = ({ images, currentIndex, onClose, onNext, onPrevious }: Im
       {/* Image Container */}
       <div 
         className="relative w-full h-full flex items-center justify-center p-8 md:p-16"
-        onClick={onClose}
+        onClick={handleClose}
       >
         <img
           src={images[currentIndex]}
           alt={`Gallery image ${currentIndex + 1}`}
           className={cn(
             "max-w-full max-h-full object-contain rounded-lg shadow-2xl",
-            "animate-in zoom-in-95 fade-in duration-500"
+            isClosing 
+              ? "animate-out zoom-out-95 fade-out duration-300" 
+              : "animate-in zoom-in-95 fade-in duration-500"
           )}
           onClick={(e) => e.stopPropagation()}
           style={{
