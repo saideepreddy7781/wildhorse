@@ -10,7 +10,7 @@ import matLanding from '../assets/landing/mat-landing-new.jpg';
 import babysLanding from '../assets/landing/babys-landing-new.jpg';
 import babyLanding from '../assets/landing/baby-landing-new.jpg';
 import brideLanding from '../assets/landing/bride-landing-new.jpeg';
-import familyLanding from '../assets/landing/family-landing-new.jpg';
+import familyLanding from '../assets/fam-tile11.jpeg';
 
 // --- Updated slides array with service descriptions ---
 const slides = [

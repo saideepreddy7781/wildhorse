@@ -1,17 +1,66 @@
-import React, { useState } from 'react';
-import { PlayCircle } from 'lucide-react';
+// src/components/YouTubeGallery.tsx
+
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
+// --- UPDATED video list with only 4 videos ---
 const videos = [
-  { id: 'u6lmI0V14BQ', title: 'Wild Horse Media Portfolio' },
-  { id: 'oIAkui8unzc', title: 'Wedding Highlights' },
-  { id: 'e11WgcN4MWU', title: 'Varun ❤️ Priya | When Two Souls Met' },
-  { id: 'bThTutu6Py8', title: 'Cinematic Love Story' },
-  { id: '7VXcWCwqI88', title: 'Sathish & Ashwini\'s Magical Pre-Wedding' },
+  { id: 'u6lmI0V14BQ', title: 'Engagement Ceremony Highlight' },
+  { id: 'oIAkui8unzc', title: 'Wedding Cinematic Film' },
+  { id: 'bThTutu6Py8', title: 'Love Story Feature' },
+  { id: 'e11WgcN4MWU', title: 'Pre-Wedding Shoot' },
 ];
 
 const YouTubeGallery = () => {
-  const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Auto-transition every 8 seconds
+  useEffect(() => {
+    if (!isAutoPlaying || videos.length === 0) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
+    }, 8000); // Change video every 8 seconds
+
+    return () => clearInterval(interval);
+  }, [currentIndex, isAutoPlaying]);
+
+  const goToNext = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
+  };
+
+  const goToPrevious = () => {
+    setIsAutoPlaying(false);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + videos.length) % videos.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setIsAutoPlaying(false);
+    setCurrentIndex(index);
+  };
+
+  // Return null or a placeholder if there are no videos
+  if (videos.length === 0) {
+    return (
+      <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4 text-foreground">
+              Our Work in Motion
+            </h2>
+            <p className="text-lg font-poppins text-muted-foreground">
+              No videos available at the moment.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const currentVideoId = videos[currentIndex].id;
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30">
@@ -25,55 +74,67 @@ const YouTubeGallery = () => {
           </p>
         </div>
 
-        {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
-
-          {/* Main Video Player - Sticky on desktop */}
-          <div className="md:col-span-2 md:sticky md:top-24">
-            <div className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
-              <iframe
-                key={currentVideoId}
-                // --- REMOVED ?autoplay=1 from src ---
-                src={`https://www.youtube.com/embed/${currentVideoId}`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
+        {/* Video Carousel Container */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Main Video Player */}
+          <div className="relative aspect-video rounded-lg overflow-hidden border border-border">
+            <iframe
+              key={currentVideoId}
+              src={`https://www.youtube.com/embed/${currentVideoId}?autoplay=0&rel=0`}
+              title={videos[currentIndex].title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            />
           </div>
 
-          {/* Thumbnail List */}
-          <div className="md:col-span-1 flex flex-col gap-4">
-            {videos.map((video) => (
+          {/* Navigation Arrows */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10 backdrop-blur-sm"
+            aria-label="Previous video"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+
+          <button
+            onClick={goToNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10 backdrop-blur-sm"
+            aria-label="Next video"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Video Title Overlay - Shadow removed */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
+            <h3 className="text-white text-lg md:text-xl font-poppins font-semibold">
+              {videos[currentIndex].title}
+            </h3>
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-3 mt-8">
+            {videos.map((_, index) => (
               <button
-                key={video.id}
-                onClick={() => setCurrentVideoId(video.id)}
+                key={index}
+                onClick={() => goToSlide(index)}
                 className={cn(
-                  "relative aspect-video rounded-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-transform duration-200",
-                  currentVideoId === video.id ? "opacity-70 scale-95 cursor-default" : "hover:scale-[1.03]"
+                  "transition-all duration-300 rounded-full",
+                  index === currentIndex
+                    ? 'bg-primary w-10 h-3'
+                    : 'bg-muted-foreground/40 w-3 h-3 hover:bg-muted-foreground/60'
                 )}
-                disabled={currentVideoId === video.id}
-                aria-label={`Play video: ${video.title}`}
-              >
-                {/* Thumbnail Image */}
-                <img
-                   src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                   alt={video.title}
-                   className="absolute inset-0 w-full h-full object-cover"
-                />
-                 {/* Dark overlay */}
-                <div className={cn(
-                    "absolute inset-0 bg-black/30 transition-opacity",
-                    currentVideoId === video.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                )}></div>
-                {/* Play Icon Overlay */}
-                 <PlayCircle className={cn(
-                   "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-10 w-10 text-white/80 transition-opacity",
-                    currentVideoId === video.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                 )} />
-              </button>
+                aria-label={`Go to video ${index + 1}`}
+              />
             ))}
+          </div>
+
+          {/* Video Counter */}
+          <div className="text-center mt-4">
+            <p className="text-sm text-muted-foreground font-poppins">
+              Video {currentIndex + 1} of {videos.length}
+              {isAutoPlaying && <span className="ml-2 text-primary">• Auto-playing</span>}
+            </p>
           </div>
         </div>
       </div>

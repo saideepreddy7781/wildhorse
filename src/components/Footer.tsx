@@ -61,7 +61,7 @@ const Footer = () => {
                 <strong>Phone:</strong> +91 97409 44666
               </p>
               <p className="font-poppins text-muted-foreground text-sm">
-                <strong>Email:</strong> teamwildhorse@gmail.com
+                <strong>Email:</strong> <a href="mailto:teamwildhorse@gmail.com" className="hover:text-primary transition-colors">teamwildhorse@gmail.com</a>
               </p>
               <p className="font-poppins text-muted-foreground text-sm">
                 <strong>Address:</strong><br />
@@ -90,9 +90,9 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="mb-6">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.0346!2d77.5397!3d12.9196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzEwLjYiTiA3N8KwMzInMjMuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3888.7449538905785!2d77.55535231508394!3d12.902568090898983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU0JzA5LjIiTiA3N8KwMzMnMjcuMiJF!5e0!3m2!1sen!2sin!4v1698396742000!5m2!1sen!2sin"
               width="100%"
-              height="200"
+              height="250"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
