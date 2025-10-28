@@ -191,12 +191,7 @@ const ServiceBookingPage = () => {
                                                 ))}
                                             </ul>
                                             <button
-                                                onClick={() => {
-                                                    const formSection = document.querySelector('[defaultService]');
-                                                    if (formSection) {
-                                                        formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                                    }
-                                                }}
+                                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                                 className="w-full py-3 px-6 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                                             >
                                                 Get Quote

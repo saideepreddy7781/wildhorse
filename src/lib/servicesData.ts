@@ -557,48 +557,96 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Silver Package',
-        price: 'Starting from ₹50,000',
+        name: 'Rs 30000',
+        price: '₹30,000',
         features: [
-          '1 Photographer',
-          '1 Videographer',
-          '300+ Edited Photos',
-          'Cinematic Video Highlights (3-5 mins)',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 4-5 hrs',
+          'No of Sessions: 1',
+          'Photography Style: Traditional',
+          'Photographers: 1',
+          'Video: 1 Traditional',
+          'Deliverables: Album of 30 sheets + Pen drive',
+          'Spot Mixer: No',
+          'TVs: No',
+          'Drone: No',
+          'LED Wall: No'
         ]
       },
       {
-        name: 'Gold Package',
-        price: 'Starting from ₹80,000',
+        name: 'Rs 75000',
+        price: '₹75,000',
+        features: [
+          'Duration: 4-5 hrs',
+          'No of Sessions: 2',
+          'Photography Style: Traditional+candid photo',
+          'Photographers: 2',
+          'Video: 1 Traditional',
+          'Deliverables: 2 Album of 30 sheets + Pen drive',
+          'Spot Mixer: No',
+          'TVs: No',
+          'Drone: No',
+          'LED Wall: No'
+        ]
+      },
+      {
+        name: 'Rs 85000',
+        price: '₹85,000',
         popular: true,
         features: [
-          '2 Photographers',
-          '1 Videographer',
-          '500+ Edited Photos',
-          'Cinematic Video Highlights (5-8 mins)',
-          'Traditional Video Coverage',
-          'Drone Coverage',
-          'Online Gallery',
-          'All Raw Files',
-          'Premium Album (20 pages)'
+          'Duration: 3-4 hrs',
+          'No of Sessions: 2',
+          'Photography Style: Traditional + Candid',
+          'Photographers: 2',
+          'Video: 1 Traditional',
+          'Deliverables: 2 Album of 30 sheets Pen drive',
+          'Spot Mixer: Yes',
+          'Drone: No',
+          'LED Wall: Yes (R)'
         ]
       },
       {
-        name: 'Platinum Package',
-        price: 'Starting from ₹1,20,000',
+        name: 'Rs 125000',
+        price: '₹1,25,000',
         features: [
-          '2 Photographers',
-          '2 Videographers',
-          '800+ Edited Photos',
-          'Cinematic Video Highlights (8-12 mins)',
-          'Traditional Video Coverage',
-          'Drone Coverage',
-          'Pre-wedding Shoot',
-          'Online Gallery',
-          'All Raw Files',
-          'Premium Album (30 pages)',
-          'Same Day Edit Video'
+          'Duration: 3-4 hrs',
+          'No of Sessions: 2',
+          'Photography Style: 2Traditional + Candid',
+          'Photographers: 3',
+          'Video: 1 Traditional',
+          'Deliverables: 2 Album of 40 sheets Pen drive',
+          'Spot Mixer: Yes',
+          'Drone: Yes',
+          'LED Wall: Yes(R+W)'
+        ]
+      },
+      {
+        name: 'Rs 155000',
+        price: '₹1,55,000',
+        features: [
+          'Duration: 3-4 hrs',
+          'No of Sessions: 2',
+          'Photography Style: 2 Traditional + Candid',
+          'Photographers: 3',
+          'Video: Traditional+Candid Film',
+          'Deliverables: 3 Albums of 30 sheets + Pen Drive',
+          'Spot Mixer: Yes(R+W)',
+          'Drone: Yes(R)',
+          'LED Wall: Yes(R+W)'
+        ]
+      },
+      {
+        name: 'Rs 205000',
+        price: '₹2,05,000',
+        features: [
+          'Duration: 3-4 hrs',
+          'No of Sessions: 2',
+          'Photography Style: 1 Traditional + 2 Candid',
+          'Photographers: 3',
+          'Video: 2 Traditional + Candid Film',
+          'Deliverables: 3 Albums of 35 sheets + Pen Drive',
+          'Spot Mixer: Yes(R+W)',
+          'Drone: Yes(R)',
+          'LED Wall: Yes(R+W)'
         ]
       }
     ]
@@ -626,46 +674,34 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Basic Package',
-        price: 'Starting from ₹25,000',
+        name: 'Silver',
+        price: '₹20,000',
         features: [
-          '1 Photographer',
-          '1 Location',
-          '4 Hours Coverage',
-          '150+ Edited Photos',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 3 hrs Shoot',
+          'Deliverables: 20 Copies',
+          'Location: Included',
+          'Make Up: Provided'
         ]
       },
       {
-        name: 'Premium Package',
-        price: 'Starting from ₹40,000',
+        name: 'Gold',
+        price: '₹28,000',
         popular: true,
         features: [
-          '1 Photographer + 1 Videographer',
-          '2 Locations',
-          '6 Hours Coverage',
-          '250+ Edited Photos',
-          'Cinematic Video Highlights (3-5 mins)',
-          'Drone Coverage',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 5 hrs Shoot',
+          'Deliverables: 35 Copies',
+          'Location: Included',
+          'Make Up: Provided'
         ]
       },
       {
-        name: 'Luxury Package',
-        price: 'Starting from ₹60,000',
+        name: 'Platinum',
+        price: '₹45,000',
         features: [
-          '2 Photographers + 1 Videographer',
-          '3 Locations',
-          '8 Hours Coverage',
-          '400+ Edited Photos',
-          'Cinematic Video Highlights (5-8 mins)',
-          'Drone Coverage',
-          'Premium Costumes & Props',
-          'Online Gallery',
-          'All Raw Files',
-          'Photo Album (15 pages)'
+          'Duration: 8 hrs Shoot',
+          'Deliverables: 50 Copies',
+          'Location: Included',
+          'Make Up: Provided'
         ]
       }
     ]
@@ -690,30 +726,36 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Basic Coverage',
-        price: 'Starting from ₹20,000',
+        name: 'Traditional Photography',
+        price: '₹8,000',
         features: [
-          '1 Photographer',
-          '3 Hours Coverage',
-          '150+ Edited Photos',
-          'Ceremony Coverage',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: Upto 5 hrs',
+          'Deliverables: Unlimited soft copies'
         ]
       },
       {
-        name: 'Complete Package',
-        price: 'Starting from ₹35,000',
+        name: 'Candid Photography',
+        price: '₹15,000',
         popular: true,
         features: [
-          '1 Photographer + 1 Videographer',
-          '5 Hours Coverage',
-          '300+ Edited Photos',
-          'Event Highlights Video (3-5 mins)',
-          'Ceremony & Ring Exchange Coverage',
-          'Family & Candid Photos',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: Upto 5 hrs',
+          'Deliverables: Unlimited soft copies + 50 Edited'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Videography',
+        price: '₹15,000',
+        features: [
+          'Duration: Upto 5 Hrs',
+          'Deliverables: Unlimited soft copies + 20 mins- 1hrs Full HD Video'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Cinematography',
+        price: '₹30,000',
+        features: [
+          'Duration: Upto 5 Hrs',
+          'Deliverables: Unlimited soft copies + 2-5min Full HD Video'
         ]
       }
     ]
@@ -741,31 +783,112 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Standard Package',
-        price: 'Starting from ₹15,000',
+        name: 'Basic',
+        price: '₹8,000',
         features: [
-          '1 Photographer',
-          'Indoor/Outdoor Shoot',
-          '2 Hours Coverage',
-          '100+ Edited Photos',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 2 Hours',
+          'Photography Style: Candid',
+          'Deliverables: 20 Copies',
+          'Costume: Not Applicable',
+          'MakeUp: Not Applicable',
+          'Location: Within Bangalore'
         ]
       },
       {
-        name: 'Deluxe Package',
-        price: 'Starting from ₹25,000',
+        name: 'Combo 1',
+        price: '₹14,000',
+        features: [
+          'Duration: 2 Hours',
+          'Photography Style: Candid',
+          'Deliverables: 20 Copies',
+          'Costume: 1 Costume Provided',
+          'Makeup: Provided',
+          'Location: Within Bangalore'
+        ]
+      },
+      {
+        name: 'Combo 2',
+        price: '₹20,000',
+        features: [
+          'Duration: 2 Hours',
+          'Photography Style: Candid',
+          'Deliverables: 20 Copies',
+          'Costume: 1 Costume Provided',
+          'Makeup: Provided',
+          'Location: The Shire Studio'
+        ]
+      },
+      {
+        name: 'Standard',
+        price: '₹12,000',
         popular: true,
         features: [
-          '1 Photographer',
-          'Indoor & Outdoor Shoot',
-          '3 Hours Coverage',
-          '150+ Edited Photos',
-          '2 Outfit Changes',
-          'Props & Accessories',
-          'Online Gallery',
-          'All Raw Files',
-          'Printed Photos (10 prints)'
+          'Duration: 3 Hours',
+          'Photography Style: Candid',
+          'Deliverables: 35 Copies',
+          'Costume: Not Applicable',
+          'Makeup: Not Applicable',
+          'Location: Within Bangalore'
+        ]
+      },
+      {
+        name: 'Combo 1 (Gold)',
+        price: '₹18,000',
+        features: [
+          'Duration: 3 Hours',
+          'Photography Style: Candid',
+          'Deliverables: 35 Copies',
+          'Costume: 1 Costume Provided',
+          'Makeup: Provided',
+          'Location: Within Bangalore'
+        ]
+      },
+      {
+        name: 'Combo 2 (Gold)',
+        price: '₹22,000',
+        features: [
+          'Duration: 3 Hours',
+          'Photography Style: Candid',
+          'Deliverables: 35 Copies',
+          'Costume: 1 Costume Provided',
+          'Makeup: Provided',
+          'Location: The Shire Studio'
+        ]
+      },
+      {
+        name: 'Premium',
+        price: '₹20,000',
+        features: [
+          'Duration: 3-4 Hours',
+          'Style: Candid',
+          'Deliverables: 50 copies + 15 sheets Album',
+          'Costume: Not Applicable',
+          'Makeup: Not Applicable',
+          'Location: Within Bangalore'
+        ]
+      },
+      {
+        name: 'Combo 1 (Platinum)',
+        price: '₹25,000',
+        features: [
+          'Duration: 3-4 Hours',
+          'Style: Candid',
+          'Deliverables: 50 copies + 15 sheets Album',
+          'Costume: 1 Costume Provided',
+          'Makeup: Provided',
+          'Location: Within Bangalore'
+        ]
+      },
+      {
+        name: 'Combo 2 (Platinum)',
+        price: '₹30,000',
+        features: [
+          'Duration: 3-4 Hours',
+          'Style: Candid',
+          'Deliverables: 50 copies + 15 sheets Album',
+          'Costume: 1 Costume Provided',
+          'Makeup: Provided',
+          'Location: The Shire Studio'
         ]
       }
     ]
@@ -788,30 +911,36 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Basic Package',
-        price: 'Starting from ₹12,000',
+        name: 'Traditional Photography',
+        price: '₹10,000',
         features: [
-          '1 Photographer',
-          '2 Hours Coverage',
-          '100+ Edited Photos',
-          'Event Coverage',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: Upto 5 hrs',
+          'Deliverables: Unlimited soft copies'
         ]
       },
       {
-        name: 'Premium Package',
-        price: 'Starting from ₹20,000',
+        name: 'Candid Photography',
+        price: '₹15,000',
         popular: true,
         features: [
-          '1 Photographer + 1 Videographer',
-          '4 Hours Coverage',
-          '200+ Edited Photos',
-          'Event Highlights Video (2-3 mins)',
-          'Decoration Coverage',
-          'Games & Activities Coverage',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: Upto 5 hrs',
+          'Deliverables: Unlimited soft copies + 50 Edited'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Videography',
+        price: '₹16,000',
+        features: [
+          'Duration: Upto 5 Hrs',
+          'Deliverables: Unlimited soft copies + 20 mns- 1hrs Full HD Video'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Cinematography',
+        price: '₹30,000',
+        features: [
+          'Duration: Upto 5 Hrs',
+          'Deliverables: Unlimited soft copies + 2-5min Full HD Video'
         ]
       }
     ]
@@ -831,33 +960,94 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Newborn Package',
-        price: 'Starting from ₹10,000',
+        name: 'Basic (Newborn 0-5 months)',
+        price: '₹12,000',
         features: [
-          '1 Photographer',
-          'Home/Studio Shoot',
-          '2 Hours Coverage',
-          '80+ Edited Photos',
-          'Baby Props & Accessories',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 2 hrs',
+          'Photography Style: Candid',
+          'Deliverables: 20 edited images',
+          'Themes(+Props): 2 Themes'
         ]
       },
       {
-        name: 'Baby Milestone Package',
-        price: 'Starting from ₹15,000',
+        name: 'Standard (Newborn 0-5 months)',
+        price: '₹15,000',
         popular: true,
         features: [
-          '1 Photographer',
-          'Home/Studio Shoot',
-          '3 Hours Coverage',
-          '120+ Edited Photos',
-          'Multiple Outfit Changes',
-          'Themed Props & Backgrounds',
-          'Cake Smash (if applicable)',
-          'Online Gallery',
-          'All Raw Files',
-          'Photo Album (10 pages)'
+          'Duration: 3 hrs',
+          'Photography Style: Candid',
+          'Deliverables: 30 edited images',
+          'Themes(+Props): 3 Themes'
+        ]
+      },
+      {
+        name: 'Premium (Newborn 0-5 months)',
+        price: '₹20,000',
+        features: [
+          'Duration: 3- 4 hrs',
+          'Photography Style: Candid',
+          'Deliverables: 40 edited images + Album 20 Sheets',
+          'Themes(+Props): 3- 4 Themes'
+        ]
+      },
+      {
+        name: 'Standard (Baby 0.6 months - 2 years)',
+        price: '₹10,000',
+        features: [
+          'Duration: 1 hr',
+          'Pictures Includes: Baby',
+          'Deliverables: 15 Images',
+          'Themes: 3 - 4 attractive themes'
+        ]
+      },
+      {
+        name: 'Classic (Baby 0.6 months - 2 years)',
+        price: '₹15,000',
+        features: [
+          'Duration: 2 hrs',
+          'Pictures Includes: Baby + Parents',
+          'Deliverables: 25 images + Photo Reel',
+          'Themes: Unlimted themes + Cake Smash (optn)'
+        ]
+      },
+      {
+        name: 'Premium (Baby 0.6 months - 2 years)',
+        price: '₹20,000',
+        features: [
+          'Duration: 3 hrs',
+          'Pictures Includes: Baby + Parents + Extended Family',
+          'Deliverables: 35 images + Photo Reel + 15 sheets Album',
+          'Themes: Unlimted themes + Cake Smash (optn)'
+        ]
+      },
+      {
+        name: 'Standard (Kids Above 2 years)',
+        price: '₹8,000',
+        features: [
+          'Duration: 1 hr',
+          'Pictures Includes: Baby',
+          'Deliverables: 15 Images',
+          'Themes: 2 Themes'
+        ]
+      },
+      {
+        name: 'Classic (Kids Above 2 years)',
+        price: '₹12,000',
+        features: [
+          'Duration: 2 hrs',
+          'Pictures Includes: Baby + Parents',
+          'Deliverables: 25 Images + Photo Reel',
+          'Themes: 2 Themes'
+        ]
+      },
+      {
+        name: 'Premium (Kids Above 2 years)',
+        price: '₹15,000',
+        features: [
+          'Duration: 2 hrs',
+          'Pictures Includes: Baby + Parents + Extended Family',
+          'Deliverables: 35 Images + Photo Reel + Album',
+          'Themes: 3 Themes'
         ]
       }
     ]
@@ -880,6 +1070,41 @@ export const servicesData: Service[] = [
       'https://youtu.be/KP2ny-OhSlU',
       'https://youtu.be/-BjwDmj7jlU',
       'https://youtu.be/Y24y5QByfQk'
+    ],
+    packages: [
+      {
+        name: 'Traditional Photography',
+        price: '₹8,000',
+        features: [
+          'Duration: Upto 5 hrs',
+          'Deliverables: Unlimited soft copies'
+        ]
+      },
+      {
+        name: 'Candid Photography',
+        price: '₹15,000',
+        popular: true,
+        features: [
+          'Duration: Upto 5 hrs',
+          'Deliverables: Unlimited soft copies + 50 Edited'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Videography',
+        price: '₹15,000',
+        features: [
+          'Duration: Upto 5 Hrs',
+          'Deliverables: Unlimited soft copies + 20 mns- 1hrs Full HD Video'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Cinematography',
+        price: '₹25,000',
+        features: [
+          'Duration: Upto 5 Hrs',
+          'Deliverables: Unlimited soft copies + 2-5min Full HD Video'
+        ]
+      }
     ]
   },
   // --- Row 3 ---
@@ -902,30 +1127,40 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Basic Coverage',
-        price: 'Starting from ₹10,000',
+        name: 'Rs 8,000',
+        price: '₹8,000',
         features: [
-          '1 Photographer',
-          '3 Hours Coverage',
-          '100+ Edited Photos',
-          'Ceremony Coverage',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 4-5 hrs (1 Session)',
+          'Photography Style: Conventional',
+          'Video: NA',
+          'Deliverables: Unlimited soft copies'
         ]
       },
       {
-        name: 'Complete Package',
-        price: 'Starting from ₹18,000',
+        name: 'Rs 10,000',
+        price: '₹10,000',
         popular: true,
         features: [
-          '1 Photographer + 1 Videographer',
-          '5 Hours Coverage',
-          '200+ Edited Photos',
-          'Event Highlights Video (3-5 mins)',
-          'Ceremony & Celebration Coverage',
-          'Guest Candid Photos',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 4-5 hrs (1 Session)',
+          'Photography Style: Semi-Candid',
+          'Video: NA',
+          'Deliverables: Unlimited soft copies'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Videography',
+        price: '₹15,000',
+        features: [
+          'Duration: Upto 6 Hrs',
+          'Deliverables: Unlimited soft copies + 20 mins- 1hrs Full HD Video'
+        ]
+      },
+      {
+        name: 'Traditional Photography+ Cinematography',
+        price: '₹30,000',
+        features: [
+          'Duration: Upto 6 Hrs',
+          'Deliverables: Unlimited soft copies + 2-5min Full HD Video'
         ]
       }
     ]
@@ -944,31 +1179,31 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Family Session',
-        price: 'Starting from ₹12,000',
+        name: 'Silver',
+        price: '₹5,000',
         features: [
-          '1 Photographer',
-          'Indoor/Outdoor Location',
-          '2 Hours Coverage',
-          '100+ Edited Photos',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 2 hrs',
+          'Photography Style: Candid',
+          'Deliverables: Unlimited Soft Copies + 20 edited images'
         ]
       },
       {
-        name: 'Extended Family Package',
-        price: 'Starting from ₹20,000',
+        name: 'Gold',
+        price: '₹12,000',
         popular: true,
         features: [
-          '1 Photographer',
-          'Indoor & Outdoor Locations',
-          '4 Hours Coverage',
-          '200+ Edited Photos',
-          'Multiple Family Groupings',
-          'Individual Portraits',
-          'Online Gallery',
-          'All Raw Files',
-          'Printed Photos (15 prints)'
+          'Duration: 3 hr',
+          'Photography Style: Candid',
+          'Deliverables: Unlimited Soft Copies + 35 Edited images'
+        ]
+      },
+      {
+        name: 'Platinum',
+        price: '₹15,000',
+        features: [
+          'Duration: 3-4 hr',
+          'Photography Style: Candid',
+          'Deliverables: Unlimited Softcopies + 50 Edited images + 1 Album of 15 Sheets'
         ]
       }
     ]
@@ -992,32 +1227,40 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Portfolio Starter',
-        price: 'Starting from ₹15,000',
+        name: 'Basic',
+        price: '₹5,000',
         features: [
-          '1 Photographer',
-          'Studio/Outdoor Location',
-          '3 Hours Coverage',
-          '100+ Edited Photos',
-          '3 Outfit Changes',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 1 hrs',
+          'Photography Style: Candid',
+          'Deliverables: 10 edited images'
         ]
       },
       {
-        name: 'Professional Portfolio',
-        price: 'Starting from ₹25,000',
+        name: 'Basic (Higher)',
+        price: '₹10,000',
         popular: true,
         features: [
-          '1 Photographer + 1 Assistant',
-          'Studio & Outdoor Locations',
-          '5 Hours Coverage',
-          '200+ Edited Photos',
-          '5 Outfit Changes',
-          'Professional Makeup & Hair',
-          'Online Gallery',
-          'All Raw Files',
-          'Digital Portfolio Book'
+          'Duration: 3 hrs',
+          'Photography Style: Candid',
+          'Deliverables: 20 edited images'
+        ]
+      },
+      {
+        name: 'Standard',
+        price: '₹15,000',
+        features: [
+          'Duration: 5 hrs',
+          'Photography Style: Candid',
+          'Deliverables: Unlimited Soft Copies + 40 Edited images'
+        ]
+      },
+      {
+        name: 'Premium',
+        price: '₹20,000',
+        features: [
+          'Duration: 6 hrs',
+          'Photography Style: Candid',
+          'Deliverables: Unlimited Soft Copies + 1 Album of 40 images'
         ]
       }
     ]
@@ -1043,46 +1286,29 @@ export const servicesData: Service[] = [
     ],
     packages: [
       {
-        name: 'Product Photography',
-        price: 'Starting from ₹8,000',
+        name: 'Basic',
+        price: '₹100-350 Per product',
         features: [
-          '1 Photographer',
-          'Studio Setup',
-          'Up to 20 Products',
-          '50+ Edited Photos',
-          'White Background',
-          'Online Gallery',
-          'All Raw Files'
+          'Duration: 2 hrs shoot, 2-3 dimension of each product',
+          'Deliverables: Post processed images'
         ]
       },
       {
-        name: 'Interior Photography',
-        price: 'Starting from ₹15,000',
-        features: [
-          '1 Photographer',
-          'On-Location Shoot',
-          'Up to 10 Rooms/Spaces',
-          '100+ Edited Photos',
-          'HDR Processing',
-          'Online Gallery',
-          'All Raw Files'
-        ]
-      },
-      {
-        name: 'Commercial Package',
-        price: 'Starting from ₹30,000',
+        name: 'Standard',
+        price: '₹500-750 Per product',
         popular: true,
         features: [
-          '1 Photographer + 1 Assistant',
-          'Full Property/Product Line Coverage',
-          'Full Day Coverage',
-          '200+ Edited Photos',
-          'Drone Footage (for properties)',
-          'Professional Lighting Setup',
-          'HDR & 360° Views',
-          'Online Gallery',
-          'All Raw Files',
-          'Commercial Usage Rights'
+          'Duration: 2 hrs shoot, 2-3 dimension of each product',
+          'Deliverables: Post processed images',
+          'Style: Apparel and Mannequine shoot'
+        ]
+      },
+      {
+        name: 'Customized Package',
+        price: 'Starts at ₹5000 - 50000',
+        features: [
+          'Duration: Depends on Requirements',
+          'Deliverables: HD Video'
         ]
       }
     ]
